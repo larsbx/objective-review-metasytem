@@ -6,8 +6,58 @@ these are for coding agents mostly.
 
 ---
 
+## About This Project
+
+This repository aggregates and structures high-quality software engineering manifestos that teams can use to standardize their code review practices and engineering culture. Each manifesto represents a coherent philosophy backed by industry best practices, research, and real-world experience.
+
+### What is a Manifesto?
+
+For inclusion in this repository, a manifesto must:
+
+1. **Define a coherent philosophy**: Express a unified set of principles addressing a specific dimension of software quality
+2. **Be actionable**: Provide concrete guidance that can be applied during code reviews and development
+3. **Include implementation details**: Contain practical checklists, examples, and measurement frameworks
+4. **Be well-documented**: Include clear explanations, rationale, and context for each principle
+5. **Address a distinct concern**: Cover a dimension of software quality not fully addressed by existing manifestos
+6. **Be production-ready**: Suitable for adoption in professional software engineering teams
+
+### Project Scope
+
+This collection focuses on manifestos relevant to code review and software engineering best practices across:
+
+- **Correctness & Safety** (Formal Verification)
+- **Maintainability** (Vibe Coding)
+- **Data Quality** (Data & Analytics)
+- **Security** (Security Hardening)
+- **User Experience** (UX, Accessibility, Content)
+- **Communication** (Documentation, Content)
+
+### Manifesto Structure
+
+All manifestos in this repository follow a consistent structure to facilitate comparison and adoption:
+
+- **Title & Version**: Clear identification with semantic versioning
+- **Core Principles**: Foundational concepts (typically tiered: Core/Standard/Excellence)
+- **Implementation Guide**: Practical adoption timelines and checklists
+- **Examples**: Anti-patterns and correct patterns for each principle
+- **Tools & Ecosystem**: Recommended tools for enforcement and measurement
+- **Measurement Framework**: Metrics and success criteria
+- **Changelog**: Version history and evolution (for v2.0+ manifestos)
+
+This consistency ensures that teams can:
+- Compare manifestos across different dimensions of software quality
+- Apply similar adoption patterns regardless of which manifesto they choose
+- Measure progress using comparable frameworks
+- Integrate multiple manifestos without structural conflicts
+
+---
+
 ## Table of Contents
 
+- [About This Project](#about-this-project)
+  - [What is a Manifesto?](#what-is-a-manifesto)
+  - [Project Scope](#project-scope)
+  - [Manifesto Structure](#manifesto-structure)
 - [Quick Selection Guide](#quick-selection-guide)
 - [Manifesto Index](#manifesto-index)
   - [🔬 Formal Verification](#-formal-verification)
@@ -665,22 +715,60 @@ gantt
 
 ## Contributing
 
-These are living documents. Contributions welcome:
+These are living documents maintained by the community. We welcome all contributions that help improve the quality, clarity, and usefulness of these manifestos.
 
-- **Feedback**: [Open issues](../../issues) with suggestions or questions
-- **Improvements**: Submit pull requests for clarifications or examples
+### How to Contribute
+
+- **Feedback & Questions**: [Open an issue](../../issues) with suggestions or questions
+- **Bug Reports**: Found a broken link, typo, or error? [Report it](../../issues)
+- **Improvements**: Submit pull requests for clarifications, examples, or corrections
+- **New Manifestos**: Propose new manifestos that meet our [inclusion criteria](#what-is-a-manifesto)
 - **Case Studies**: Share adoption stories and lessons learned
-- **Translations**: Help make accessible to global community
+- **Translations**: Help make these manifestos accessible to the global community
 
-**Contribution Guidelines**: See individual manifesto directories for domain-specific guidance.
+### Contribution Process
+
+1. **Read [CONTRIBUTING.md](./CONTRIBUTING.md)** for detailed guidelines on:
+   - Content standards and quality requirements
+   - Style guide and formatting conventions
+   - Quality checks and review process
+   - Versioning and changelog updates
+
+2. **Fork and create a feature branch**: `git checkout -b feature/your-improvement`
+
+3. **Make your changes** following the [Style Guide](./STYLE_GUIDE.md)
+
+4. **Run quality checks**: Link checking, markdown linting, spell checking
+
+5. **Submit a pull request** with a clear description of your changes
+
+### Recognition
+
+All contributors are recognized through:
+- GitHub contributor graph
+- PR descriptions and commit history
+- CHANGELOG.md entries (for significant contributions)
+
+**By contributing, you agree that your contributions will be licensed under the same [CC0 1.0 Universal](./LICENSE) license.**
 
 ---
 
 ## License
 
-**CC0 - Public Domain**
+**[CC0 1.0 Universal (Public Domain)](./LICENSE)**
 
-All manifestos freely available for education, research, and industry use.
+To maximize reuse and accessibility, all manifestos in this repository are dedicated to the public domain under the CC0 1.0 Universal license.
+
+This means you can:
+- ✅ Use these manifestos in commercial and non-commercial projects
+- ✅ Modify, adapt, and build upon them without attribution
+- ✅ Include them in your company's engineering guidelines
+- ✅ Translate and distribute them freely
+- ✅ Use them for education, research, and training
+
+**No permission required. No attribution required. Maximum freedom to use and adapt.**
+
+For full legal text, see [LICENSE](./LICENSE).
 
 ---
 
