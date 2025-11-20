@@ -1,4 +1,4 @@
-Human note: These are for coding agents mostly.
+these are for coding agents mostly.
 
 # Code Review Manifestos
 
