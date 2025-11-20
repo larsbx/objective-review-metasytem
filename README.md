@@ -2,7 +2,7 @@ Human note: These are for coding agents mostly.
 
 # Code Review Manifestos
 
-A curated collection of software engineering manifestos covering formal verification, coding practices, and data analytics. These documents establish foundational principles for building reliable, maintainable, and high-quality software systems.
+A curated collection of software engineering manifestos covering formal verification, coding practices, data analytics, and security hardening. These documents establish foundational principles for building reliable, maintainable, secure, and high-quality software systems.
 
 ## Overview
 
@@ -98,16 +98,50 @@ This repository organizes manifestos by domain, each containing comprehensive pr
 
 ---
 
+### 🔒 [Security Hardening](./security_hardening/)
+
+**[Security Hardening Manifesto](./security_hardening/SECURITY_HARDENING_MANIFESTO.md)** (v2.0) | [Changelog](./security_hardening/CHANGELOG.md)
+
+18 foundational principles for building secure, resilient systems.
+
+**Key Principles:**
+- Defense in Depth
+- Least Privilege
+- Fail Secure
+- Complete Mediation
+- Zero Trust
+- Cryptographic Agility
+- Secure Development Lifecycle
+- Audit Everything
+- Secrets Management
+- Vulnerability Management
+- Immutable Infrastructure
+- Threat Modeling
+- Supply Chain Security
+- Security Monitoring & Incident Response
+
+**Best For:**
+- Security-critical applications (fintech, healthcare, government)
+- Cloud-native and microservices architectures
+- Organizations building security programs
+- Compliance-driven environments (PCI-DSS, HIPAA, GDPR)
+- DevSecOps transformation
+
+**Standards Covered:** OWASP Top 10, NIST CSF, CIS Controls, ISO 27001, PCI-DSS
+
+---
+
 ## Comparison Matrix
 
-| Aspect | Formal Verification | Vibe Coding | Data & Analytics |
-|--------|-------------------|-------------|------------------|
-| **Primary Goal** | Mathematical correctness | Human readability | Data reliability |
-| **Verification** | Formal proofs | Code review + tests | Data quality tests |
-| **Automation** | Theorem provers, SMT | Linters, formatters | Observability, monitoring |
-| **Learning Curve** | Very High | Medium | Medium-High |
-| **Industry Adoption** | Specialized (safety-critical) | Universal | Data-intensive orgs |
-| **ROI Timeline** | Long-term | Immediate | Medium-term |
+| Aspect | Formal Verification | Vibe Coding | Data & Analytics | Security Hardening |
+|--------|-------------------|-------------|------------------|-------------------|
+| **Primary Goal** | Mathematical correctness | Human readability | Data reliability | System security & resilience |
+| **Verification** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning |
+| **Automation** | Theorem provers, SMT | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM |
+| **Learning Curve** | Very High | Medium | Medium-High | Medium |
+| **Industry Adoption** | Specialized (safety-critical) | Universal | Data-intensive orgs | Universal (required) |
+| **ROI Timeline** | Long-term | Immediate | Medium-term | Immediate (avoid breach) |
+| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems |
 
 ## Common Themes
 
@@ -151,14 +185,16 @@ Despite different domains, these manifestos share core philosophy:
 ### For Organizations
 
 **Assess Criticality:**
-- **Safety-critical**: Prioritize Formal Verification Manifesto
-- **Data-intensive**: Prioritize Data & Analytics Manifesto
-- **General software**: Prioritize Vibe Coding Manifesto
+- **Safety-critical**: Formal Verification + Security Hardening (avionics, medical devices)
+- **Security-critical**: Security Hardening + Vibe Coding (fintech, healthcare, government)
+- **Data-intensive**: Data & Analytics + Security Hardening (analytics platforms, ML systems)
+- **General software**: Vibe Coding + Security Hardening (all applications)
 
 **Federated Adoption:**
-- Platform teams: All three manifestos (infrastructure criticality)
-- Product teams: Vibe Coding + domain-specific (Data or Verification)
-- Data teams: Data & Analytics + Vibe Coding
+- Platform teams: All four manifestos (infrastructure criticality)
+- Product teams: Vibe Coding + Security Hardening + domain-specific (Data or Verification)
+- Data teams: Data & Analytics + Security Hardening + Vibe Coding
+- Security teams: Security Hardening as foundation, expand to domain-specific needs
 
 ## Implementation Checklists
 
@@ -167,6 +203,7 @@ Each manifesto includes detailed implementation guidance:
 - **Formal Verification**: Learning paths (30-day quickstart, 3-month deep dive), decision tree for tool selection, cost-benefit analysis
 - **Vibe Coding**: Incremental adoption strategy (3 phases), language-specific guidance, metrics & measurement
 - **Data & Analytics**: Implementation checklist per principle, maturity model (6 levels), tool ecosystem map
+- **Security Hardening**: Implementation checklists (18 principles), security maturity model (6 levels), tool ecosystem map (100+ tools), compliance mapping (OWASP, NIST, CIS, ISO 27001), learning paths (30-day to 3-month), modern architecture guidance
 
 ## Contributing
 
@@ -195,6 +232,7 @@ Manifestos gathered from:
 | Formal Verification | 1.1 | 2024 |
 | Vibe Coding | 2.0 | 2025-11-20 |
 | Data & Analytics | 2.0 | 2025-11-20 |
+| Security Hardening | 2.0 | 2025-11-20 |
 
 ---
 
