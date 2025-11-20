@@ -1,0 +1,46 @@
+# Code Ownership for Manifestos
+#
+# This file defines ownership for each manifesto. Owners are automatically
+# requested for review when changes are made to their manifesto.
+#
+# Learn more: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default reviewers for all content
+* @larsbx
+
+# Repository-wide files
+/README.md @larsbx
+/.github/ @larsbx
+/CONTRIBUTING.md @larsbx
+/STYLE_GUIDE.md @larsbx
+
+# Manifesto-specific ownership
+# Format: /directory/ @team @individual-owners
+
+# Formal Verification - Requires formal methods and safety expertise
+/formal_verification/ @larsbx
+# Ideal additional owners: @safety-team @formal-methods-experts
+
+# Vibe Coding - General engineering practices
+/vibe_coding/ @larsbx
+# Ideal additional owners: @engineering-practices @code-quality-team
+
+# Data & Analytics - Data platform and analytics expertise
+/data_analytics/ @larsbx
+# Ideal additional owners: @data-platform @analytics-team
+
+# Security Hardening - Security and DevSecOps expertise
+/security_hardening/ @larsbx
+# Ideal additional owners: @security-team @devsecops
+
+# User Experience - Design and UX expertise
+/user_experience/ @larsbx
+# Ideal additional owners: @design-team @ux-research
+
+# Accessibility - Accessibility advocates and WCAG experts
+/accessibility/ @larsbx
+# Ideal additional owners: @a11y-advocates @accessibility-team
+
+# Content & Communication - Technical writing and content strategy
+/content_communication/ @larsbx
+# Ideal additional owners: @technical-writers @content-strategy @devrel-team

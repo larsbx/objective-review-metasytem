@@ -11,7 +11,7 @@ Version 2.0 addresses critical tensions, adds practical adoption guidance, and m
 - Explicitly excludes prototypes, scripts, generated code
 - Prevents dogmatic misapplication
 
-### 2. **Core/Intermediate/Advanced Principle Hierarchy**
+### 2. **Core/Standard/Excellence Principle Hierarchy**
 **Core** (universal, start here):
 - I. Aesthetic Legibility
 - IV. Intentional Naming
@@ -19,13 +19,13 @@ Version 2.0 addresses critical tensions, adds practical adoption guidance, and m
 - XIII. Obviousness Over Cleverness
 - XII. Locality & Cohesion
 
-**Intermediate** (language-dependent):
+**Standard** (language-dependent):
 - II. Semantic Density ⚖️ (with balance guidance)
 - IX. Immutability Default
 - XIV. Contextual Verbosity
 - XV. Joyful Craft
 
-**Advanced** (requires strong types or FP):
+**Excellence** (requires strong types or FP):
 - V. Type as Documentation
 - VI. Composition Over Configuration
 - X. Error as Value

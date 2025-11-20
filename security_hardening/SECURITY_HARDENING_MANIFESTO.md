@@ -5011,8 +5011,31 @@ Initial release with 15 foundational principles covering core security concepts.
 
 ---
 
-**Status**: Living document - community contributions welcome  
-**Feedback**: GitHub Issues / Pull Requests  
+## Related Manifestos
+
+**Complements (Essential):**
+- **[Vibe Coding](../vibe_coding/)** - Secure code is readable code; Principle XIII (Obviousness Over Cleverness) prevents security-through-obscurity
+- **[Formal Verification](../formal_verification/)** - Mathematical proofs for critical security components (auth, crypto, access control)
+- **[Data & Analytics](../data_analytics/)** - Secure audit logging, PII protection, data classification principles
+
+**Prerequisites:**
+- None - Security is foundational for all systems
+
+**Enhances:**
+- **[User Experience](../user_experience/)** - Principle XIII (Privacy & Ethical Design) ensures security doesn't compromise UX
+- **[Accessibility](../accessibility/)** - Security features must be accessible (MFA, CAPTCHAs, security notifications)
+- **[Content & Communication](../content_communication/)** - Clear security documentation, error messages, incident reports
+
+**Application Contexts:**
+- **All Projects**: Core security principles (Defense in Depth, Least Privilege, Fail Secure) are universal
+- **Fintech/Healthcare**: Full manifesto + Formal Verification for critical paths
+- **Cloud-Native**: Zero Trust architecture, supply chain security, immutable infrastructure
+- **Compliance-Driven**: Map to specific frameworks (PCI-DSS, HIPAA, SOC 2, ISO 27001)
+
+---
+
+**Status**: Living document - community contributions welcome
+**Feedback**: GitHub Issues / Pull Requests
 **Citation**: "Security Hardening Manifesto v2.0" (2025), licensed under CC0 Public Domain  
 
 ---

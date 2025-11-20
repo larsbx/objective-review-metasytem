@@ -215,7 +215,7 @@ src/
 
 ---
 
-## Intermediate Principles (Language-Dependent — Adopt Selectively)
+## Standard Principles (Language-Dependent — Adopt Selectively)
 
 These principles provide significant value but require language support or team skill development.
 
@@ -1101,7 +1101,7 @@ VIII. Literate Programming
 XIII. Obviousness Over Cleverness
 XII. Locality & Cohesion
 
-### Intermediate Principles
+### Standard Principles
 II. Semantic Density ⚖️
 IX. Immutability Default
 XIV. Contextual Verbosity
@@ -1124,6 +1124,28 @@ XVI. Collaborative Aesthetics
 - Incremental Adoption Strategy
 - Language-Specific Guidance
 - Metrics & Measurement
+
+---
+
+## Related Manifestos
+
+**Complements:**
+- **[Security Hardening](../security_hardening/)** - Apply secure coding practices; Principle XI (Complete Mediation) ensures code correctness extends to security boundaries
+- **[Content & Communication](../content_communication/)** - Code documentation and comments; Principle VIII (Literate Programming) aligns with Content Principle I (Clarity)
+- **[Accessibility](../accessibility/)** - Code that generates accessible UI; semantic structure principles overlap
+
+**Prerequisites:**
+- None - Vibe Coding is the universal foundation for all code
+
+**Advanced:**
+- **[Formal Verification](../formal_verification/)** - Mathematical correctness for critical code paths; Type as Documentation (Principle V) is first step toward formal proofs
+- **[User Experience](../user_experience/)** - Code structure impacts developer experience; maintainability principles create better DX
+
+**Application Contexts:**
+- **API/Backend**: Core + Standard tiers essential
+- **Frontend**: All tiers, plus UX + Accessibility manifestos
+- **Data Engineering**: Core + Data Analytics manifesto for pipeline quality
+- **Infrastructure**: Core + Security manifesto for reliability
 
 ---
 
