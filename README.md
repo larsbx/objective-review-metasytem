@@ -1,3 +1,5 @@
+(it's mostly for agents - don't judge me)
+
 # Code Review Manifestos
 
 **Software engineering manifestos for code review and system quality**
