@@ -44,6 +44,29 @@ these are for coding agents mostly.
 | **Content clarity & documentation** | 📝 Content & Communication | ✨ Vibe Coding + 🎨 UX |
 | **General software quality** | ✨ Vibe Coding | Context-dependent |
 
+### Decision Tree
+
+```mermaid
+graph TD
+    A[What's your priority?] --> B{Safety-critical<br/>system?}
+    B -->|Yes| C[🔬 Formal Verification]
+    B -->|No| D{User-facing<br/>product?}
+    D -->|Yes| E[🎨 UX + ♿ Accessibility]
+    D -->|No| F{Data-intensive?}
+    F -->|Yes| G[📊 Data & Analytics]
+    F -->|No| H[✨ Vibe Coding]
+
+    C --> I[Also add: 🔒 Security]
+    E --> J[Also add: 📝 Content + 🔒 Security]
+    G --> K[Also add: 🔒 Security + ✨ Vibe]
+    H --> L[Also add: 🔒 Security]
+
+    style C fill:#e1f5ff
+    style E fill:#ffe1f5
+    style G fill:#f5e1ff
+    style H fill:#e1ffe1
+```
+
 ---
 
 ## Manifesto Index
@@ -105,13 +128,13 @@ Coq • Isabelle • Lean • Agda • F* • Dafny • TLA+ • SPARK Ada
 - Obviousness Over Cleverness
 - Locality & Cohesion
 
-**Intermediate** (Language-Dependent):
+**Standard** (Language-Dependent):
 - Semantic Density
 - Immutability Default
 - Contextual Verbosity
 - Joyful Craft
 
-**Advanced** (Requires Strong Types):
+**Excellence** (Requires Strong Types):
 - Type as Documentation
 - Composition Over Configuration
 - Error as Value
@@ -567,6 +590,32 @@ Cross-cutting philosophy across all manifestos:
 **Month 4-6**: Explore advanced principles, share with team
 
 ### Team (Coordinated)
+
+```mermaid
+gantt
+    title Team Adoption Timeline
+    dateFormat YYYY-MM
+    axisFormat %B
+
+    section Foundation
+    Vibe Coding Core           :2025-01, 3M
+    Security Basics            :2025-01, 3M
+    UX Core Principles         :2025-01, 3M
+    Code Review Culture        :2025-01, 3M
+
+    section Quality Gates
+    Vibe Standard Principles   :2025-04, 3M
+    Security SDL Integration   :2025-04, 3M
+    Data Quality Checks        :2025-04, 3M
+    UX Standard + A11y         :2025-04, 3M
+
+    section Excellence
+    Vibe Advanced Patterns     :2025-07, 6M
+    Security Zero Trust        :2025-07, 6M
+    Data Lineage & Contracts   :2025-07, 6M
+    UX Excellence              :2025-07, 6M
+    Formal Verification        :2025-10, 3M
+```
 
 **Month 1-3 (Foundations)**:
 - ✨ Vibe Coding: Formatting, naming, documentation standards

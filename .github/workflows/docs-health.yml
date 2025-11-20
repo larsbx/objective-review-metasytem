@@ -1,0 +1,104 @@
+name: Documentation Health Check
+
+# Run weekly to catch broken links and stale content
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Every Sunday at midnight UTC
+  workflow_dispatch:  # Allow manual triggering
+  pull_request:  # Also run on PRs to catch issues early
+    paths:
+      - '**/*.md'
+      - '.github/workflows/docs-health.yml'
+
+jobs:
+  link-check:
+    name: Check for broken links
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check links with Lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # Check all markdown files
+          args: --verbose --no-progress '**/*.md'
+          # Fail action on broken links
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create issue if links are broken (scheduled runs only)
+        if: failure() && github.event_name == 'schedule'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🔗 Broken links detected in documentation',
+              body: 'The weekly link check found broken links. Please review the [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details.',
+              labels: ['documentation', 'maintenance']
+            })
+
+  freshness-check:
+    name: Check content freshness
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Full history for git log
+
+      - name: Check for stale content
+        run: |
+          echo "## Content Freshness Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Files not updated in over 12 months:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # Find markdown files older than 365 days
+          stale_count=0
+          while IFS= read -r file; do
+            if [ -f "$file" ]; then
+              last_modified=$(git log -1 --format=%cd --date=short -- "$file")
+              days_old=$(( ( $(date +%s) - $(date -d "$last_modified" +%s) ) / 86400 ))
+
+              if [ $days_old -gt 365 ]; then
+                echo "- \`$file\` (last updated: $last_modified, $days_old days ago)" >> $GITHUB_STEP_SUMMARY
+                stale_count=$((stale_count + 1))
+              fi
+            fi
+          done < <(find . -name "*.md" -not -path "./.git/*")
+
+          if [ $stale_count -eq 0 ]; then
+            echo "✅ All content is fresh (updated within last 12 months)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "⚠️ Found $stale_count stale file(s). Consider reviewing and updating." >> $GITHUB_STEP_SUMMARY
+          fi
+
+  markdown-lint:
+    name: Lint Markdown files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Lint Markdown files
+        uses: DavidAnson/markdownlint-cli2-action@v11
+        with:
+          globs: '**/*.md'
+          config: '.markdownlint.json'
+        continue-on-error: true  # Don't fail build, just report
+
+  spell-check:
+    name: Check spelling
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check spelling with typos
+        uses: crate-ci/typos@master
+        continue-on-error: true  # Don't fail build, just report
