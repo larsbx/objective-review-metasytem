@@ -1,4 +1,4 @@
-Don't judge me... I need someplace to keep these things so other coding agents can use them. May as well not destroy the planet even more for my slop addiction. Feel free to use them. I think they're pretty good, all in all. Enjoy! 
+Don't judge me... I need someplace to keep these things so other coding agents can use them. May as well not destroy the planet even more for my slop addiction. Feel free to use them. I think they're pretty good, all in all. 
 
 # Code Review Manifestos
 
