@@ -15,6 +15,7 @@ these are for coding agents mostly.
   - [📊 Data & Analytics](#-data--analytics)
   - [🔒 Security Hardening](#-security-hardening)
   - [🎨 User Experience](#-user-experience)
+  - [♿ Accessibility](#-accessibility)
 - [Comparison Matrix](#comparison-matrix)
 - [Selection by Role](#selection-by-role)
 - [Selection by Context](#selection-by-context)
@@ -37,7 +38,8 @@ these are for coding agents mostly.
 | **Code readability & maintainability** | ✨ Vibe Coding | 🎨 UX (if frontend) |
 | **Data reliability & quality** | 📊 Data & Analytics | 🔒 Security Hardening |
 | **System security & resilience** | 🔒 Security Hardening | 🔬 Formal (critical systems) |
-| **User satisfaction & usability** | 🎨 User Experience | ✨ Vibe Coding |
+| **User satisfaction & usability** | 🎨 User Experience | ✨ Vibe Coding + ♿ Accessibility |
+| **Universal access & legal compliance** | ♿ Accessibility | 🎨 UX (broader context) |
 | **General software quality** | ✨ Vibe Coding | Context-dependent |
 
 ---
@@ -280,18 +282,78 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 
 ---
 
+### ♿ Accessibility
+
+**[Accessibility Manifesto](./accessibility/ACCESSIBILITY_MANIFESTO.md)** • v1.1 • [Changelog](./accessibility/CHANGELOG.md) • 15 principles
+
+#### At a Glance
+- **Goal**: Universal access & WCAG compliance
+- **Primary Users**: Frontend developers, designers, accessibility specialists, all developers
+- **Learning Curve**: Medium
+- **ROI**: Immediate (avoid lawsuits) + Long-term (broader audience)
+- **Adoption**: Universal (legally required)
+
+#### Key Principles (by tier)
+
+**Core** (WCAG A - Legal Minimum):
+- Universal Design
+- Perceivability
+- Operability
+- Keyboard Accessibility
+
+**Standard** (WCAG AA - Industry Baseline):
+- Understandability
+- Robustness
+- Semantic Structure
+- Screen Reader Compatibility
+- Sufficient Time
+- Seizure Prevention
+- Navigational Clarity
+- Input Assistance
+
+**Excellence** (WCAG AAA + Inclusive Design):
+- Adaptive Technology Support
+- Multimodal Interaction
+- Testing & Validation
+
+#### Best Fit
+- ✅ All web and mobile applications (legal requirement)
+- ✅ Government and education platforms (Section 508)
+- ✅ E-commerce (settlement risk mitigation)
+- ✅ Design systems & component libraries
+- ✅ Public-facing applications
+- ✅ Healthcare and financial services (high compliance stakes)
+
+#### Standards & Frameworks
+WCAG 2.1 AA/AAA • Section 508 • ADA • EAA (EU) • AODA (Ontario) • EN 301 549
+
+#### Tools & Ecosystem
+axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver • TalkBack • Colour Contrast Analyser • Accessibility Insights
+
+#### Implementation Guide
+- 3-tier implementation (Core/Standard/Excellence)
+- Comprehensive measurement framework (automated + manual + user testing)
+- 40+ tool ecosystem map (testing, CI/CD, screen readers, design systems)
+- Legal compliance mapping (ADA, Section 508, EAA, AODA)
+- Actionable checklists per tier
+- Cost-benefit analysis (10% → 10× → 100× multiplier)
+
+**Related**: Expands [UX Manifesto Principle VIII](#-user-experience) with WCAG implementation details
+
+---
+
 ## Comparison Matrix
 
-| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience |
-|--------|----------------------|---------------|--------------------|--------------------|-------------------|
-| **Focus** | Mathematical correctness | Human readability | Data reliability | System security | User success |
-| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics |
-| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B |
-| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium |
-| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal |
-| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium |
-| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) |
-| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems | All systems |
+| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience | ♿ Accessibility |
+|--------|----------------------|---------------|--------------------|--------------------|-------------------|----------------|
+| **Focus** | Mathematical correctness | Human readability | Data reliability | System security | User success | Universal access |
+| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing, user testing with disabled users |
+| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B | axe, WAVE, Pa11y, Lighthouse |
+| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium | ✓ Medium |
+| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal | ✓ Universal (legally required) |
+| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium | ✓ Immediate (avoid lawsuits) + Long-term |
+| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) | Low-Medium (all roles) |
+| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems | All systems | All systems (legal requirement) |
 
 ---
 
@@ -303,8 +365,9 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 3. **Consider**: 🔬 Formal Verification (for critical components)
 
 ### Frontend Developers
-1. **Start**: 🎨 User Experience + ✨ Vibe Coding + 🔒 Security (input validation, XSS prevention)
-2. **Priority**: Accessibility (VIII), Performance (XIV), Consistency (IV), Security (CSP, CORS)
+1. **Start**: 🎨 User Experience + ♿ Accessibility + ✨ Vibe Coding + 🔒 Security (input validation, XSS prevention)
+2. **Priority**: Accessibility (WCAG AA compliance, screen reader testing), Performance (XIV), Consistency (IV), Security (CSP, CORS)
+3. **Focus**: UX Principle VIII + Accessibility Manifesto (full WCAG implementation details)
 
 ### Data Engineers / Analysts
 1. **Start**: 📊 Data & Analytics + 🔒 Security (data classification, PII protection)
@@ -312,9 +375,10 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 3. **Focus**: Data Quality, Lineage, Observability, Privacy & Compliance
 
 ### Designers / Product Managers
-1. **Start**: 🎨 User Experience
-2. **Priority**: User Primacy (I), Accessibility (VIII), Privacy & Ethics (XIII), Continuous Validation (XV)
+1. **Start**: 🎨 User Experience + ♿ Accessibility
+2. **Priority**: User Primacy (I), Accessibility (WCAG compliance, inclusive design), Privacy & Ethics (XIII), Continuous Validation (XV)
 3. **Consider**: ✨ Vibe Coding (understand engineering constraints) + 🔒 Security (privacy-by-design)
+4. **Testing**: Include disabled users (≥20% of usability testing)
 
 ### Platform / Infrastructure Engineers
 1. **Start**: ✨ Vibe Coding + 🔒 Security Hardening
@@ -334,15 +398,15 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 
 | Project Type | Primary | Secondary | Notes |
 |--------------|---------|-----------|-------|
-| **Web Application** | 🎨 UX + 🔒 Security | ✨ Vibe Coding | Add 📊 if data-heavy |
-| **Mobile App** | 🎨 UX + 🔒 Security | ✨ Vibe Coding | Performance, accessibility, privacy critical |
+| **Web Application** | 🎨 UX + ♿ Accessibility + 🔒 Security | ✨ Vibe Coding + 📊 Data | WCAG AA required; add 📊 if data-heavy |
+| **Mobile App** | 🎨 UX + ♿ Accessibility + 🔒 Security | ✨ Vibe Coding | Performance, WCAG, privacy critical; screen reader testing mandatory |
 | **API / Backend Service** | ✨ Vibe Coding + 🔒 Security | 📊 Data (if stateful) | Consider 🔬 for auth/payments |
 | **Data Pipeline** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding | Quality, observability, PII protection paramount |
 | **ML Platform** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding | Reproducibility, lineage, model security critical |
-| **IoT / Embedded** | 🎨 UX + 🔒 Security | 🔬 Formal Verification | Safety, usability, security constraints |
-| **Financial System** | 🔬 Formal + 🔒 Security | 📊 Data + ✨ Vibe | Correctness, auditability, compliance |
-| **Medical Device** | 🔬 Formal + 🔒 Security | 🎨 UX | Safety, security, human factors (FDA requirements) |
-| **Design System** | 🎨 UX | ✨ Vibe Coding + 🔒 Security | Consistency, documentation, secure components |
+| **IoT / Embedded** | 🎨 UX + ♿ Accessibility + 🔒 Security | 🔬 Formal Verification | Safety, usability, multimodal interaction, security constraints |
+| **Financial System** | 🔬 Formal + 🔒 Security | 📊 Data + ✨ Vibe + ♿ A11y | Correctness, auditability, compliance (ADA if customer-facing) |
+| **Medical Device** | 🔬 Formal + 🔒 Security + ♿ Accessibility | 🎨 UX | Safety, security, human factors, adaptive tech (FDA requirements) |
+| **Design System** | 🎨 UX + ♿ Accessibility | ✨ Vibe Coding + 🔒 Security | WCAG-compliant components, documentation, secure patterns |
 | **CLI Tool** | ✨ Vibe Coding | 🎨 UX + 🔒 Security | Clarity, error messages, secure input handling |
 
 ### Organizational Maturity
@@ -376,6 +440,7 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 | **📊 Data & Analytics** | Month 1 (observability, SLOs) | Months 2-4 (quality, contracts) | Months 5-12 (lineage, mesh) |
 | **🔒 Security Hardening** | Week 1 (OWASP Top 10, MFA, secrets mgmt) | Months 1-3 (SDL, SIEM, threat modeling) | Months 4-12 (Zero Trust, supply chain, maturity level 3+) |
 | **🎨 User Experience** | Week 1 (Core: accessibility, clarity) | Months 1-3 (Standard principles) | Ongoing (Excellence: performance, validation) |
+| **♿ Accessibility** | Week 1 (Core: WCAG A, keyboard nav) | Months 1-3 (Standard: WCAG AA, screen readers) | Months 3-6+ (Excellence: WCAG AAA, user testing) |
 
 ### Resources Required
 
@@ -386,6 +451,7 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 | 📊 Data | Medium (platform training) | ⚠️ High (platform tools) | Sometimes needed |
 | 🔒 Security | Medium (OWASP, SDL training) | Medium-High (SIEM, SAST, SOAR) | Recommended (pentest, audits) |
 | 🎨 UX | Medium (UX research methods) | Medium (testing tools) | Recommended |
+| ♿ Accessibility | ✓ Low-Medium (WCAG training, screen reader basics) | ✓ Low (axe, WAVE, Pa11y - mostly free) | Recommended (WCAG audits, disabled user testing) |
 
 ### Success Metrics
 
@@ -396,6 +462,7 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 | 📊 Data | Data quality test coverage | Data incident frequency |
 | 🔒 Security | Vuln SLA compliance, MTTD/MTTR | Security incidents, breach cost avoided |
 | 🎨 UX | Usability test pass rate | User satisfaction (NPS/CSAT) |
+| ♿ Accessibility | Automated test pass rate (100%), WCAG audit scores | ADA lawsuits avoided, screen reader user satisfaction, task completion parity |
 
 ---
 
@@ -465,6 +532,7 @@ Cross-cutting philosophy across all manifestos:
 | 📊 Data & Analytics | v2.0 | 2025-11-20 | Current |
 | 🔒 Security Hardening | v2.0 | 2025-11-20 | Current |
 | 🎨 User Experience | v2.0 | 2025-11-20 | Current |
+| ♿ Accessibility | v1.1 | 2025-11-20 | Current |
 
 **Changelog Access**: Each v2.0+ manifesto includes detailed changelog in respective directory.
 
