@@ -1,0 +1,318 @@
+metadata:
+  schema_version: "1.0"
+  generated: "2025-11-20"
+  description: "Decision trees and rule-based logic for manifesto and principle selection"
+
+# Main manifesto selection decision tree
+manifesto_selection:
+  name: "Primary Manifesto Selection"
+  description: "Determines which manifesto(s) to prioritize based on project context"
+
+  rules:
+    - condition:
+        type: "priority"
+        value: "safety-critical-system"
+      primary: "formal-verification"
+      secondary: ["security-hardening"]
+      rationale: "Mathematical correctness proofs essential for life/safety systems"
+
+    - condition:
+        type: "priority"
+        value: "user-facing-product"
+      primary: "user-experience"
+      secondary: ["accessibility", "content-communication", "security-hardening"]
+      rationale: "User success and inclusive design paramount"
+
+    - condition:
+        type: "priority"
+        value: "data-intensive"
+      primary: "data-analytics"
+      secondary: ["security-hardening", "vibe-coding"]
+      rationale: "Data quality and reliability critical for analytics/ML"
+
+    - condition:
+        type: "priority"
+        value: "general-software"
+      primary: "vibe-coding"
+      secondary: ["security-hardening"]
+      rationale: "Code quality and security foundational for all software"
+
+# Selection by role
+role_based_selection:
+  backend-developer:
+    start_with: ["vibe-coding-core", "security-hardening-basics"]
+    add_if_data_heavy: ["data-analytics"]
+    add_if_user_facing: ["user-experience"]
+    consider: ["formal-verification-for-critical"]
+
+  frontend-developer:
+    start_with: ["user-experience", "accessibility", "vibe-coding", "security-hardening-input-validation"]
+    priority_principles:
+      - "accessibility-wcag-aa"
+      - "ux-performance"
+      - "ux-consistency"
+      - "security-xss-prevention"
+      - "content-ui-microcopy"
+    focus: ["accessibility-screen-reader-testing", "ux-principle-viii", "content-principle-i-iii-v-xi"]
+
+  data-engineer:
+    start_with: ["data-analytics", "security-hardening-pii-protection"]
+    add: ["vibe-coding-pipeline-quality"]
+    focus: ["data-quality", "data-lineage", "data-observability", "privacy-compliance"]
+
+  designer-pm:
+    start_with: ["user-experience", "accessibility", "content-communication"]
+    priority_principles:
+      - "ux-user-primacy"
+      - "accessibility-inclusive-design"
+      - "ux-privacy-ethics"
+      - "ux-continuous-validation"
+      - "content-clarity"
+      - "content-empathy"
+    consider: ["vibe-coding-engineering-constraints", "security-hardening-privacy-by-design"]
+    testing: ["include-disabled-users-20-percent"]
+
+  technical-writer:
+    start_with: ["content-communication", "accessibility"]
+    priority_tiers: ["content-core", "diataxis-framework", "voice-tone"]
+    add: ["vibe-coding-code-examples", "user-experience-user-context"]
+    tools: ["vale", "mkdocs", "openapi", "mermaid", "link-checkers", "analytics"]
+    focus: ["technical-docs", "api-docs", "tutorials", "help-centers", "ui-microcopy", "error-messages"]
+
+  platform-engineer:
+    start_with: ["vibe-coding", "security-hardening"]
+    add: ["data-analytics-observability", "formal-verification-critical-paths"]
+    priority: "all-manifestos-due-to-infrastructure-criticality"
+
+  security-engineer:
+    start_with: ["security-hardening", "formal-verification"]
+    add: ["vibe-coding", "user-experience-privacy-ethics", "data-analytics-audit-logging"]
+    focus: ["threat-modeling", "supply-chain-security", "incident-response", "cryptography-verification"]
+
+# Selection by project type
+project_type_selection:
+  web-application:
+    primary: ["user-experience", "accessibility", "security-hardening"]
+    secondary: ["vibe-coding", "content-communication"]
+    add_if_data_heavy: ["data-analytics"]
+    required: "wcag-aa-compliance"
+
+  mobile-app:
+    primary: ["user-experience", "accessibility", "security-hardening"]
+    secondary: ["vibe-coding", "content-communication"]
+    critical: ["performance", "wcag", "privacy", "screen-reader-testing", "clear-error-messages"]
+
+  api-backend-service:
+    primary: ["vibe-coding", "security-hardening", "content-communication"]
+    secondary: ["data-analytics-if-stateful"]
+    consider: ["formal-verification-for-auth-payments"]
+    critical: "api-documentation"
+
+  data-pipeline:
+    primary: ["data-analytics", "security-hardening"]
+    secondary: ["vibe-coding", "content-communication"]
+    paramount: ["quality", "observability", "pii-protection", "data-flow-docs"]
+
+  ml-platform:
+    primary: ["data-analytics", "security-hardening"]
+    secondary: ["vibe-coding", "content-communication"]
+    critical: ["reproducibility", "lineage", "model-security", "model-cards-documentation"]
+
+  iot-embedded:
+    primary: ["user-experience", "accessibility", "security-hardening"]
+    secondary: ["formal-verification", "content-communication"]
+    critical: ["safety", "usability", "multimodal-interaction", "security-constraints", "clear-error-messages"]
+
+  financial-system:
+    primary: ["formal-verification", "security-hardening"]
+    secondary: ["data-analytics", "vibe-coding", "accessibility", "content-communication"]
+    critical: ["correctness", "auditability", "compliance-ada-if-customer-facing", "clear-disclosures"]
+
+  medical-device:
+    primary: ["formal-verification", "security-hardening", "accessibility"]
+    secondary: ["user-experience", "content-communication"]
+    critical: ["safety", "security", "human-factors", "adaptive-tech-fda", "clear-instructions-for-use"]
+
+  design-system:
+    primary: ["user-experience", "accessibility", "content-communication"]
+    secondary: ["vibe-coding", "security-hardening"]
+    critical: ["wcag-compliant-components", "comprehensive-documentation", "secure-patterns"]
+
+  cli-tool:
+    primary: ["vibe-coding", "content-communication"]
+    secondary: ["user-experience", "security-hardening"]
+    critical: ["clarity", "error-messages", "secure-input-handling", "help-documentation"]
+
+  developer-portal:
+    primary: ["content-communication", "accessibility"]
+    secondary: ["user-experience", "vibe-coding"]
+    paramount: ["api-documentation", "tutorials", "searchability", "code-examples"]
+
+# Organizational maturity-based selection
+maturity_selection:
+  startup-mvp:
+    focus: "speed-ux-security-basics"
+    manifestos: ["user-experience", "vibe-coding-core", "security-hardening-owasp-top-10"]
+    rationale: "User validation + avoid basic security flaws"
+
+  growth-scaling:
+    focus: "quality-reliability-security"
+    manifestos: ["vibe-coding", "security-hardening", "data-analytics"]
+    rationale: "Technical debt prevention, compliance prep"
+
+  enterprise-mature:
+    focus: "all-dimensions"
+    manifestos: ["all"]
+    rationale: "Domain-specific application, regulatory compliance"
+
+  legacy-modernization:
+    focus: "code-quality-security-first"
+    manifestos: ["vibe-coding", "security-hardening"]
+    rationale: "Refactoring foundation, harden vulnerabilities"
+
+# Risk profile-based selection
+risk_profile_selection:
+  critical-life-finance:
+    manifestos: ["formal-verification", "security-hardening", "data-analytics"]
+    priority: ["correctness-proofs", "zero-trust", "auditability"]
+
+  high-security-pii:
+    manifestos: ["security-hardening", "formal-verification", "user-experience-privacy"]
+    priority: ["cryptography", "threat-modeling", "privacy-by-design"]
+
+  medium-business-critical:
+    manifestos: ["security-hardening", "data-analytics", "vibe-coding"]
+    priority: ["sdl", "vulnerability-mgmt", "observability", "maintainability"]
+
+  standard-saas:
+    manifestos: ["security-hardening-basics", "user-experience", "vibe-coding"]
+    priority: ["owasp-top-10", "user-satisfaction", "code-quality"]
+
+# Principle conflict resolution
+principle_conflicts:
+  - manifestos: ["vibe-coding"]
+    conflicting_principles:
+      - "semantic-density"
+      - "obviousness-over-cleverness"
+    resolution:
+      winner: "obviousness-over-cleverness"
+      exceptions:
+        - "team-fluent-in-idiom"
+        - "performance-justified"
+        - "well-documented-pattern"
+      decision_logic: "if !code_reviewer_understands_in_10_seconds: refactor"
+
+  - manifestos: ["user-experience", "accessibility"]
+    conflicting_principles:
+      - "aesthetic-minimalism"
+      - "sufficient-context"
+    resolution:
+      winner: "accessibility-sufficient-context"
+      exceptions: ["non-critical-decorative-elements"]
+      decision_logic: "accessibility-wins-for-functional-elements"
+
+  - manifestos: ["vibe-coding", "user-experience"]
+    conflicting_principles:
+      - "performance-optimization"
+      - "code-simplicity"
+    resolution:
+      winner: "depends-on-context"
+      rules:
+        - "if user_impact_significant: optimize"
+        - "if premature: simplicity_wins"
+        - "measure_first: data_driven_decision"
+      decision_logic: "measure-impact-before-optimizing"
+
+# Adoption phase selection
+adoption_phase_timeline:
+  individual_engineer:
+    week_1:
+      read: ["vibe-coding-core", "security-hardening-owasp-top-10"]
+      apply: "next-pr"
+    week_2_4:
+      add: ["domain-manifesto-based-on-context"]
+    month_2_3:
+      implement: ["intermediate-standard-principles"]
+    month_4_6:
+      explore: ["advanced-principles"]
+      share: "with-team"
+
+  team_coordinated:
+    month_1_3:
+      foundations: ["vibe-coding-core", "security-basics", "ux-core-if-user-facing"]
+      establish: "code-review-culture"
+      setup: ["linting", "formatting", "security-scanning"]
+    month_4_6:
+      quality_gates: ["vibe-standard", "security-sdl", "data-quality-if-applicable", "ux-standard-a11y"]
+      establish: ["slas", "monitoring"]
+    month_7_12:
+      advanced: ["vibe-advanced", "security-zero-trust", "data-lineage", "ux-excellence", "formal-for-critical"]
+      maturity: ["assessment", "continuous-improvement"]
+
+  organization_federated:
+    quarter_1:
+      pilot: "team-adoption"
+      tooling: "setup"
+    quarter_2:
+      expand: "similar-teams"
+      refine: "playbooks"
+    quarter_3_4:
+      rollout: "org-wide"
+      customize: "by-domain"
+    ongoing:
+      maturity: ["assessment", "continuous-improvement", "security-audits"]
+
+# Tool selection decision tree
+tool_selection:
+  by_principle:
+    vibe-coding-aesthetic-legibility:
+      formatters: ["prettier", "black", "rustfmt", "gofmt"]
+      linters: ["eslint", "pylint", "clippy"]
+
+    accessibility-perceivability:
+      automated: ["axe-devtools", "wave", "lighthouse", "pa11y"]
+      manual: ["nvda", "jaws", "voiceover", "talkback"]
+      design: ["colour-contrast-analyser"]
+
+    security-hardening-input-validation:
+      sast: ["semgrep", "sonarqube", "checkmarx"]
+      dast: ["owasp-zap", "burp-suite"]
+
+    content-communication-clarity:
+      linters: ["vale", "alex", "write-good"]
+      readability: ["hemingway-app", "grammarly"]
+
+  by_language:
+    javascript:
+      manifestos: ["vibe-coding", "user-experience", "accessibility", "security-hardening"]
+      tools: ["eslint", "prettier", "typescript", "axe-devtools", "lighthouse"]
+
+    python:
+      manifestos: ["vibe-coding", "data-analytics", "security-hardening"]
+      tools: ["black", "pylint", "mypy", "pytest", "great-expectations"]
+
+    rust:
+      manifestos: ["vibe-coding", "formal-verification", "security-hardening"]
+      tools: ["rustfmt", "clippy", "cargo-audit", "miri"]
+
+# Quick selection shortcuts
+shortcuts:
+  need_wcag_compliance:
+    manifestos: ["accessibility", "user-experience"]
+    tier: "standard-wcag-aa"
+    tools: ["axe", "wave", "lighthouse", "screen-readers"]
+
+  need_security_audit:
+    manifestos: ["security-hardening"]
+    focus: ["owasp-top-10", "threat-modeling", "penetration-testing"]
+    tools: ["sast", "dast", "sca", "siem"]
+
+  need_api_docs:
+    manifestos: ["content-communication", "vibe-coding"]
+    focus: ["openapi", "examples", "clarity", "versioning"]
+    tools: ["swagger", "redoc", "stoplight"]
+
+  need_code_review_checklist:
+    manifestos: ["vibe-coding", "security-hardening"]
+    generate: "principle-based-checklist"
+    by_tier: ["core", "standard", "excellence"]

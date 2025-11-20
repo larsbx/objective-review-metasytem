@@ -1,0 +1,321 @@
+metadata:
+  schema_version: "1.0"
+  generated: "2025-11-20"
+  description: "Index of all manifestos with metadata for AI agent consumption"
+
+manifestos:
+  vibe-coding:
+    id: "vibe-coding"
+    title: "Vibe Coding Manifesto"
+    version: "2.0"
+    file_path: "../vibe_coding/VIBE_CODING_MANIFESTO.md"
+    changelog_path: "../vibe_coding/CHANGELOG.md"
+    last_updated: "2025-11-20"
+    status: "current"
+
+    focus: "Human readability & maintainability"
+    primary_users: ["all-developers"]
+    learning_curve: "medium"
+    roi_timeline: "immediate"
+    adoption_scope: "universal"
+
+    principles_count: 15
+    tier_structure:
+      core: 5
+      standard: 5
+      excellence: 4
+      supporting: 1
+
+    applicability:
+      project_types: ["all"]
+      languages: ["python", "typescript", "rust", "go", "haskell", "java"]
+      contexts: ["long-lived-systems", "complex-business-logic", "libraries", "frameworks"]
+
+    related_manifestos:
+      complements: ["accessibility", "content-communication", "formal-verification"]
+      prerequisites: []
+      enables: ["security-hardening", "data-analytics"]
+
+    tools:
+      categories: ["linters", "formatters", "type-checkers"]
+      count: 20+
+
+    measurement:
+      cyclomatic_complexity_max: 10
+      line_length_target: "80-100"
+      nesting_depth_max: 3
+      function_length_max: 25
+      test_coverage_min: 0.9
+
+  formal-verification:
+    id: "formal-verification"
+    title: "Formal Verification Manifesto"
+    version: "1.1"
+    file_path: "../formal_verification/FORMAL_VERIFICATION_MANIFESTO.md"
+    changelog_path: "../formal_verification/CHANGELOG.md"
+    last_updated: "2024"
+    status: "stable"
+
+    focus: "Mathematical correctness proofs"
+    primary_users: ["safety-engineers", "security-researchers"]
+    learning_curve: "very-high"
+    roi_timeline: "long-term"
+    adoption_scope: "specialized"
+
+    principles_count: 16
+    tier_structure:
+      foundational: 8
+      advanced: 8
+
+    applicability:
+      project_types: ["safety-critical", "security-critical", "high-assurance"]
+      languages: ["coq", "isabelle", "lean", "agda", "f-star", "dafny", "tla-plus", "spark-ada"]
+      contexts: ["avionics", "medical-devices", "automotive", "cryptography", "authentication"]
+
+    related_manifestos:
+      complements: ["security-hardening", "vibe-coding"]
+      prerequisites: ["strong-type-systems"]
+      enables: ["provable-security"]
+
+    tools:
+      categories: ["proof-assistants", "theorem-provers", "smt-solvers"]
+      count: 8+
+
+  data-analytics:
+    id: "data-analytics"
+    title: "Data & Analytics Manifesto"
+    version: "2.0"
+    file_path: "../data_analytics/DATA_ANALYTICS_MANIFESTO.md"
+    changelog_path: "../data_analytics/CHANGELOG.md"
+    last_updated: "2025-11-20"
+    status: "current"
+
+    focus: "Data reliability & scalability"
+    primary_users: ["data-engineers", "data-analysts", "ml-engineers"]
+    learning_curve: "medium-high"
+    roi_timeline: "medium-term"
+    adoption_scope: "data-intensive"
+
+    principles_count: 18
+    tier_structure:
+      core: 6
+      standard: 8
+      excellence: 4
+
+    applicability:
+      project_types: ["data-warehouses", "data-pipelines", "bi-systems", "ml-platforms", "data-mesh"]
+      languages: ["sql", "python", "scala", "java"]
+      contexts: ["batch-processing", "streaming", "analytics", "reporting"]
+
+    related_manifestos:
+      complements: ["security-hardening", "vibe-coding"]
+      prerequisites: []
+      enables: ["ml-ops", "data-governance"]
+
+    tools:
+      categories: ["orchestration", "quality", "observability", "governance"]
+      count: 40+
+
+  security-hardening:
+    id: "security-hardening"
+    title: "Security Hardening Manifesto"
+    version: "2.0"
+    file_path: "../security_hardening/SECURITY_HARDENING_MANIFESTO.md"
+    changelog_path: "../security_hardening/CHANGELOG.md"
+    last_updated: "2025-11-20"
+    status: "current"
+
+    focus: "System security & resilience"
+    primary_users: ["all-developers", "security-engineers", "devsecops-teams"]
+    learning_curve: "medium"
+    roi_timeline: "immediate"
+    adoption_scope: "universal-required"
+
+    principles_count: 18
+    tier_structure:
+      foundational: 6
+      operational: 8
+      advanced: 4
+
+    applicability:
+      project_types: ["all"]
+      languages: ["all"]
+      contexts: ["fintech", "healthcare", "government", "cloud-native", "compliance-driven"]
+
+    related_manifestos:
+      complements: ["all"]
+      prerequisites: []
+      enables: ["zero-trust", "compliance", "incident-response"]
+
+    tools:
+      categories: ["sast", "dast", "sca", "siem", "soar", "edr", "secrets-management"]
+      count: 100+
+
+    standards:
+      - "OWASP Top 10"
+      - "NIST CSF"
+      - "CIS Controls"
+      - "ISO 27001"
+      - "PCI-DSS"
+      - "GDPR"
+
+  user-experience:
+    id: "user-experience"
+    title: "UX Manifesto"
+    version: "2.0"
+    file_path: "../user_experience/UX_MANIFESTO.md"
+    changelog_path: "../user_experience/CHANGELOG.md"
+    last_updated: "2025-11-20"
+    status: "current"
+
+    focus: "User success & satisfaction"
+    primary_users: ["designers", "product-managers", "frontend-developers"]
+    learning_curve: "medium"
+    roi_timeline: "immediate-medium"
+    adoption_scope: "universal-product-focused"
+
+    principles_count: 17
+    tier_structure:
+      core: 5
+      standard: 9
+      excellence: 3
+
+    applicability:
+      project_types: ["web-apps", "mobile-apps", "voice-ui", "ar-vr", "iot", "design-systems"]
+      languages: ["javascript", "swift", "kotlin", "html", "css"]
+      contexts: ["user-facing", "b2c", "b2b", "consumer", "enterprise"]
+
+    related_manifestos:
+      complements: ["accessibility", "content-communication", "security-hardening"]
+      prerequisites: []
+      enables: ["user-satisfaction", "conversion", "retention"]
+
+    tools:
+      categories: ["testing", "analytics", "design", "prototyping"]
+      count: 30+
+
+    standards:
+      - "Nielsen Heuristics"
+      - "WCAG 2.1 AA"
+      - "Core Web Vitals"
+      - "Privacy-by-Design"
+
+  accessibility:
+    id: "accessibility"
+    title: "Accessibility Manifesto"
+    version: "1.1"
+    file_path: "../accessibility/ACCESSIBILITY_MANIFESTO.md"
+    changelog_path: "../accessibility/CHANGELOG.md"
+    last_updated: "2025-11-20"
+    status: "current"
+
+    focus: "Universal access & WCAG compliance"
+    primary_users: ["frontend-developers", "designers", "accessibility-specialists", "all-developers"]
+    learning_curve: "medium"
+    roi_timeline: "immediate"
+    adoption_scope: "universal-legally-required"
+
+    principles_count: 15
+    tier_structure:
+      core: 4  # WCAG A
+      standard: 8  # WCAG AA
+      excellence: 3  # WCAG AAA
+
+    applicability:
+      project_types: ["all-web", "all-mobile", "government", "education", "ecommerce", "healthcare"]
+      languages: ["html", "css", "javascript", "swift", "kotlin"]
+      contexts: ["public-facing", "customer-facing", "regulated"]
+
+    related_manifestos:
+      complements: ["user-experience", "content-communication"]
+      prerequisites: []
+      enables: ["inclusive-design", "legal-compliance"]
+
+    tools:
+      categories: ["automated-testing", "screen-readers", "design-validation", "ci-cd"]
+      count: 40+
+
+    standards:
+      - "WCAG 2.1 AA/AAA"
+      - "Section 508"
+      - "ADA"
+      - "EAA (EU)"
+      - "AODA (Ontario)"
+      - "EN 301 549"
+
+    measurement:
+      color_contrast_text_min: 4.5
+      color_contrast_ui_min: 3.0
+      touch_target_size_min: "44x44px"
+      timeout_multiplier_min: 20
+      automated_test_pass_rate_min: 1.0
+
+  content-communication:
+    id: "content-communication"
+    title: "Content & Communication Manifesto"
+    version: "2.0"
+    file_path: "../content_communication/CONTENT_COMMUNICATION_MANIFESTO.md"
+    changelog_path: "../content_communication/CHANGELOG.md"
+    last_updated: "2025-11-20"
+    status: "current"
+
+    focus: "Clear, maintainable, accessible content"
+    primary_users: ["technical-writers", "developers", "designers", "devrel", "content-strategists", "product-managers"]
+    learning_curve: "low-medium"
+    roi_timeline: "immediate"
+    adoption_scope: "universal"
+
+    principles_count: 18
+    tier_structure:
+      core: 5
+      standard: 8
+      excellence: 5
+
+    applicability:
+      project_types: ["all-with-user-facing-content"]
+      content_types: ["technical-docs", "ui-microcopy", "error-messages", "marketing", "support", "api-docs"]
+      contexts: ["documentation", "user-interfaces", "knowledge-bases", "developer-portals"]
+
+    related_manifestos:
+      complements: ["accessibility", "user-experience", "vibe-coding"]
+      prerequisites: []
+      enables: ["user-comprehension", "support-deflection", "developer-experience"]
+
+    tools:
+      categories: ["linters", "docs-frameworks", "diagram-tools", "analytics", "i18n"]
+      count: 50+
+
+    measurement:
+      flesch_kincaid_grade_max: 10
+      avg_sentence_length: "15-20"
+      passive_voice_percentage_max: 10
+      link_health_target: 1.0
+
+# Cross-cutting themes
+common_themes:
+  - "quality-by-design"
+  - "incremental-adoption"
+  - "explicit-over-implicit"
+  - "automation-matters"
+  - "cost-benefit-awareness"
+  - "documentation-as-code"
+  - "security-as-foundation"
+
+# Adoption patterns
+adoption_patterns:
+  individual:
+    week_1: ["vibe-coding-core", "security-hardening-owasp-top-10"]
+    week_2_4: ["domain-manifesto"]
+    month_2_3: ["standard-principles"]
+    month_4_6: ["advanced-principles"]
+
+  team:
+    month_1_3: ["foundations", "code-review-culture", "automation"]
+    month_4_6: ["quality-gates", "slas", "monitoring"]
+    month_7_12: ["advanced-techniques", "maturity-assessment"]
+
+  organization:
+    quarter_1: ["pilot-team", "tooling-setup"]
+    quarter_2: ["expand-similar-teams", "refine-playbooks"]
+    quarter_3_4: ["org-wide-rollout", "domain-customization"]
+    ongoing: ["maturity-assessment", "continuous-improvement"]
