@@ -16,6 +16,7 @@ these are for coding agents mostly.
   - [🔒 Security Hardening](#-security-hardening)
   - [🎨 User Experience](#-user-experience)
   - [♿ Accessibility](#-accessibility)
+  - [📝 Content & Communication](#-content--communication)
 - [Comparison Matrix](#comparison-matrix)
 - [Selection by Role](#selection-by-role)
 - [Selection by Context](#selection-by-context)
@@ -40,6 +41,7 @@ these are for coding agents mostly.
 | **System security & resilience** | 🔒 Security Hardening | 🔬 Formal (critical systems) |
 | **User satisfaction & usability** | 🎨 User Experience | ✨ Vibe Coding + ♿ Accessibility |
 | **Universal access & legal compliance** | ♿ Accessibility | 🎨 UX (broader context) |
+| **Content clarity & documentation** | 📝 Content & Communication | ✨ Vibe Coding + 🎨 UX |
 | **General software quality** | ✨ Vibe Coding | Context-dependent |
 
 ---
@@ -342,18 +344,80 @@ axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver �
 
 ---
 
+### 📝 Content & Communication
+
+**[Content & Communication Manifesto](./content_communication/CONTENT_COMMUNICATION_MANIFESTO.md)** • v2.0 • [Changelog](./content_communication/CHANGELOG.md) • 18 principles
+
+#### At a Glance
+- **Goal**: Clear, maintainable, accessible content across all touchpoints
+- **Primary Users**: Technical writers, developers, designers, DevRel, content strategists, product managers
+- **Learning Curve**: Low-Medium
+- **ROI**: Immediate (reduced support burden, higher conversion, better UX)
+- **Adoption**: Universal (all projects with user-facing content)
+
+#### Key Principles (by tier)
+
+**Core** (Non-negotiable):
+- Clarity as Prime Directive
+- Semantic Hierarchy
+- Precision in Terminology
+- Accessibility as Requirement
+- Empathy & Respect
+
+**Standard** (Production-required):
+- Audience-First Architecture
+- Actionable Documentation
+- Progressive Disclosure
+- Scannability & Skimming
+- Code as Communication
+- Voice & Tone Consistency
+- Version Control & Change Management
+- Maintenance & Decay Prevention
+
+**Excellence** (Differentiation):
+- Visual Communication
+- Searchability & Discoverability
+- Content Governance & Strategy
+- Internationalization & Localization
+- Continuous Measurement
+
+#### Best Fit
+- ✅ Technical documentation (API docs, tutorials, guides, reference)
+- ✅ UI/UX content (microcopy, error messages, tooltips, labels)
+- ✅ Marketing content (landing pages, emails, product descriptions)
+- ✅ Support content (help centers, FAQs, chatbots)
+- ✅ Internal content (runbooks, incident reports, specifications)
+
+#### Content Types Covered
+Documentation • UI Microcopy • Error Messages • Marketing • Support • Onboarding
+
+#### Tools & Ecosystem
+Vale • alex • write-good • Grammarly • Docusaurus • MkDocs • OpenAPI • Mermaid • PlantUML • axe DevTools • Lighthouse • i18next • Crowdin • Plausible Analytics
+
+#### Implementation Guide
+- 4-phase adoption (Week 1-2, Month 1-2, Month 3-6, Ongoing)
+- Content maturity model (5 levels)
+- Diátaxis framework integration (Tutorial, How-to, Reference, Explanation)
+- Measurement framework with content quality scorecard
+- Role-specific guidance (8 roles)
+- Tool ecosystem map (50+ tools)
+
+**Related**: Complements [♿ Accessibility](#-accessibility), [🎨 UX](#-user-experience), [✨ Vibe Coding](#-vibe-coding)
+
+---
+
 ## Comparison Matrix
 
-| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience | ♿ Accessibility |
-|--------|----------------------|---------------|--------------------|--------------------|-------------------|----------------|
-| **Focus** | Mathematical correctness | Human readability | Data reliability | System security | User success | Universal access |
-| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing, user testing with disabled users |
-| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B | axe, WAVE, Pa11y, Lighthouse |
-| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium | ✓ Medium |
-| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal | ✓ Universal (legally required) |
-| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium | ✓ Immediate (avoid lawsuits) + Long-term |
-| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) | Low-Medium (all roles) |
-| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems | All systems | All systems (legal requirement) |
+| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience | ♿ Accessibility | 📝 Content & Communication |
+|--------|----------------------|---------------|--------------------|--------------------|-------------------|----------------|---------------------------|
+| **Focus** | Mathematical correctness | Human readability | Data reliability | System security | User success | Universal access | Content clarity & effectiveness |
+| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing, user testing with disabled users | Content audits, user feedback, readability scores |
+| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B | axe, WAVE, Pa11y, Lighthouse | Vale, alex, link checkers, analytics |
+| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium | ✓ Medium | ✓ Low-Medium |
+| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal | ✓ Universal (legally required) | ✓ Universal |
+| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium | ✓ Immediate (avoid lawsuits) + Long-term | ✓ Immediate (reduced support) |
+| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) | Low-Medium (all roles) | Low (all roles) |
+| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems | All systems | All systems (legal requirement) | All systems with documentation/UI |
 
 ---
 
@@ -365,9 +429,9 @@ axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver �
 3. **Consider**: 🔬 Formal Verification (for critical components)
 
 ### Frontend Developers
-1. **Start**: 🎨 User Experience + ♿ Accessibility + ✨ Vibe Coding + 🔒 Security (input validation, XSS prevention)
-2. **Priority**: Accessibility (WCAG AA compliance, screen reader testing), Performance (XIV), Consistency (IV), Security (CSP, CORS)
-3. **Focus**: UX Principle VIII + Accessibility Manifesto (full WCAG implementation details)
+1. **Start**: 🎨 User Experience + ♿ Accessibility + ✨ Vibe Coding + 🔒 Security (input validation, XSS prevention) + 📝 Content (UI microcopy, error messages)
+2. **Priority**: Accessibility (WCAG AA compliance, screen reader testing), Performance (XIV), Consistency (IV), Security (CSP, CORS), Content (error messages, UI text)
+3. **Focus**: UX Principle VIII + Accessibility Manifesto (full WCAG implementation details) + Content Manifesto (Principles I, III, V, XI)
 
 ### Data Engineers / Analysts
 1. **Start**: 📊 Data & Analytics + 🔒 Security (data classification, PII protection)
@@ -375,10 +439,17 @@ axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver �
 3. **Focus**: Data Quality, Lineage, Observability, Privacy & Compliance
 
 ### Designers / Product Managers
-1. **Start**: 🎨 User Experience + ♿ Accessibility
-2. **Priority**: User Primacy (I), Accessibility (WCAG compliance, inclusive design), Privacy & Ethics (XIII), Continuous Validation (XV)
+1. **Start**: 🎨 User Experience + ♿ Accessibility + 📝 Content (UI copy, product messaging)
+2. **Priority**: User Primacy (I), Accessibility (WCAG compliance, inclusive design), Privacy & Ethics (XIII), Continuous Validation (XV), Content (Clarity, Empathy)
 3. **Consider**: ✨ Vibe Coding (understand engineering constraints) + 🔒 Security (privacy-by-design)
 4. **Testing**: Include disabled users (≥20% of usability testing)
+
+### Technical Writers / DevRel / Content Strategists
+1. **Start**: 📝 Content & Communication (all tiers) + ♿ Accessibility
+2. **Priority**: Core tier (Clarity, Semantic Hierarchy, Precision, Accessibility, Empathy), Diátaxis framework, Voice & Tone
+3. **Add**: ✨ Vibe Coding (understand code examples) + 🎨 UX (understand user context)
+4. **Tools**: Vale, MkDocs/Docusaurus, OpenAPI, Mermaid, link checkers, analytics
+5. **Focus**: Technical documentation, API docs, tutorials, help centers, UI microcopy, error messages
 
 ### Platform / Infrastructure Engineers
 1. **Start**: ✨ Vibe Coding + 🔒 Security Hardening
@@ -398,16 +469,17 @@ axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver �
 
 | Project Type | Primary | Secondary | Notes |
 |--------------|---------|-----------|-------|
-| **Web Application** | 🎨 UX + ♿ Accessibility + 🔒 Security | ✨ Vibe Coding + 📊 Data | WCAG AA required; add 📊 if data-heavy |
-| **Mobile App** | 🎨 UX + ♿ Accessibility + 🔒 Security | ✨ Vibe Coding | Performance, WCAG, privacy critical; screen reader testing mandatory |
-| **API / Backend Service** | ✨ Vibe Coding + 🔒 Security | 📊 Data (if stateful) | Consider 🔬 for auth/payments |
-| **Data Pipeline** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding | Quality, observability, PII protection paramount |
-| **ML Platform** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding | Reproducibility, lineage, model security critical |
-| **IoT / Embedded** | 🎨 UX + ♿ Accessibility + 🔒 Security | 🔬 Formal Verification | Safety, usability, multimodal interaction, security constraints |
-| **Financial System** | 🔬 Formal + 🔒 Security | 📊 Data + ✨ Vibe + ♿ A11y | Correctness, auditability, compliance (ADA if customer-facing) |
-| **Medical Device** | 🔬 Formal + 🔒 Security + ♿ Accessibility | 🎨 UX | Safety, security, human factors, adaptive tech (FDA requirements) |
-| **Design System** | 🎨 UX + ♿ Accessibility | ✨ Vibe Coding + 🔒 Security | WCAG-compliant components, documentation, secure patterns |
-| **CLI Tool** | ✨ Vibe Coding | 🎨 UX + 🔒 Security | Clarity, error messages, secure input handling |
+| **Web Application** | 🎨 UX + ♿ Accessibility + 🔒 Security | ✨ Vibe Coding + 📊 Data + 📝 Content | WCAG AA required; add 📊 if data-heavy, 📝 for UI copy/docs |
+| **Mobile App** | 🎨 UX + ♿ Accessibility + 🔒 Security | ✨ Vibe Coding + 📝 Content | Performance, WCAG, privacy critical; screen reader testing + clear error messages mandatory |
+| **API / Backend Service** | ✨ Vibe Coding + 🔒 Security + 📝 Content | 📊 Data (if stateful) | Consider 🔬 for auth/payments; 📝 critical for API docs |
+| **Data Pipeline** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding + 📝 Content | Quality, observability, PII protection paramount; document data flows |
+| **ML Platform** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding + 📝 Content | Reproducibility, lineage, model security critical; model cards documentation |
+| **IoT / Embedded** | 🎨 UX + ♿ Accessibility + 🔒 Security | 🔬 Formal Verification + 📝 Content | Safety, usability, multimodal interaction, security constraints, clear error messages |
+| **Financial System** | 🔬 Formal + 🔒 Security | 📊 Data + ✨ Vibe + ♿ A11y + 📝 Content | Correctness, auditability, compliance (ADA if customer-facing), clear disclosures |
+| **Medical Device** | 🔬 Formal + 🔒 Security + ♿ Accessibility | 🎨 UX + 📝 Content | Safety, security, human factors, adaptive tech (FDA requirements), clear instructions for use |
+| **Design System** | 🎨 UX + ♿ Accessibility + 📝 Content | ✨ Vibe Coding + 🔒 Security | WCAG-compliant components, comprehensive documentation, secure patterns |
+| **CLI Tool** | ✨ Vibe Coding + 📝 Content | 🎨 UX + 🔒 Security | Clarity, error messages, secure input handling, help documentation |
+| **Developer Portal** | 📝 Content + ♿ Accessibility | 🎨 UX + ✨ Vibe Coding | API documentation, tutorials, searchability, code examples paramount |
 
 ### Organizational Maturity
 
@@ -441,6 +513,7 @@ axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver �
 | **🔒 Security Hardening** | Week 1 (OWASP Top 10, MFA, secrets mgmt) | Months 1-3 (SDL, SIEM, threat modeling) | Months 4-12 (Zero Trust, supply chain, maturity level 3+) |
 | **🎨 User Experience** | Week 1 (Core: accessibility, clarity) | Months 1-3 (Standard principles) | Ongoing (Excellence: performance, validation) |
 | **♿ Accessibility** | Week 1 (Core: WCAG A, keyboard nav) | Months 1-3 (Standard: WCAG AA, screen readers) | Months 3-6+ (Excellence: WCAG AAA, user testing) |
+| **📝 Content & Communication** | Weeks 1-2 (Core: clarity, style guide, accessibility) | Months 1-2 (Standard: docs-as-code, voice & tone, maintenance) | Months 3-6+ (Excellence: i18n, governance, measurement) |
 
 ### Resources Required
 
@@ -452,6 +525,7 @@ axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver �
 | 🔒 Security | Medium (OWASP, SDL training) | Medium-High (SIEM, SAST, SOAR) | Recommended (pentest, audits) |
 | 🎨 UX | Medium (UX research methods) | Medium (testing tools) | Recommended |
 | ♿ Accessibility | ✓ Low-Medium (WCAG training, screen reader basics) | ✓ Low (axe, WAVE, Pa11y - mostly free) | Recommended (WCAG audits, disabled user testing) |
+| 📝 Content | ✓ Low (writing workshops, style guides) | ✓ Low (Vale, link checkers - mostly free) | Optional (tech writers, editors) |
 
 ### Success Metrics
 
@@ -463,6 +537,7 @@ axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver �
 | 🔒 Security | Vuln SLA compliance, MTTD/MTTR | Security incidents, breach cost avoided |
 | 🎨 UX | Usability test pass rate | User satisfaction (NPS/CSAT) |
 | ♿ Accessibility | Automated test pass rate (100%), WCAG audit scores | ADA lawsuits avoided, screen reader user satisfaction, task completion parity |
+| 📝 Content | Search success rate, link health, freshness | Support ticket deflection, "Was this helpful?" rating, user comprehension |
 
 ---
 
@@ -533,6 +608,7 @@ Cross-cutting philosophy across all manifestos:
 | 🔒 Security Hardening | v2.0 | 2025-11-20 | Current |
 | 🎨 User Experience | v2.0 | 2025-11-20 | Current |
 | ♿ Accessibility | v1.1 | 2025-11-20 | Current |
+| 📝 Content & Communication | v2.0 | 2025-11-20 | Current |
 
 **Changelog Access**: Each v2.0+ manifesto includes detailed changelog in respective directory.
 
