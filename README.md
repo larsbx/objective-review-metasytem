@@ -2,7 +2,7 @@ Human note: These are for coding agents mostly.
 
 # Code Review Manifestos
 
-**A reference index of software engineering manifestos for reliable, maintainable, high-quality systems**
+**A reference index of software engineering manifestos for reliable, maintainable, secure, and high-quality systems**
 
 ---
 
@@ -13,6 +13,7 @@ Human note: These are for coding agents mostly.
   - [🔬 Formal Verification](#-formal-verification)
   - [✨ Vibe Coding](#-vibe-coding)
   - [📊 Data & Analytics](#-data--analytics)
+  - [🔒 Security Hardening](#-security-hardening)
   - [🎨 User Experience](#-user-experience)
 - [Comparison Matrix](#comparison-matrix)
 - [Selection by Role](#selection-by-role)
@@ -32,9 +33,10 @@ Human note: These are for coding agents mostly.
 
 | If your priority is... | Start with | Also consider |
 |------------------------|-----------|---------------|
-| **Code correctness & safety** | 🔬 Formal Verification | ✨ Vibe Coding |
+| **Code correctness & safety** | 🔬 Formal Verification | ✨ Vibe Coding + 🔒 Security |
 | **Code readability & maintainability** | ✨ Vibe Coding | 🎨 UX (if frontend) |
-| **Data reliability & quality** | 📊 Data & Analytics | ✨ Vibe Coding |
+| **Data reliability & quality** | 📊 Data & Analytics | 🔒 Security Hardening |
+| **System security & resilience** | 🔒 Security Hardening | 🔬 Formal (critical systems) |
 | **User satisfaction & usability** | 🎨 User Experience | ✨ Vibe Coding |
 | **General software quality** | ✨ Vibe Coding | Context-dependent |
 
@@ -172,6 +174,57 @@ dbt • Airflow • Snowflake • BigQuery • Spark • Kafka • Great Expecta
 
 ---
 
+### 🔒 Security Hardening
+
+**[Security Hardening Manifesto](./security_hardening/SECURITY_HARDENING_MANIFESTO.md)** • v2.0 • [Changelog](./security_hardening/CHANGELOG.md) • 18 principles
+
+#### At a Glance
+- **Goal**: System security & resilience
+- **Primary Users**: Security engineers, DevSecOps teams, all developers
+- **Learning Curve**: Medium
+- **ROI**: Immediate (avoid breach)
+- **Adoption**: Universal (required)
+
+#### Key Principles
+- Defense in Depth
+- Least Privilege
+- Fail Secure
+- Complete Mediation
+- Zero Trust
+- Cryptographic Agility
+- Secure Development Lifecycle
+- Audit Everything
+- Separation of Duties
+- Input Validation & Output Encoding
+- Secure Secrets Management
+- Vulnerability Management
+- Immutable Infrastructure
+- Threat Modeling
+- Supply Chain Security
+- Security Monitoring & Incident Response
+
+#### Best Fit
+- ✅ Security-critical applications (fintech, healthcare, government)
+- ✅ Cloud-native and microservices architectures
+- ✅ Organizations building security programs
+- ✅ Compliance-driven environments (PCI-DSS, HIPAA, GDPR)
+- ✅ DevSecOps transformation
+
+#### Standards & Frameworks
+OWASP Top 10 • NIST CSF • CIS Controls • ISO 27001 • PCI-DSS • GDPR
+
+#### Implementation Guide
+- Per-principle implementation checklists (18 total)
+- 6-level security maturity model
+- Tool ecosystem map (100+ tools: SIEM, SOAR, EDR, SAST, DAST, SCA)
+- Compliance mapping (OWASP, NIST, CIS, ISO 27001, PCI-DSS, GDPR)
+- Learning paths (30-day quickstart, 3-month deep dive, 1-day executive)
+- Modern architecture guidance (cloud-native, microservices, containers, Kubernetes)
+- Trade-offs & anti-patterns
+- Organizational enablement
+
+---
+
 ### 🎨 User Experience
 
 **[UX Manifesto](./user_experience/UX_MANIFESTO.md)** • v2.0 • [Changelog](./user_experience/CHANGELOG.md) • 17 principles
@@ -229,48 +282,49 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 
 ## Comparison Matrix
 
-| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🎨 User Experience |
-|--------|----------------------|---------------|--------------------|--------------------|
-| **Focus** | Mathematical correctness | Human readability | Data reliability | User success |
-| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Usability testing + analytics |
-| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | A11y tools, analytics, A/B |
-| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium |
-| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal |
-| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate-Medium |
-| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (designers) |
+| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience |
+|--------|----------------------|---------------|--------------------|--------------------|-------------------|
+| **Focus** | Mathematical correctness | Human readability | Data reliability | System security | User success |
+| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics |
+| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B |
+| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium |
+| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal |
+| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium |
+| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) |
+| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems | All systems |
 
 ---
 
 ## Selection by Role
 
 ### Developers (Backend/Fullstack)
-1. **Start**: ✨ Vibe Coding (Core principles)
+1. **Start**: ✨ Vibe Coding (Core principles) + 🔒 Security Hardening (basics)
 2. **Add**: 📊 Data & Analytics (if data-heavy) OR 🎨 UX (if user-facing)
 3. **Consider**: 🔬 Formal Verification (for critical components)
 
 ### Frontend Developers
-1. **Start**: 🎨 User Experience + ✨ Vibe Coding
-2. **Priority**: Accessibility (VIII), Performance (XIV), Consistency (IV)
+1. **Start**: 🎨 User Experience + ✨ Vibe Coding + 🔒 Security (input validation, XSS prevention)
+2. **Priority**: Accessibility (VIII), Performance (XIV), Consistency (IV), Security (CSP, CORS)
 
 ### Data Engineers / Analysts
-1. **Start**: 📊 Data & Analytics
+1. **Start**: 📊 Data & Analytics + 🔒 Security (data classification, PII protection)
 2. **Add**: ✨ Vibe Coding (pipeline code quality)
-3. **Focus**: Data Quality, Lineage, Observability
+3. **Focus**: Data Quality, Lineage, Observability, Privacy & Compliance
 
 ### Designers / Product Managers
 1. **Start**: 🎨 User Experience
-2. **Priority**: User Primacy (I), Accessibility (VIII), Continuous Validation (XV)
-3. **Consider**: ✨ Vibe Coding (understand engineering constraints)
+2. **Priority**: User Primacy (I), Accessibility (VIII), Privacy & Ethics (XIII), Continuous Validation (XV)
+3. **Consider**: ✨ Vibe Coding (understand engineering constraints) + 🔒 Security (privacy-by-design)
 
 ### Platform / Infrastructure Engineers
-1. **Start**: ✨ Vibe Coding
+1. **Start**: ✨ Vibe Coding + 🔒 Security Hardening
 2. **Add**: 📊 Data & Analytics (observability) + 🔬 Formal Verification (critical paths)
 3. **Priority**: All manifestos relevant due to infrastructure criticality
 
 ### Security Engineers
-1. **Start**: 🔬 Formal Verification
-2. **Add**: ✨ Vibe Coding + 🎨 UX (Privacy & Ethics principle)
-3. **Focus**: Cryptography verification, secure-by-design
+1. **Start**: 🔒 Security Hardening + 🔬 Formal Verification
+2. **Add**: ✨ Vibe Coding + 🎨 UX (Privacy & Ethics principle) + 📊 Data (audit logging)
+3. **Focus**: Threat modeling, supply chain security, incident response, cryptography verification
 
 ---
 
@@ -280,34 +334,34 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 
 | Project Type | Primary | Secondary | Notes |
 |--------------|---------|-----------|-------|
-| **Web Application** | 🎨 UX | ✨ Vibe Coding | Add 📊 if data-heavy |
-| **Mobile App** | 🎨 UX | ✨ Vibe Coding | Performance & accessibility critical |
-| **API / Backend Service** | ✨ Vibe Coding | 📊 Data (if stateful) | Consider 🔬 for auth/payments |
-| **Data Pipeline** | 📊 Data & Analytics | ✨ Vibe Coding | Quality & observability paramount |
-| **ML Platform** | 📊 Data & Analytics | ✨ Vibe Coding | Reproducibility & lineage critical |
-| **IoT / Embedded** | 🎨 UX | 🔬 Formal Verification | Safety + usability constraints |
-| **Financial System** | 🔬 Formal Verification | 📊 Data + ✨ Vibe | Correctness & auditability |
-| **Medical Device** | 🔬 Formal Verification | 🎨 UX | Safety + human factors |
-| **Design System** | 🎨 UX | ✨ Vibe Coding | Consistency & documentation |
-| **CLI Tool** | ✨ Vibe Coding | 🎨 UX | Clarity & error messages |
+| **Web Application** | 🎨 UX + 🔒 Security | ✨ Vibe Coding | Add 📊 if data-heavy |
+| **Mobile App** | 🎨 UX + 🔒 Security | ✨ Vibe Coding | Performance, accessibility, privacy critical |
+| **API / Backend Service** | ✨ Vibe Coding + 🔒 Security | 📊 Data (if stateful) | Consider 🔬 for auth/payments |
+| **Data Pipeline** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding | Quality, observability, PII protection paramount |
+| **ML Platform** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding | Reproducibility, lineage, model security critical |
+| **IoT / Embedded** | 🎨 UX + 🔒 Security | 🔬 Formal Verification | Safety, usability, security constraints |
+| **Financial System** | 🔬 Formal + 🔒 Security | 📊 Data + ✨ Vibe | Correctness, auditability, compliance |
+| **Medical Device** | 🔬 Formal + 🔒 Security | 🎨 UX | Safety, security, human factors (FDA requirements) |
+| **Design System** | 🎨 UX | ✨ Vibe Coding + 🔒 Security | Consistency, documentation, secure components |
+| **CLI Tool** | ✨ Vibe Coding | 🎨 UX + 🔒 Security | Clarity, error messages, secure input handling |
 
 ### Organizational Maturity
 
 | Stage | Focus | Manifestos | Rationale |
 |-------|-------|-----------|-----------|
-| **Startup (MVP)** | Speed + UX | 🎨 UX + ✨ Vibe (Core only) | User validation priority |
-| **Growth (Scaling)** | Quality + Reliability | ✨ Vibe + 📊 Data | Technical debt prevention |
-| **Enterprise (Mature)** | All dimensions | All manifestos | Domain-specific application |
-| **Legacy Modernization** | Code quality first | ✨ Vibe Coding | Refactoring foundation |
+| **Startup (MVP)** | Speed + UX + Security basics | 🎨 UX + ✨ Vibe (Core) + 🔒 Security (OWASP Top 10) | User validation + avoid basic security flaws |
+| **Growth (Scaling)** | Quality + Reliability + Security | ✨ Vibe + 🔒 Security + 📊 Data | Technical debt prevention, compliance prep |
+| **Enterprise (Mature)** | All dimensions | All manifestos | Domain-specific application, regulatory compliance |
+| **Legacy Modernization** | Code quality + Security first | ✨ Vibe Coding + 🔒 Security | Refactoring foundation, harden vulnerabilities |
 
 ### Risk Profile
 
 | Risk Level | Manifestos | Priority Principles |
 |------------|-----------|---------------------|
-| **Critical** (life/finance) | 🔬 Formal Verification + 📊 Data | Correctness proofs, auditability |
-| **High** (security/PII) | 🔬 Formal + 🎨 UX (Privacy) | Cryptography, privacy-by-design |
-| **Medium** (business-critical) | 📊 Data + ✨ Vibe | Quality, observability, maintainability |
-| **Standard** (typical SaaS) | 🎨 UX + ✨ Vibe | User satisfaction, code quality |
+| **Critical** (life/finance) | 🔬 Formal + 🔒 Security + 📊 Data | Correctness proofs, zero trust, auditability |
+| **High** (security/PII) | 🔒 Security + 🔬 Formal + 🎨 UX (Privacy) | Cryptography, threat modeling, privacy-by-design |
+| **Medium** (business-critical) | 🔒 Security + 📊 Data + ✨ Vibe | SDL, vulnerability mgmt, observability, maintainability |
+| **Standard** (typical SaaS) | 🔒 Security (basics) + 🎨 UX + ✨ Vibe | OWASP Top 10, user satisfaction, code quality |
 
 ---
 
@@ -320,6 +374,7 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 | **🔬 Formal Verification** | 30-day intro (1 component) | 3-month deep dive (module) | 6-12 month (subsystem) |
 | **✨ Vibe Coding** | Weeks 1-2 (formatting, naming) | Months 1-2 (immutability, cohesion) | Months 3-6 (types, composition) |
 | **📊 Data & Analytics** | Month 1 (observability, SLOs) | Months 2-4 (quality, contracts) | Months 5-12 (lineage, mesh) |
+| **🔒 Security Hardening** | Week 1 (OWASP Top 10, MFA, secrets mgmt) | Months 1-3 (SDL, SIEM, threat modeling) | Months 4-12 (Zero Trust, supply chain, maturity level 3+) |
 | **🎨 User Experience** | Week 1 (Core: accessibility, clarity) | Months 1-3 (Standard principles) | Ongoing (Excellence: performance, validation) |
 
 ### Resources Required
@@ -329,6 +384,7 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 | 🔬 Formal | ⚠️ High (specialist courses) | Medium (proof assistants) | Often required |
 | ✨ Vibe | ✓ Low (internal workshops) | Low (linters, formatters) | Rarely needed |
 | 📊 Data | Medium (platform training) | ⚠️ High (platform tools) | Sometimes needed |
+| 🔒 Security | Medium (OWASP, SDL training) | Medium-High (SIEM, SAST, SOAR) | Recommended (pentest, audits) |
 | 🎨 UX | Medium (UX research methods) | Medium (testing tools) | Recommended |
 
 ### Success Metrics
@@ -338,6 +394,7 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 | 🔬 Formal | % code formally verified | Bug density in critical paths |
 | ✨ Vibe | Code review approval time | Time to onboard new devs |
 | 📊 Data | Data quality test coverage | Data incident frequency |
+| 🔒 Security | Vuln SLA compliance, MTTD/MTTR | Security incidents, breach cost avoided |
 | 🎨 UX | Usability test pass rate | User satisfaction (NPS/CSAT) |
 
 ---
@@ -354,6 +411,7 @@ Cross-cutting philosophy across all manifestos:
 | **Automation Matters** | Leverage tooling for enforcement & verification |
 | **Cost-Benefit Awareness** | Apply techniques proportional to criticality |
 | **Documentation as Code** | Maintain docs alongside implementation |
+| **Security as Foundation** | Security integrated at every layer and phase |
 
 ---
 
@@ -361,7 +419,7 @@ Cross-cutting philosophy across all manifestos:
 
 ### Individual Engineer (Self-Directed)
 
-**Week 1**: Read ✨ Vibe Coding (Core principles) + apply to next PR
+**Week 1**: Read ✨ Vibe Coding (Core) + 🔒 Security (OWASP Top 10) + apply to next PR
 **Week 2-4**: Add domain manifesto (🔬/📊/🎨 based on context)
 **Month 2-3**: Implement intermediate/standard principles
 **Month 4-6**: Explore advanced principles, share with team
@@ -370,18 +428,21 @@ Cross-cutting philosophy across all manifestos:
 
 **Month 1-3 (Foundations)**:
 - ✨ Vibe Coding: Formatting, naming, documentation standards
+- 🔒 Security: MFA, secrets management, input validation, SAST in CI/CD
 - 🎨 UX: Core principles (if user-facing)
 - Establish code review culture
-- Set up linting & formatting automation
+- Set up linting, formatting, security scanning automation
 
 **Month 4-6 (Quality Gates)**:
 - ✨ Vibe Coding: Testing philosophy, immutability
+- 🔒 Security: SDL integration, threat modeling, vulnerability management
 - 📊 Data: Quality checks, observability (if applicable)
 - 🎨 UX: Standard principles, A11y testing
 - Establish SLAs and monitoring
 
 **Month 7-12 (Advanced Techniques)**:
 - ✨ Vibe Coding: Type-driven design, advanced patterns
+- 🔒 Security: Zero Trust implementation, supply chain security, security maturity level 3+
 - 📊 Data: Contracts, lineage, cost optimization
 - 🎨 UX: Excellence principles, continuous validation
 - 🔬 Formal: Consider for critical components
@@ -391,7 +452,7 @@ Cross-cutting philosophy across all manifestos:
 **Quarter 1**: Pilot team adoption + tooling setup
 **Quarter 2**: Expand to similar teams + refine playbooks
 **Quarter 3-4**: Org-wide rollout with domain customization
-**Ongoing**: Maturity assessment, continuous improvement
+**Ongoing**: Maturity assessment, continuous improvement, security audits
 
 ---
 
@@ -402,6 +463,7 @@ Cross-cutting philosophy across all manifestos:
 | 🔬 Formal Verification | v1.1 | 2024 | Stable |
 | ✨ Vibe Coding | v2.0 | 2025-11-20 | Current |
 | 📊 Data & Analytics | v2.0 | 2025-11-20 | Current |
+| 🔒 Security Hardening | v2.0 | 2025-11-20 | Current |
 | 🎨 User Experience | v2.0 | 2025-11-20 | Current |
 
 **Changelog Access**: Each v2.0+ manifesto includes detailed changelog in respective directory.
