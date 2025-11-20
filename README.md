@@ -1,13 +1,33 @@
-these are for coding agents mostly.
-
 # Code Review Manifestos
 
-**A reference index of software engineering manifestos for reliable, maintainable, secure, and high-quality systems**
+**Software engineering manifestos for code review and system quality**
+
+---
+
+## About This Project
+
+This repository aggregates software engineering manifestos—each representing coherent philosophies backed by industry best practices—to help teams standardize code review and engineering culture.
+
+### What is a Manifesto?
+
+Included manifestos define coherent philosophies with actionable guidance for specific software quality dimensions (correctness, maintainability, security, UX, data quality, content). Each is production-ready with implementation guides, examples, and measurement frameworks.
+
+### Project Scope
+
+**Quality Dimensions Covered**: Correctness & Safety • Maintainability • Data Quality • Security • User Experience • Accessibility • Content & Communication
+
+### Manifesto Structure
+
+All manifestos follow a consistent structure (Title & Version • Core Principles • Implementation Guide • Examples • Tools & Ecosystem • Metrics • Changelog) enabling easy comparison, adoption, and integration across teams.
 
 ---
 
 ## Table of Contents
 
+- [About This Project](#about-this-project)
+  - [What is a Manifesto?](#what-is-a-manifesto)
+  - [Project Scope](#project-scope)
+  - [Manifesto Structure](#manifesto-structure)
 - [Quick Selection Guide](#quick-selection-guide)
 - [Manifesto Index](#manifesto-index)
   - [🔬 Formal Verification](#-formal-verification)
@@ -75,36 +95,15 @@ graph TD
 
 **[Formal Verification Manifesto](./formal_verification/FORMAL_VERIFICATION_MANIFESTO.md)** • v1.1 • 16 principles
 
-#### At a Glance
-- **Goal**: Mathematical correctness proofs
-- **Primary Users**: Safety engineers, security researchers
-- **Learning Curve**: Very High
-- **ROI**: Long-term
-- **Adoption**: Specialized (safety/security-critical)
+**At a Glance**: Mathematical correctness proofs • Safety/security engineers • Very high learning curve • Long-term ROI • Specialized adoption
 
-#### Key Principles
-- Specification as Foundation
-- Types as Propositions (Curry-Howard)
-- Totality & Termination
-- Refinement Types
-- Separation Logic
-- Proof Automation
-- Verified Compilation
-- Incremental Formalization
+**Key Principles**: Specification as Foundation • Types as Propositions (Curry-Howard) • Totality & Termination • Refinement Types • Separation Logic • Proof Automation • Verified Compilation • Incremental Formalization
 
-#### Best Fit
-- ✅ Safety-critical systems (avionics, medical, automotive)
-- ✅ Security-critical components (cryptography, authentication)
-- ✅ High-assurance software requiring mathematical proofs
+**Best For**: Safety-critical systems (avionics, medical, automotive) • Security-critical components (cryptography, authentication) • High-assurance software
 
-#### Tools & Ecosystem
-Coq • Isabelle • Lean • Agda • F* • Dafny • TLA+ • SPARK Ada
+**Tools**: Coq • Isabelle • Lean • Agda • F* • Dafny • TLA+ • SPARK Ada
 
-#### Implementation Guide
-- 30-day quickstart path
-- 3-month deep dive
-- Tool selection decision tree
-- Cost-benefit analysis framework
+**Implementation**: 30-day quickstart • 3-month deep dive • Tool selection decision tree • Cost-benefit analysis
 
 ---
 
@@ -112,48 +111,15 @@ Coq • Isabelle • Lean • Agda • F* • Dafny • TLA+ • SPARK Ada
 
 **[Vibe Coding Manifesto](./vibe_coding/VIBE_CODING_MANIFESTO.md)** • v2.0 • [Changelog](./vibe_coding/CHANGELOG.md) • 15 principles
 
-#### At a Glance
-- **Goal**: Human readability & maintainability
-- **Primary Users**: All developers
-- **Learning Curve**: Medium
-- **ROI**: Immediate
-- **Adoption**: Universal
+**At a Glance**: Human readability & maintainability • All developers • Medium learning curve • Immediate ROI • Universal adoption
 
-#### Key Principles (by tier)
+**Key Principles (tiered)**: **Core** (Aesthetic Legibility • Intentional Naming • Literate Programming • Obviousness • Locality & Cohesion) • **Standard** (Semantic Density • Immutability Default • Contextual Verbosity • Joyful Craft) • **Excellence** (Type as Documentation • Composition • Error as Value • Constraint Propagation)
 
-**Core** (Universal - Start Here):
-- Aesthetic Legibility
-- Intentional Naming
-- Literate Programming
-- Obviousness Over Cleverness
-- Locality & Cohesion
+**Best For**: Long-lived production systems (10+ years) • Teams valuing correctness & maintainability • Complex business logic • Libraries and frameworks
 
-**Standard** (Language-Dependent):
-- Semantic Density
-- Immutability Default
-- Contextual Verbosity
-- Joyful Craft
+**Languages**: Python • TypeScript • Rust • Go • Haskell • Java
 
-**Excellence** (Requires Strong Types):
-- Type as Documentation
-- Composition Over Configuration
-- Error as Value
-- Constraint Propagation
-
-#### Best Fit
-- ✅ Long-lived production systems (10+ year horizon)
-- ✅ Teams valuing correctness & maintainability
-- ✅ Complex business logic domains
-- ✅ Libraries and frameworks
-
-#### Languages Covered
-Python • TypeScript • Rust • Go • Haskell • Java
-
-#### Implementation Guide
-- 3-phase incremental adoption (weeks 1-2, months 1-2, months 3-6)
-- Language-specific guidance
-- Metrics & measurement framework
-- Code review checklists
+**Implementation**: 3-phase incremental adoption (weeks 1-2, months 1-2, months 3-6) • Language-specific guidance • Metrics & measurement • Code review checklists
 
 ---
 
@@ -161,43 +127,15 @@ Python • TypeScript • Rust • Go • Haskell • Java
 
 **[Data & Analytics Manifesto](./data_analytics/DATA_ANALYTICS_MANIFESTO.md)** • v2.0 • [Changelog](./data_analytics/CHANGELOG.md) • 18 principles
 
-#### At a Glance
-- **Goal**: Data reliability & scalability
-- **Primary Users**: Data engineers, analysts
-- **Learning Curve**: Medium-High
-- **ROI**: Medium-term
-- **Adoption**: Data-intensive organizations
+**At a Glance**: Data reliability & scalability • Data engineers & analysts • Medium-high learning curve • Medium-term ROI • Data-intensive organizations
 
-#### Key Principles
-- Data as Product
-- Single Source of Truth
-- Immutability & Temporal Integrity
-- Schema as Contract
-- Data Quality by Design
-- Lineage & Provenance
-- Idempotency & Determinism
-- Metrics as Code
-- Data Observability
-- Privacy & Compliance by Design
-- Explicit Data Contracts
-- Comprehensive Testing
-- Cost-Aware Engineering
+**Key Principles**: Data as Product • Single Source of Truth • Immutability & Temporal Integrity • Schema as Contract • Data Quality by Design • Lineage & Provenance • Idempotency & Determinism • Metrics as Code • Data Observability • Privacy & Compliance • Data Contracts • Testing • Cost-Aware Engineering
 
-#### Best Fit
-- ✅ Data warehouses & analytics platforms
-- ✅ Data pipelines (batch and streaming)
-- ✅ Business intelligence systems
-- ✅ Machine learning platforms
-- ✅ Data mesh architectures
+**Best For**: Data warehouses & analytics platforms • Data pipelines (batch/streaming) • BI systems • ML platforms • Data mesh architectures
 
-#### Tools & Ecosystem
-dbt • Airflow • Snowflake • BigQuery • Spark • Kafka • Great Expectations • Amundsen
+**Tools**: dbt • Airflow • Snowflake • BigQuery • Spark • Kafka • Great Expectations • Amundsen
 
-#### Implementation Guide
-- Per-principle implementation checklist
-- 6-level maturity model
-- Tool ecosystem map
-- Cost optimization framework
+**Implementation**: Per-principle checklists • 6-level maturity model • Tool ecosystem map • Cost optimization framework
 
 ---
 
@@ -205,50 +143,15 @@ dbt • Airflow • Snowflake • BigQuery • Spark • Kafka • Great Expecta
 
 **[Security Hardening Manifesto](./security_hardening/SECURITY_HARDENING_MANIFESTO.md)** • v2.0 • [Changelog](./security_hardening/CHANGELOG.md) • 18 principles
 
-#### At a Glance
-- **Goal**: System security & resilience
-- **Primary Users**: Security engineers, DevSecOps teams, all developers
-- **Learning Curve**: Medium
-- **ROI**: Immediate (avoid breach)
-- **Adoption**: Universal (required)
+**At a Glance**: System security & resilience • Security engineers, DevSecOps teams, all developers • Medium learning curve • Immediate ROI (avoid breach) • Universal (required)
 
-#### Key Principles
-- Defense in Depth
-- Least Privilege
-- Fail Secure
-- Complete Mediation
-- Zero Trust
-- Cryptographic Agility
-- Secure Development Lifecycle
-- Audit Everything
-- Separation of Duties
-- Input Validation & Output Encoding
-- Secure Secrets Management
-- Vulnerability Management
-- Immutable Infrastructure
-- Threat Modeling
-- Supply Chain Security
-- Security Monitoring & Incident Response
+**Key Principles**: Defense in Depth • Least Privilege • Fail Secure • Complete Mediation • Zero Trust • Cryptographic Agility • Secure Development Lifecycle • Audit Everything • Separation of Duties • Input Validation & Output Encoding • Secure Secrets Management • Vulnerability Management • Immutable Infrastructure • Threat Modeling • Supply Chain Security • Security Monitoring & Incident Response
 
-#### Best Fit
-- ✅ Security-critical applications (fintech, healthcare, government)
-- ✅ Cloud-native and microservices architectures
-- ✅ Organizations building security programs
-- ✅ Compliance-driven environments (PCI-DSS, HIPAA, GDPR)
-- ✅ DevSecOps transformation
+**Best For**: Security-critical applications (fintech, healthcare, government) • Cloud-native & microservices • Organizations building security programs • Compliance-driven environments (PCI-DSS, HIPAA, GDPR) • DevSecOps transformation
 
-#### Standards & Frameworks
-OWASP Top 10 • NIST CSF • CIS Controls • ISO 27001 • PCI-DSS • GDPR
+**Standards**: OWASP Top 10 • NIST CSF • CIS Controls • ISO 27001 • PCI-DSS • GDPR
 
-#### Implementation Guide
-- Per-principle implementation checklists (18 total)
-- 6-level security maturity model
-- Tool ecosystem map (100+ tools: SIEM, SOAR, EDR, SAST, DAST, SCA)
-- Compliance mapping (OWASP, NIST, CIS, ISO 27001, PCI-DSS, GDPR)
-- Learning paths (30-day quickstart, 3-month deep dive, 1-day executive)
-- Modern architecture guidance (cloud-native, microservices, containers, Kubernetes)
-- Trade-offs & anti-patterns
-- Organizational enablement
+**Implementation**: Per-principle checklists (18) • 6-level security maturity model • Tool ecosystem map (100+ tools) • Compliance mapping • Learning paths (30-day/3-month/1-day) • Modern architecture guidance • Trade-offs & anti-patterns
 
 ---
 
@@ -256,54 +159,15 @@ OWASP Top 10 • NIST CSF • CIS Controls • ISO 27001 • PCI-DSS • GDPR
 
 **[UX Manifesto](./user_experience/UX_MANIFESTO.md)** • v2.0 • [Changelog](./user_experience/CHANGELOG.md) • 17 principles
 
-#### At a Glance
-- **Goal**: User success & satisfaction
-- **Primary Users**: Designers, PMs, frontend developers
-- **Learning Curve**: Medium
-- **ROI**: Immediate-Medium
-- **Adoption**: Universal (product-focused)
+**At a Glance**: User success & satisfaction • Designers, PMs, frontend developers • Medium learning curve • Immediate-Medium ROI • Universal (product-focused)
 
-#### Key Principles (by tier)
+**Key Principles (tiered)**: **Core** (User Primacy • Clarity • Progressive Disclosure • Consistency & Coherence • Accessibility as Foundation) • **Standard** (Immediate Feedback • Forgiveness & Reversibility • Recognition Over Recall • Efficiency & Flow • Appropriate Defaults • Contextual Relevance • Error Prevention • Privacy & Ethical Design • Navigation & Findability) • **Excellence** (Aesthetic Integrity • Performance as Feature • Continuous Validation)
 
-**Core** (Non-negotiable):
-- User Primacy
-- Clarity Over Cleverness
-- Progressive Disclosure
-- Consistency & Coherence
-- Accessibility as Foundation
+**Best For**: Web & mobile applications • Voice interfaces & conversational UI • AR/VR & spatial computing • IoT devices & embedded systems • Design systems & component libraries • Multimodal interfaces
 
-**Standard** (Production-required):
-- Immediate Feedback
-- Forgiveness & Reversibility
-- Recognition Over Recall
-- Efficiency & Flow
-- Appropriate Defaults
-- Contextual Relevance
-- Error Prevention
-- Privacy & Ethical Design
-- Navigation & Findability
+**Standards**: Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 
-**Excellence** (Differentiation):
-- Aesthetic Integrity
-- Performance as Feature
-- Continuous Validation
-
-#### Best Fit
-- ✅ Web & mobile applications
-- ✅ Voice interfaces & conversational UI
-- ✅ AR/VR & spatial computing
-- ✅ IoT devices & embedded systems
-- ✅ Design systems & component libraries
-- ✅ Multimodal interfaces
-
-#### Standards & Coverage
-Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
-
-#### Implementation Guide
-- Core/Standard/Excellence implementation hierarchy
-- Role-based ownership matrix
-- Measurement framework with KPIs
-- Conflict resolution framework
+**Implementation**: Core/Standard/Excellence hierarchy • Role-based ownership matrix • Measurement framework with KPIs • Conflict resolution framework
 
 ---
 
@@ -311,59 +175,19 @@ Nielsen Heuristics • WCAG 2.1 AA • Core Web Vitals • Privacy-by-Design
 
 **[Accessibility Manifesto](./accessibility/ACCESSIBILITY_MANIFESTO.md)** • v1.1 • [Changelog](./accessibility/CHANGELOG.md) • 15 principles
 
-#### At a Glance
-- **Goal**: Universal access & WCAG compliance
-- **Primary Users**: Frontend developers, designers, accessibility specialists, all developers
-- **Learning Curve**: Medium
-- **ROI**: Immediate (avoid lawsuits) + Long-term (broader audience)
-- **Adoption**: Universal (legally required)
+**At a Glance**: Universal access & WCAG compliance • Frontend developers, designers, accessibility specialists, all developers • Medium learning curve • Immediate ROI (avoid lawsuits) + Long-term (broader audience) • Universal (legally required)
 
-#### Key Principles (by tier)
+**Key Principles (tiered)**: **Core/WCAG A** (Universal Design • Perceivability • Operability • Keyboard Accessibility) • **Standard/WCAG AA** (Understandability • Robustness • Semantic Structure • Screen Reader Compatibility • Sufficient Time • Seizure Prevention • Navigational Clarity • Input Assistance) • **Excellence/WCAG AAA** (Adaptive Technology Support • Multimodal Interaction • Testing & Validation)
 
-**Core** (WCAG A - Legal Minimum):
-- Universal Design
-- Perceivability
-- Operability
-- Keyboard Accessibility
+**Best For**: All web & mobile applications (legal requirement) • Government & education platforms (Section 508) • E-commerce (settlement risk mitigation) • Design systems & component libraries • Public-facing applications • Healthcare & financial services
 
-**Standard** (WCAG AA - Industry Baseline):
-- Understandability
-- Robustness
-- Semantic Structure
-- Screen Reader Compatibility
-- Sufficient Time
-- Seizure Prevention
-- Navigational Clarity
-- Input Assistance
+**Standards**: WCAG 2.1 AA/AAA • Section 508 • ADA • EAA (EU) • AODA (Ontario) • EN 301 549
 
-**Excellence** (WCAG AAA + Inclusive Design):
-- Adaptive Technology Support
-- Multimodal Interaction
-- Testing & Validation
+**Tools**: axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver • TalkBack • Colour Contrast Analyser • Accessibility Insights
 
-#### Best Fit
-- ✅ All web and mobile applications (legal requirement)
-- ✅ Government and education platforms (Section 508)
-- ✅ E-commerce (settlement risk mitigation)
-- ✅ Design systems & component libraries
-- ✅ Public-facing applications
-- ✅ Healthcare and financial services (high compliance stakes)
+**Implementation**: 3-tier (Core/Standard/Excellence) • Comprehensive measurement framework (automated + manual + user testing) • 40+ tool ecosystem map • Legal compliance mapping • Actionable checklists per tier • Cost-benefit analysis (10% → 10× → 100× multiplier)
 
-#### Standards & Frameworks
-WCAG 2.1 AA/AAA • Section 508 • ADA • EAA (EU) • AODA (Ontario) • EN 301 549
-
-#### Tools & Ecosystem
-axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver • TalkBack • Colour Contrast Analyser • Accessibility Insights
-
-#### Implementation Guide
-- 3-tier implementation (Core/Standard/Excellence)
-- Comprehensive measurement framework (automated + manual + user testing)
-- 40+ tool ecosystem map (testing, CI/CD, screen readers, design systems)
-- Legal compliance mapping (ADA, Section 508, EAA, AODA)
-- Actionable checklists per tier
-- Cost-benefit analysis (10% → 10× → 100× multiplier)
-
-**Related**: Expands [UX Manifesto Principle VIII](#-user-experience) with WCAG implementation details
+**Related**: Expands UX Manifesto Principle VIII with WCAG implementation details
 
 ---
 
@@ -371,61 +195,19 @@ axe DevTools • WAVE • Lighthouse • Pa11y • NVDA • JAWS • VoiceOver �
 
 **[Content & Communication Manifesto](./content_communication/CONTENT_COMMUNICATION_MANIFESTO.md)** • v2.0 • [Changelog](./content_communication/CHANGELOG.md) • 18 principles
 
-#### At a Glance
-- **Goal**: Clear, maintainable, accessible content across all touchpoints
-- **Primary Users**: Technical writers, developers, designers, DevRel, content strategists, product managers
-- **Learning Curve**: Low-Medium
-- **ROI**: Immediate (reduced support burden, higher conversion, better UX)
-- **Adoption**: Universal (all projects with user-facing content)
+**At a Glance**: Clear, maintainable, accessible content across all touchpoints • Technical writers, developers, designers, DevRel, content strategists, product managers • Low-Medium learning curve • Immediate ROI (reduced support, higher conversion, better UX) • Universal (all projects with user-facing content)
 
-#### Key Principles (by tier)
+**Key Principles (tiered)**: **Core** (Clarity as Prime Directive • Semantic Hierarchy • Precision in Terminology • Accessibility as Requirement • Empathy & Respect) • **Standard** (Audience-First Architecture • Actionable Documentation • Progressive Disclosure • Scannability & Skimming • Code as Communication • Voice & Tone Consistency • Version Control & Change Management • Maintenance & Decay Prevention) • **Excellence** (Visual Communication • Searchability & Discoverability • Content Governance & Strategy • Internationalization & Localization • Continuous Measurement)
 
-**Core** (Non-negotiable):
-- Clarity as Prime Directive
-- Semantic Hierarchy
-- Precision in Terminology
-- Accessibility as Requirement
-- Empathy & Respect
+**Best For**: Technical documentation (API docs, tutorials, guides, reference) • UI/UX content (microcopy, error messages, tooltips, labels) • Marketing content (landing pages, emails, product descriptions) • Support content (help centers, FAQs, chatbots) • Internal content (runbooks, incident reports, specifications)
 
-**Standard** (Production-required):
-- Audience-First Architecture
-- Actionable Documentation
-- Progressive Disclosure
-- Scannability & Skimming
-- Code as Communication
-- Voice & Tone Consistency
-- Version Control & Change Management
-- Maintenance & Decay Prevention
+**Content Types**: Documentation • UI Microcopy • Error Messages • Marketing • Support • Onboarding
 
-**Excellence** (Differentiation):
-- Visual Communication
-- Searchability & Discoverability
-- Content Governance & Strategy
-- Internationalization & Localization
-- Continuous Measurement
+**Tools**: Vale • alex • write-good • Grammarly • Docusaurus • MkDocs • OpenAPI • Mermaid • PlantUML • axe DevTools • Lighthouse • i18next • Crowdin • Plausible Analytics
 
-#### Best Fit
-- ✅ Technical documentation (API docs, tutorials, guides, reference)
-- ✅ UI/UX content (microcopy, error messages, tooltips, labels)
-- ✅ Marketing content (landing pages, emails, product descriptions)
-- ✅ Support content (help centers, FAQs, chatbots)
-- ✅ Internal content (runbooks, incident reports, specifications)
+**Implementation**: 4-phase adoption (Week 1-2, Month 1-2, Month 3-6, Ongoing) • Content maturity model (5 levels) • Diátaxis framework integration • Measurement framework with content quality scorecard • Role-specific guidance (8 roles) • Tool ecosystem map (50+ tools)
 
-#### Content Types Covered
-Documentation • UI Microcopy • Error Messages • Marketing • Support • Onboarding
-
-#### Tools & Ecosystem
-Vale • alex • write-good • Grammarly • Docusaurus • MkDocs • OpenAPI • Mermaid • PlantUML • axe DevTools • Lighthouse • i18next • Crowdin • Plausible Analytics
-
-#### Implementation Guide
-- 4-phase adoption (Week 1-2, Month 1-2, Month 3-6, Ongoing)
-- Content maturity model (5 levels)
-- Diátaxis framework integration (Tutorial, How-to, Reference, Explanation)
-- Measurement framework with content quality scorecard
-- Role-specific guidance (8 roles)
-- Tool ecosystem map (50+ tools)
-
-**Related**: Complements [♿ Accessibility](#-accessibility), [🎨 UX](#-user-experience), [✨ Vibe Coding](#-vibe-coding)
+**Related**: Complements Accessibility, UX, and Vibe Coding manifestos
 
 ---
 
@@ -647,40 +429,62 @@ gantt
 
 ---
 
-## Version Information
-
-| Manifesto | Current Version | Last Updated | Status |
-|-----------|----------------|--------------|--------|
-| 🔬 Formal Verification | v1.1 | 2024 | Stable |
-| ✨ Vibe Coding | v2.0 | 2025-11-20 | Current |
-| 📊 Data & Analytics | v2.0 | 2025-11-20 | Current |
-| 🔒 Security Hardening | v2.0 | 2025-11-20 | Current |
-| 🎨 User Experience | v2.0 | 2025-11-20 | Current |
-| ♿ Accessibility | v1.1 | 2025-11-20 | Current |
-| 📝 Content & Communication | v2.0 | 2025-11-20 | Current |
-
-**Changelog Access**: Each v2.0+ manifesto includes detailed changelog in respective directory.
-
----
-
 ## Contributing
 
-These are living documents. Contributions welcome:
+These are living documents maintained by the community. We welcome all contributions that help improve the quality, clarity, and usefulness of these manifestos.
 
-- **Feedback**: [Open issues](../../issues) with suggestions or questions
-- **Improvements**: Submit pull requests for clarifications or examples
+### How to Contribute
+
+- **Feedback & Questions**: [Open an issue](../../issues) with suggestions or questions
+- **Bug Reports**: Found a broken link, typo, or error? [Report it](../../issues)
+- **Improvements**: Submit pull requests for clarifications, examples, or corrections
+- **New Manifestos**: Propose new manifestos that meet our [inclusion criteria](#what-is-a-manifesto)
 - **Case Studies**: Share adoption stories and lessons learned
-- **Translations**: Help make accessible to global community
+- **Translations**: Help make these manifestos accessible to the global community
 
-**Contribution Guidelines**: See individual manifesto directories for domain-specific guidance.
+### Contribution Process
+
+1. **Read [CONTRIBUTING.md](./CONTRIBUTING.md)** for detailed guidelines on:
+   - Content standards and quality requirements
+   - Style guide and formatting conventions
+   - Quality checks and review process
+   - Versioning and changelog updates
+
+2. **Fork and create a feature branch**: `git checkout -b feature/your-improvement`
+
+3. **Make your changes** following the [Style Guide](./STYLE_GUIDE.md)
+
+4. **Run quality checks**: Link checking, markdown linting, spell checking
+
+5. **Submit a pull request** with a clear description of your changes
+
+### Recognition
+
+All contributors are recognized through:
+- GitHub contributor graph
+- PR descriptions and commit history
+- CHANGELOG.md entries (for significant contributions)
+
+**By contributing, you agree that your contributions will be licensed under the same [CC0 1.0 Universal](./LICENSE) license.**
 
 ---
 
 ## License
 
-**CC0 - Public Domain**
+**[CC0 1.0 Universal (Public Domain)](./LICENSE)**
 
-All manifestos freely available for education, research, and industry use.
+To maximize reuse and accessibility, all manifestos in this repository are dedicated to the public domain under the CC0 1.0 Universal license.
+
+This means you can:
+- ✅ Use these manifestos in commercial and non-commercial projects
+- ✅ Modify, adapt, and build upon them without attribution
+- ✅ Include them in your company's engineering guidelines
+- ✅ Translate and distribute them freely
+- ✅ Use them for education, research, and training
+
+**No permission required. No attribution required. Maximum freedom to use and adapt.**
+
+For full legal text, see [LICENSE](./LICENSE).
 
 ---
 
