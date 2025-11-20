@@ -1,6 +1,6 @@
 # Code Review Manifestos
 
-**Software engineering manifestos for code review and system quality**
+**A curated collection of software engineering manifestos for code review and system quality**
 
 ---
 
@@ -10,15 +10,15 @@ This repository aggregates software engineering manifestos—each representing c
 
 ### What is a Manifesto?
 
-Included manifestos define coherent philosophies with actionable guidance for specific software quality dimensions (correctness, maintainability, security, UX, data quality, content). Each is production-ready with implementation guides, examples, and measurement frameworks.
+Each manifesto defines a coherent philosophy with actionable guidance for a specific software quality dimension (correctness, maintainability, security, UX, data quality, content). All are production-ready with implementation guides, examples, and measurement frameworks.
 
-### Project Scope
+### Quality Dimensions
 
-**Quality Dimensions Covered**: Correctness & Safety • Maintainability • Data Quality • Security • User Experience • Accessibility • Content & Communication
+Correctness & Safety • Maintainability • Data Quality • Security • User Experience • Accessibility • Content & Communication
 
-### Manifesto Structure
+### Structure
 
-All manifestos follow a consistent structure (Title & Version • Core Principles • Implementation Guide • Examples • Tools & Ecosystem • Metrics • Changelog) enabling easy comparison, adoption, and integration across teams.
+All manifestos follow a consistent structure (Title & Version • Core Principles • Implementation Guide • Examples • Tools & Ecosystem • Metrics • Changelog) enabling easy comparison and adoption.
 
 ---
 
@@ -359,73 +359,6 @@ Cross-cutting philosophy across all manifestos:
 | **Cost-Benefit Awareness** | Apply techniques proportional to criticality |
 | **Documentation as Code** | Maintain docs alongside implementation |
 | **Security as Foundation** | Security integrated at every layer and phase |
-
----
-
-## Adoption Timeline
-
-### Individual Engineer (Self-Directed)
-
-**Week 1**: Read ✨ Vibe Coding (Core) + 🔒 Security (OWASP Top 10) + apply to next PR
-**Week 2-4**: Add domain manifesto (🔬/📊/🎨 based on context)
-**Month 2-3**: Implement intermediate/standard principles
-**Month 4-6**: Explore advanced principles, share with team
-
-### Team (Coordinated)
-
-```mermaid
-gantt
-    title Team Adoption Timeline
-    dateFormat YYYY-MM
-    axisFormat %B
-
-    section Foundation
-    Vibe Coding Core           :2025-01, 3M
-    Security Basics            :2025-01, 3M
-    UX Core Principles         :2025-01, 3M
-    Code Review Culture        :2025-01, 3M
-
-    section Quality Gates
-    Vibe Standard Principles   :2025-04, 3M
-    Security SDL Integration   :2025-04, 3M
-    Data Quality Checks        :2025-04, 3M
-    UX Standard + A11y         :2025-04, 3M
-
-    section Excellence
-    Vibe Advanced Patterns     :2025-07, 6M
-    Security Zero Trust        :2025-07, 6M
-    Data Lineage & Contracts   :2025-07, 6M
-    UX Excellence              :2025-07, 6M
-    Formal Verification        :2025-10, 3M
-```
-
-**Month 1-3 (Foundations)**:
-- ✨ Vibe Coding: Formatting, naming, documentation standards
-- 🔒 Security: MFA, secrets management, input validation, SAST in CI/CD
-- 🎨 UX: Core principles (if user-facing)
-- Establish code review culture
-- Set up linting, formatting, security scanning automation
-
-**Month 4-6 (Quality Gates)**:
-- ✨ Vibe Coding: Testing philosophy, immutability
-- 🔒 Security: SDL integration, threat modeling, vulnerability management
-- 📊 Data: Quality checks, observability (if applicable)
-- 🎨 UX: Standard principles, A11y testing
-- Establish SLAs and monitoring
-
-**Month 7-12 (Advanced Techniques)**:
-- ✨ Vibe Coding: Type-driven design, advanced patterns
-- 🔒 Security: Zero Trust implementation, supply chain security, security maturity level 3+
-- 📊 Data: Contracts, lineage, cost optimization
-- 🎨 UX: Excellence principles, continuous validation
-- 🔬 Formal: Consider for critical components
-
-### Organization (Federated)
-
-**Quarter 1**: Pilot team adoption + tooling setup
-**Quarter 2**: Expand to similar teams + refine playbooks
-**Quarter 3-4**: Org-wide rollout with domain customization
-**Ongoing**: Maturity assessment, continuous improvement, security audits
 
 ---
 
