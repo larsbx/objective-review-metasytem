@@ -100,7 +100,7 @@ graph TD
 
 ### ⚖️ Ethics Framework
 
-**[Ethics Manifesto: A Computable Framework for Software Engineering](./ethics/ETHICS_MANIFESTO.md)** • v1.1 • [Changelog](./ethics/CHANGELOG.md) • Dual-engine framework
+**[Ethics Manifesto: A Computable Framework for Software Engineering](./ethics/ETHICS_MANIFESTO.md)** • v1.2 • [Changelog](./ethics/CHANGELOG.md) • Dual-engine framework
 
 **At a Glance**: Unified decision framework with Objectives + Means engines • All roles • Low learning curve • Immediate ROI • Universal (foundational)
 
@@ -119,6 +119,8 @@ graph TD
 **Implementation**: CLI tool (`mix decision.analyze`) • Autonomous agent loop • Decision engine with mathematical guarantees • CI/CD integration patterns • ADR templates • Incident post-mortem categorization • Agent human-in-the-loop protocols • Task queue processing with auto-filtering
 
 **Guarantees**: Lower-priority gains cannot justify higher-priority harms • Security cannot be sacrificed for speed • Team wellbeing cannot be compromised for velocity • Prohibited and anti-pattern actions automatically rejected
+
+**New in v1.2**: Asimov's Three Laws comparison addendum • Demonstrates how Maqasid framework addresses fundamental flaws in Asimov's linguistic rules • Slave vs. Steward (Khalifah) distinction • Mathematical precision vs. definitional ambiguity • "Agents That Say No" - professional engineers that refuse unethical directives
 
 ---
 

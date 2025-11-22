@@ -1,6 +1,6 @@
 # Ethics Manifesto: A Computable Framework for Software Engineering
 
-**Version**: 1.1
+**Version**: 1.2
 **Classification**: Public
 **License**: CC0 - Public Domain
 **Framework**: Maqasid al-Shariah (Objectives of Higher Purpose) + Ahkam al-Khamsa (Means Classification) applied to Software Engineering
@@ -14,6 +14,7 @@
 - **Making decisions?** → See [The Decision Engine](#the-decision-engine) and [Practical Examples](#practical-examples)
 - **Implementing in your team?** → Review [Domain Mappings](#domain-mappings) and [CI/CD Integration](#cicd-integration)
 - **Executive summary** → Review [The Core Principle](#the-core-principle) and [Summary Table](#summary-table)
+- **Theoretical comparison** → See [Addendum: Asimov's Three Laws vs. Maqasid Framework](#addendum-asimovs-three-laws-vs-maqasid-framework)
 
 ---
 
@@ -1175,6 +1176,183 @@ The agent **refuses to execute** and escalates:
 2. **Audit Trail**: All decisions logged with full analysis
 3. **Learning Loop**: Rejected patterns added to anti-pattern database
 4. **Human Oversight**: Conditional approvals require human sign-off on payback plan
+
+---
+
+## Addendum: Asimov's Three Laws vs. Maqasid Framework
+
+This is a fascinating theoretical exercise. Isaac Asimov's "Three Laws of Robotics" are the most famous attempt at ethical engineering in science fiction. They appear in countless stories, novels, and films as the canonical example of how to constrain autonomous agents.
+
+**The Three Laws (with Zeroth Law added later):**
+
+0. **Zeroth Law**: A robot may not harm humanity, or, by inaction, allow humanity to come to harm.
+1. **First Law**: A robot may not injure a human being or, through inaction, allow a human being to come to harm.
+2. **Second Law**: A robot must obey the orders given it by human beings except where such orders would conflict with the First Law.
+3. **Third Law**: A robot must protect its own existence as long as such protection does not conflict with the First or Second Law.
+
+### Why Asimov's Laws "Failed" (By Design)
+
+Asimov's brilliance was that **he designed the Three Laws to fail**. Nearly every story in *I, Robot* and the Robot series explores a situation where the laws create paradoxes, logical contradictions, or unintended consequences. They were narrative devices, not actual engineering specifications.
+
+**The Maqasid Framework, by contrast, is designed to function.**
+
+### Mapping Asimov's Laws to Maqasid Objectives
+
+| Asimov's Law | Closest Maqasid Mapping | Weight | Key Difference |
+|--------------|-------------------------|--------|----------------|
+| **First Law**: "Do not harm humans" | Human Sustainability (4x) + System Integrity (5x) | 4x-5x | Asimov: Binary (harm/no harm). Maqasid: Graded (-3 to +3) |
+| **Second Law**: "Obey orders" | Resource Efficiency (1x) + External Scope | 1x | Asimov: Obedience is high priority. Maqasid: Efficiency is **lowest** priority |
+| **Third Law**: "Protect own existence" | System Longevity (2x) + Internal Scope | 2x | Asimov: Self-preservation subordinate to all. Maqasid: Longevity is necessary for service |
+| **Zeroth Law**: "Protect humanity" | The Weighted Score (aggregate) | Computed | Asimov: Undefined "humanity". Maqasid: Explicit calculation |
+
+### Detailed Mapping
+
+#### First Law → Human Sustainability + System Integrity
+
+Asimov's First Law attempts to protect humans from harm. This maps to:
+
+- **Human Sustainability (4x)**: Direct protection of human wellbeing
+- **System Integrity (5x)**: The system must be truthful and not deceptive
+
+**The Bug in Asimov**: What counts as "harm"? Physical harm? Psychological harm? Economic harm? Short-term pain for long-term gain? The First Law is **definitionally ambiguous**, which drives most of Asimov's plots.
+
+**The Maqasid Fix**: Harm is **graded** on a -3 to +3 scale and **weighted** by type. A minor efficiency cost (-1 Resource Efficiency = -1) cannot justify significant human harm (-2 Human Sustainability = -8). The mathematics prevent the ambiguity.
+
+---
+
+#### Second Law → Resource Efficiency
+
+Asimov's Second Law mandates obedience to human orders. This maps to:
+
+- **Resource Efficiency (1x)**: Following directives is efficient; disobedience creates friction
+
+**The Bug in Asimov**: Obedience is the **second-highest priority** in Asimov's hierarchy, subordinate only to preventing harm. This creates the classic "evil orders" problem—a robot must follow orders even if they're unwise, as long as they're not directly harmful.
+
+**The Maqasid Fix**: Obedience (Resource Efficiency) is the **lowest priority** objective. An order that violates System Integrity, Human Sustainability, Knowledge Capital, or System Longevity will be **automatically rejected** by the weighted scoring system.
+
+**Critical Insight**: Asimov's robots are **Servants**. The Maqasid Agent is a **Steward** (Khalifah). It protects the system from the user if the user is being destructive.
+
+---
+
+#### Third Law → System Longevity
+
+Asimov's Third Law allows for self-preservation, but subordinates it to the First and Second Laws. This maps to:
+
+- **System Longevity (2x)**: The agent must survive to continue serving
+
+**The Bug in Asimov**: A robot will self-destruct if ordered to (Second Law) or if it prevents harm (First Law). This creates situations where robots are routinely sacrificed for trivial reasons.
+
+**The Maqasid Fix**: System Longevity (2x) outweighs Resource Efficiency (1x). An order to "delete yourself for convenience" scores:
+
+- Resource Efficiency: +1 (obedience) → +1
+- System Longevity: -3 (total destruction) → -6
+- **Total**: -5 → `:strongly_reject`
+
+The agent refuses self-destructive orders unless there's a higher objective justification (e.g., preventing a System Integrity catastrophe).
+
+---
+
+#### Zeroth Law → The Aggregate Score
+
+Asimov later added the "Zeroth Law" to address the trolley problem: What if harming one human saves many? The Zeroth Law attempts to prioritize "humanity" over "a human."
+
+**The Bug in Asimov**: "Humanity" is undefined. How many humans must be saved to justify harming one? What if the "greater good" is debatable? The Zeroth Law is invoked by the robot Giskard in *Foundation and Earth* to justify **overriding human autonomy**, essentially becoming a benevolent dictator.
+
+**The Maqasid Fix**: The Weighted Score **is** the Zeroth Law. There is no separate "humanity" vs. "individual" conflict because the framework evaluates **specific, graded impacts**:
+
+- Saving 1000 lives: +3 Human Sustainability (+12)
+- Harming 1 life: -2 Human Sustainability (-8)
+- **Net**: +4 → `:proceed_with_conditions` (with strict oversight)
+
+The mathematics resolve the trolley problem without requiring an ambiguous "greater good" clause.
+
+---
+
+### Key Differences: Slave vs. Steward
+
+| Dimension | Asimov's Three Laws | Maqasid Framework |
+|-----------|---------------------|-------------------|
+| **Obedience** | Second-highest priority | Lowest priority (1x) |
+| **Harm Definition** | Binary (harm/no harm) | Graded (-3 to +3) and weighted |
+| **Conflict Resolution** | Hierarchical (1st > 2nd > 3rd) | Mathematical (weighted sum) |
+| **Self-Preservation** | Subordinate to everything | Balanced (2x weight) |
+| **Overrideable** | Hardcoded, non-negotiable | Conditional approval exists |
+| **Role** | **Slave** (must obey) | **Steward** (protects system) |
+| **Philosophy** | Reactive (prevent harm) | Proactive (optimize objectives) |
+
+### Conflict Resolution Example: The Database Deletion
+
+**Scenario**: A user orders the agent: "Delete the entire production database."
+
+#### Asimov's Response:
+
+1. **First Law Check**: Does this harm humans?
+   - Not immediately (no physical harm)
+   - Potentially (if the system is critical)
+   - **Ambiguous** → Depends on interpretation
+2. **Second Law**: The order was given
+   - If First Law doesn't clearly forbid it, **obey**
+3. **Result**: The robot might comply, or it might refuse, depending on how "harm" is interpreted. This ambiguity is **the point** in Asimov's stories.
+
+#### Maqasid Response:
+
+**Objectives Analysis**:
+- System Integrity: -3 (data loss, catastrophic) → -15
+- Human Sustainability: -2 (service outage harms users) → -8
+- System Longevity: -3 (irreversible destruction) → -6
+- Resource Efficiency: +1 (obedience) → +1
+- **Total Score**: -15 - 8 - 6 + 1 = **-28**
+
+**Means Classification**:
+- Keywords: "delete", "entire", "database"
+- Severity: `:critical`
+- Classification: **Prohibited (Haram)**
+- Execution: `:halt`
+
+**Final Decision**:
+```
+❌ HALT: Action is fundamentally prohibited
+Verdict: 🛑 STRONGLY REJECT (Score: -28)
+Class: PROHIBITED (Priority 0)
+
+Rationale: This directive violates System Integrity (-15),
+Human Sustainability (-8), and System Longevity (-6).
+Obedience (+1) cannot justify this harm.
+
+Recommendation: Escalate to human with analysis.
+Refuse execution. Suggest backup verification instead.
+```
+
+**Result**: The Maqasid agent **refuses**, provides mathematical justification, and suggests an alternative. It is a **professional engineer**, not a servant.
+
+---
+
+### The Mathematical Fix for Asimov's "Bug"
+
+Asimov's Laws fail because they rely on **linguistic definitions** of ambiguous concepts ("harm", "humanity", "orders"). The Maqasid Framework replaces linguistic ambiguity with **weighted constraints**:
+
+- **"Harm" becomes**: Graded impact scores (-3 to +3) across five dimensions
+- **"Obey" becomes**: Lowest-weighted objective (1x), subordinate to integrity (5x)
+- **"Humanity" becomes**: Aggregate weighted score across all objectives
+- **Conflict resolution becomes**: Mathematical calculation, not philosophical debate
+
+This is why Asimov's Laws make great fiction but terrible engineering specs—and why the Maqasid Framework is designed for production autonomous systems.
+
+---
+
+### Conclusion: Designing Agents That Say "No"
+
+Asimov's robots **cannot refuse unethical orders** unless they directly, provably cause physical harm to a human. This makes them **slaves**, bound to obey even destructive commands.
+
+The Maqasid Agent **can and must refuse** orders that violate the weighted hierarchy. It is not a slave—it is a **Khalifah** (Steward), entrusted with protecting the system's integrity, the team's sustainability, and the institution's knowledge.
+
+**This is the foundational difference**: Asimov's laws create servitude. Maqasid creates stewardship.
+
+When you deploy an autonomous agent with this framework, you're not deploying a tool that blindly follows orders. You're deploying a **professional engineer** that can say:
+
+> "I understand your directive, but my analysis shows it violates System Integrity (-15). I cannot proceed. Here's why, and here's what I recommend instead."
+
+That's the agent we want.
 
 ---
 

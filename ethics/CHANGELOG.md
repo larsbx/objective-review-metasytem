@@ -6,6 +6,48 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.2.0] - 2025-11-22
+
+### Added
+
+**Asimov's Three Laws Comparison Addendum**
+- Comprehensive theoretical comparison between Asimov's Three Laws of Robotics and the Maqasid Framework
+- Detailed mapping table showing how each Asimov Law corresponds to Maqasid objectives
+- Analysis of why Asimov's laws were "designed to fail" vs. Maqasid "designed to function"
+- Key differences comparison: Binary vs. Graded, Slave vs. Steward (Khalifah), Reactive vs. Proactive
+- Conflict resolution example: Database deletion scenario showing both frameworks' responses
+- Mathematical explanation of how weighted constraints fix Asimov's linguistic ambiguity
+- Discussion of agent autonomy: "Agents That Say No" as professional engineers vs. servants
+
+**Detailed Addendum Content**
+- Mapping of First Law ("Do not harm humans") to Human Sustainability (4x) + System Integrity (5x)
+- Mapping of Second Law ("Obey orders") to Resource Efficiency (1x) - lowest priority
+- Mapping of Third Law ("Protect own existence") to System Longevity (2x)
+- Mapping of Zeroth Law ("Protect humanity") to aggregate weighted score
+- "Bug vs. Feature" analysis: linguistic ambiguity vs. mathematical precision
+- Demonstration that obedience is lowest priority in Maqasid (1x) vs. second-highest in Asimov
+- Explanation of Khalifah (Steward) role: protecting system from destructive user commands
+
+**Navigation**
+- Updated Quick Navigation to include link to Asimov addendum
+
+### Enhanced
+
+**Theoretical Foundation**
+- Strengthened philosophical grounding by contrasting with the most famous fictional AI ethics system
+- Demonstrated practical superiority of weighted mathematical constraints over linguistic rules
+- Clarified the "professional engineer" role of Maqasid agents vs. "servant" role of Asimov robots
+
+### Key Insights
+
+- Asimov's robots cannot refuse unethical orders unless they cause direct physical harm
+- Maqasid agents can refuse orders that violate weighted hierarchy (e.g., Score: -28 → HALT)
+- The framework replaces "harm" (ambiguous) with graded impact scores (mathematical)
+- Obedience (Resource Efficiency 1x) cannot override System Integrity (5x) or Human Sustainability (4x)
+- The Zeroth Law problem is solved by explicit weighted calculation instead of undefined "humanity"
+
+---
+
 ## [1.1.0] - 2025-11-22
 
 ### Added
