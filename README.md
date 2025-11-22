@@ -39,6 +39,7 @@ All manifestos follow a consistent structure (Title & Version • Core Principle
   - [🎨 User Experience](#-user-experience)
   - [♿ Accessibility](#-accessibility)
   - [📝 Content & Communication](#-content--communication)
+  - [⚖️ Ethical Engineering](#️-ethical-engineering)
 - [Comparison Matrix](#comparison-matrix)
 - [Selection by Role](#selection-by-role)
 - [Selection by Context](#selection-by-context)
@@ -213,43 +214,67 @@ graph TD
 
 ---
 
+### ⚖️ Ethical Engineering
+
+**[Ethical Engineering Manifesto](./ethical_engineering/ETHICAL_ENGINEERING_MANIFESTO.md)** • v1.0 • [Changelog](./ethical_engineering/CHANGELOG.md) • 20 principles
+
+**At a Glance**: Ethical framework for software development • All developers, security engineers, product managers, data scientists • Medium learning curve • Immediate ROI (avoid harm, build trust) + Long-term (sustainability) • Universal (moral imperative)
+
+**Key Principles (tiered by ethical categorization)**: **Fard/Critical Required** (Encryption • Access Control • Input Validation • Vulnerability Remediation • Accessibility • Privacy Compliance • Ethical Design • Developer Sustainability • Bias Audits • Explainability • Human Oversight for AI) • **Mandub/Recommended** (Immutable Infrastructure • CI/CD • Disaster Recovery • Domain-Driven Design • Documentation • Testing • Monitoring • Code Readability) • **Mubah/Discretionary** (Technology choices, feature flags, A/B testing) • **Makruh/Anti-Pattern** (Manual deployments, god objects, premature optimization) • **Haram/Prohibited** (Hardcoded secrets, dark patterns, ignoring CVEs, selling user data, burnout culture, black-box AI for high-stakes decisions)
+
+**Best For**: All software development contexts • User-facing applications with personal data • Safety-critical systems • AI/ML systems • Compliance-driven environments • Organizations building ethical culture • Long-lived systems requiring sustainability
+
+**Framework**: Five Objectives (Maqasid): System Integrity (Hifz al-Din) • Resource Efficiency (Hifz al-Mal) • System Longevity (Hifz al-Nasl) • Human Sustainability (Hifz al-Nafs) • Knowledge Capital (Hifz al-Aql)
+
+**Domains Covered**: Security & Reliability • DevOps & Infrastructure • Product & UX • Software Architecture • Data Science & AI • Testing & QA • Code Quality
+
+**Implementation**: Per-principle checklists (7 domains) • 5-level ethical maturity model • 30-day and 3-month learning paths • Domain-specific application guides (web, mobile, API, data pipeline) • Trade-offs framework • Tool ecosystem map (50+ tools)
+
+**Related**: Provides moral framework integrating 🔒 Security + ♿ Accessibility + 🎨 UX + 📊 Data + ✨ Vibe Coding + 🔬 Formal Verification + 📝 Content
+
+---
+
 ## Comparison Matrix
 
-| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience | ♿ Accessibility | 📝 Content & Communication |
-|--------|----------------------|---------------|--------------------|--------------------|-------------------|----------------|---------------------------|
-| **Focus** | Mathematical correctness | Human readability | Data reliability | System security | User success | Universal access | Content clarity & effectiveness |
-| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing, user testing with disabled users | Content audits, user feedback, readability scores |
-| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B | axe, WAVE, Pa11y, Lighthouse | Vale, alex, link checkers, analytics |
-| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium | ✓ Medium | ✓ Low-Medium |
-| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal | ✓ Universal (legally required) | ✓ Universal |
-| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium | ✓ Immediate (avoid lawsuits) + Long-term | ✓ Immediate (reduced support) |
-| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) | Low-Medium (all roles) | Low (all roles) |
-| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems | All systems | All systems (legal requirement) | All systems with documentation/UI |
+| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience | ♿ Accessibility | 📝 Content & Communication | ⚖️ Ethical Engineering |
+|--------|----------------------|---------------|--------------------|--------------------|-------------------|----------------|---------------------------|----------------------|
+| **Focus** | Mathematical correctness | Human readability | Data reliability | System security | User success | Universal access | Content clarity & effectiveness | Moral framework & human sustainability |
+| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing, user testing with disabled users | Content audits, user feedback, readability scores | Ethical audits, compliance checks, team wellbeing surveys |
+| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B | axe, WAVE, Pa11y, Lighthouse | Vale, alex, link checkers, analytics | Integration of Security + A11y + Privacy + Bias detection tools |
+| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium | ✓ Medium | ✓ Low-Medium | ✓ Medium |
+| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal | ✓ Universal (legally required) | ✓ Universal | ✓ Universal (moral imperative) |
+| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium | ✓ Immediate (avoid lawsuits) + Long-term | ✓ Immediate (reduced support) | ✓ Immediate (trust + compliance) + Long-term (sustainability) |
+| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) | Low-Medium (all roles) | Low (all roles) | Low (all roles - cultural shift) |
+| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems | All systems | All systems (legal requirement) | All systems with documentation/UI | All systems (ethical obligation) |
 
 ---
 
 ## Selection by Role
 
 ### Developers (Backend/Fullstack)
-1. **Start**: ✨ Vibe Coding (Core principles) + 🔒 Security Hardening (basics)
+1. **Start**: ✨ Vibe Coding (Core principles) + 🔒 Security Hardening (basics) + ⚖️ Ethical Engineering (Domains 1, 2, 4, 6, 7)
 2. **Add**: 📊 Data & Analytics (if data-heavy) OR 🎨 UX (if user-facing)
 3. **Consider**: 🔬 Formal Verification (for critical components)
+4. **Ethics Focus**: Encryption, access control, input validation, sustainable pace, code readability
 
 ### Frontend Developers
-1. **Start**: 🎨 User Experience + ♿ Accessibility + ✨ Vibe Coding + 🔒 Security (input validation, XSS prevention) + 📝 Content (UI microcopy, error messages)
+1. **Start**: 🎨 User Experience + ♿ Accessibility + ✨ Vibe Coding + 🔒 Security (input validation, XSS prevention) + 📝 Content (UI microcopy, error messages) + ⚖️ Ethical Engineering (Domains 1, 3, 7)
 2. **Priority**: Accessibility (WCAG AA compliance, screen reader testing), Performance (XIV), Consistency (IV), Security (CSP, CORS), Content (error messages, UI text)
 3. **Focus**: UX Principle VIII + Accessibility Manifesto (full WCAG implementation details) + Content Manifesto (Principles I, III, V, XI)
+4. **Ethics Focus**: Accessibility as requirement, privacy compliance, ethical design (reject dark patterns), input validation
 
 ### Data Engineers / Analysts
-1. **Start**: 📊 Data & Analytics + 🔒 Security (data classification, PII protection)
+1. **Start**: 📊 Data & Analytics + 🔒 Security (data classification, PII protection) + ⚖️ Ethical Engineering (Domains 1, 5)
 2. **Add**: ✨ Vibe Coding (pipeline code quality)
 3. **Focus**: Data Quality, Lineage, Observability, Privacy & Compliance
+4. **Ethics Focus**: Bias audits (if AI/ML), explainability, privacy compliance, encryption for PII
 
 ### Designers / Product Managers
-1. **Start**: 🎨 User Experience + ♿ Accessibility + 📝 Content (UI copy, product messaging)
+1. **Start**: 🎨 User Experience + ♿ Accessibility + 📝 Content (UI copy, product messaging) + ⚖️ Ethical Engineering (Domain 3)
 2. **Priority**: User Primacy (I), Accessibility (WCAG compliance, inclusive design), Privacy & Ethics (XIII), Continuous Validation (XV), Content (Clarity, Empathy)
 3. **Consider**: ✨ Vibe Coding (understand engineering constraints) + 🔒 Security (privacy-by-design)
 4. **Testing**: Include disabled users (≥20% of usability testing)
+5. **Ethics Focus**: Accessibility as requirement, privacy compliance, ethical design (reject dark patterns, addictive mechanics), human sustainability
 
 ### Technical Writers / DevRel / Content Strategists
 1. **Start**: 📝 Content & Communication (all tiers) + ♿ Accessibility
@@ -264,9 +289,10 @@ graph TD
 3. **Priority**: All manifestos relevant due to infrastructure criticality
 
 ### Security Engineers
-1. **Start**: 🔒 Security Hardening + 🔬 Formal Verification
+1. **Start**: 🔒 Security Hardening + 🔬 Formal Verification + ⚖️ Ethical Engineering (Domains 1, 3, 5)
 2. **Add**: ✨ Vibe Coding + 🎨 UX (Privacy & Ethics principle) + 📊 Data (audit logging)
 3. **Focus**: Threat modeling, supply chain security, incident response, cryptography verification
+4. **Ethics Focus**: Encryption, access control, vulnerability remediation, privacy compliance, bias audits (if AI), human oversight for AI
 
 ---
 
@@ -276,14 +302,14 @@ graph TD
 
 | Project Type | Primary | Secondary | Notes |
 |--------------|---------|-----------|-------|
-| **Web Application** | 🎨 UX + ♿ Accessibility + 🔒 Security | ✨ Vibe Coding + 📊 Data + 📝 Content | WCAG AA required; add 📊 if data-heavy, 📝 for UI copy/docs |
-| **Mobile App** | 🎨 UX + ♿ Accessibility + 🔒 Security | ✨ Vibe Coding + 📝 Content | Performance, WCAG, privacy critical; screen reader testing + clear error messages mandatory |
-| **API / Backend Service** | ✨ Vibe Coding + 🔒 Security + 📝 Content | 📊 Data (if stateful) | Consider 🔬 for auth/payments; 📝 critical for API docs |
-| **Data Pipeline** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding + 📝 Content | Quality, observability, PII protection paramount; document data flows |
-| **ML Platform** | 📊 Data & Analytics + 🔒 Security | ✨ Vibe Coding + 📝 Content | Reproducibility, lineage, model security critical; model cards documentation |
+| **Web Application** | 🎨 UX + ♿ Accessibility + 🔒 Security + ⚖️ Ethical | ✨ Vibe Coding + 📊 Data + 📝 Content | WCAG AA required; add 📊 if data-heavy, 📝 for UI copy/docs; Ethics: accessibility, privacy, no dark patterns |
+| **Mobile App** | 🎨 UX + ♿ Accessibility + 🔒 Security + ⚖️ Ethical | ✨ Vibe Coding + 📝 Content | Performance, WCAG, privacy critical; Ethics: accessibility, privacy, ethical design |
+| **API / Backend Service** | ✨ Vibe Coding + 🔒 Security + 📝 Content + ⚖️ Ethical | 📊 Data (if stateful) | Consider 🔬 for auth/payments; Ethics: encryption, access control, input validation |
+| **Data Pipeline** | 📊 Data & Analytics + 🔒 Security + ⚖️ Ethical | ✨ Vibe Coding + 📝 Content | Quality, observability, PII protection; Ethics: privacy compliance, encryption for PII |
+| **ML Platform** | 📊 Data & Analytics + 🔒 Security + ⚖️ Ethical | ✨ Vibe Coding + 📝 Content | Reproducibility, lineage; Ethics: bias audits, explainability, human oversight (CRITICAL) |
 | **IoT / Embedded** | 🎨 UX + ♿ Accessibility + 🔒 Security | 🔬 Formal Verification + 📝 Content | Safety, usability, multimodal interaction, security constraints, clear error messages |
-| **Financial System** | 🔬 Formal + 🔒 Security | 📊 Data + ✨ Vibe + ♿ A11y + 📝 Content | Correctness, auditability, compliance (ADA if customer-facing), clear disclosures |
-| **Medical Device** | 🔬 Formal + 🔒 Security + ♿ Accessibility | 🎨 UX + 📝 Content | Safety, security, human factors, adaptive tech (FDA requirements), clear instructions for use |
+| **Financial System** | 🔬 Formal + 🔒 Security + ⚖️ Ethical | 📊 Data + ✨ Vibe + ♿ A11y + 📝 Content | Correctness, auditability, compliance; Ethics: accessibility, privacy, explainability for AI decisions, no discriminatory algorithms |
+| **Medical Device** | 🔬 Formal + 🔒 Security + ♿ Accessibility + ⚖️ Ethical | 🎨 UX + 📝 Content | Safety, security, human factors; Ethics: accessibility, privacy (HIPAA), human oversight for AI, no harm to patients |
 | **Design System** | 🎨 UX + ♿ Accessibility + 📝 Content | ✨ Vibe Coding + 🔒 Security | WCAG-compliant components, comprehensive documentation, secure patterns |
 | **CLI Tool** | ✨ Vibe Coding + 📝 Content | 🎨 UX + 🔒 Security | Clarity, error messages, secure input handling, help documentation |
 | **Developer Portal** | 📝 Content + ♿ Accessibility | 🎨 UX + ✨ Vibe Coding | API documentation, tutorials, searchability, code examples paramount |
