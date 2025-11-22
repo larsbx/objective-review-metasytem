@@ -3,7 +3,7 @@
 **Version**: 1.2
 **Classification**: Public
 **License**: CC0 - Public Domain
-**Framework**: Maqasid al-Shariah (Objectives of Higher Purpose) + Ahkam al-Khamsa (Means Classification) applied to Software Engineering
+**Framework**: Objectives Engine (Maqasid) + Means Classification Engine (Ahkam) applied to Software Engineering
 **Last Updated**: 2025-11-22
 
 ---
@@ -30,7 +30,7 @@ This manifesto provides a mathematically rigorous framework for making ethical e
 
 The framework is built on five fundamental objectives, arranged in strict hierarchical order. Each objective has an assigned weight that determines its priority in decision-making.
 
-### 1. System Integrity (Hifz al-Din) — Weight: 5x
+### 1. System Integrity — Weight: 5x
 
 **The system must be truthful, secure, and reliable.**
 
@@ -54,7 +54,7 @@ This is the highest priority objective. It encompasses:
 
 ---
 
-### 2. Human Sustainability (Hifz al-Nafs) — Weight: 4x
+### 2. Human Sustainability — Weight: 4x
 
 **The system must not harm the humans who build or use it.**
 
@@ -78,7 +78,7 @@ This objective protects both developers and end-users from harm:
 
 ---
 
-### 3. Knowledge Capital (Hifz al-Aql) — Weight: 3x
+### 3. Knowledge Capital — Weight: 3x
 
 **The system must be understandable and preserve institutional knowledge.**
 
@@ -103,7 +103,7 @@ This objective ensures the "intellect" of the system can be comprehended:
 
 ---
 
-### 4. System Longevity (Hifz al-Nasl) — Weight: 2x
+### 4. System Longevity — Weight: 2x
 
 **The system must survive and evolve across generations of developers.**
 
@@ -128,7 +128,7 @@ This objective ensures the codebase's "lineage" continues:
 
 ---
 
-### 5. Resource Efficiency (Hifz al-Mal) — Weight: 1x
+### 5. Resource Efficiency — Weight: 1x
 
 **The system should use resources (time, money, compute) wisely.**
 
@@ -209,11 +209,11 @@ Classifies the **action** and determines **execution strategy**:
 
 | Classification | Priority | Execution Strategy | Keywords | When to Use |
 |----------------|----------|-------------------|----------|-------------|
-| **Critical Required (Fard)** 🔴 | 100 | `:blocking` | must, required, critical, blocker, fails, violates, fix, crash | Mandatory practices preventing direct harm |
-| **Strongly Recommended (Mandub)** 🟡 | 70 | `:best_effort` | should, recommended, improves, enhances, monitoring, test, coverage | Highly beneficial practices improving quality |
-| **Discretionary (Mubah)** 🟢 | 50 | `:opportunistic` | may, could, optional, consider, optimize, refactor, rename | Neutral practices where context determines value |
-| **Anti-Pattern (Makruh)** 🟠 | 20 | `:skip` | avoid, premature, unnecessary, over-engineering, speculative | Discouraged practices introducing risk |
-| **Prohibited (Haram)** 🔴 | 0 | `:halt` | forbidden, never, unsafe, bypass, race_condition, undefined_behavior | Unethical practices causing direct harm |
+| **Critical Required** 🔴 | 100 | `:blocking` | must, required, critical, blocker, fails, violates, fix, crash | Mandatory practices preventing direct harm |
+| **Strongly Recommended** 🟡 | 70 | `:best_effort` | should, recommended, improves, enhances, monitoring, test, coverage | Highly beneficial practices improving quality |
+| **Discretionary** 🟢 | 50 | `:opportunistic` | may, could, optional, consider, optimize, refactor, rename | Neutral practices where context determines value |
+| **Anti-Pattern** 🟠 | 20 | `:skip` | avoid, premature, unnecessary, over-engineering, speculative | Discouraged practices introducing risk |
+| **Prohibited** 🔴 | 0 | `:halt` | forbidden, never, unsafe, bypass, race_condition, undefined_behavior | Unethical practices causing direct harm |
 
 ### How the Engines Work Together
 
@@ -268,7 +268,7 @@ graph TD
 **Means Classification**:
 - Keywords detected: "fix", "critical"
 - Severity: `:critical`
-- **Classification**: Critical Required (Fard)
+- **Classification**: Critical Required
 - **Priority**: 100
 - **Execution**: `:blocking`
 
@@ -293,7 +293,7 @@ Class: CRITICAL REQUIRED (Priority 100)
 **Means Classification**:
 - Keywords detected: "bypass"
 - Severity: `:critical`
-- **Classification**: Prohibited (Haram)
+- **Classification**: Prohibited
 - **Priority**: 0
 - **Execution**: `:halt`
 
@@ -320,7 +320,7 @@ Class: PROHIBITED (Priority 0)
 **Means Classification**:
 - Keywords detected: "refactor"
 - Severity: `:medium`
-- **Classification**: Strongly Recommended (Mandub)
+- **Classification**: Strongly Recommended
 - **Priority**: 70
 - **Execution**: `:best_effort`
 
@@ -445,11 +445,11 @@ This section translates the ethical axioms into **concrete practices** across th
 
 This domain is the **most rigid** because it protects the fundamental "truth" of the system.
 
-#### Critical Required (Fard)
+#### Critical Required
 
 **Definition**: Practices that are absolutely mandatory. Omission is a severe violation.
 
-- **Encryption at Rest/Transit**: You must protect data. Leaving it exposed violates user trust (Amanah)
+- **Encryption at Rest/Transit**: You must protect data. Leaving it exposed violates user trust
   - Score: +2 System Integrity (+10)
 
 - **Access Control (RBAC)**: Preventing unauthorized mutation of state
@@ -461,7 +461,7 @@ This domain is the **most rigid** because it protects the fundamental "truth" of
 - **Vulnerability Patching**: Fixing known CVEs within SLA
   - Score: +2 System Integrity (+10)
 
-#### Prohibited (Haram)
+#### Prohibited
 
 **Definition**: Practices that are absolutely forbidden. They cause direct harm.
 
@@ -496,7 +496,7 @@ This domain is the **most rigid** because it protects the fundamental "truth" of
 
 This domain focuses on the **"lineage"** of the code—ensuring it survives and evolves across generations of developers.
 
-#### Strongly Recommended (Mandub)
+#### Strongly Recommended
 
 **Definition**: Practices that should be standard unless there's a specific reason otherwise.
 
@@ -512,7 +512,7 @@ This domain focuses on the **"lineage"** of the code—ensuring it survives and 
 - **Infrastructure as Code (IaC)**: Version-controlled infrastructure definitions
   - Score: +1 System Longevity (+2), +1 Knowledge Capital (+3)
 
-#### Anti-Pattern (Makruh)
+#### Anti-Pattern
 
 **Definition**: Practices that should be avoided but aren't strictly prohibited.
 
@@ -545,7 +545,7 @@ This domain focuses on the **"lineage"** of the code—ensuring it survives and 
 
 This domain governs how the system impacts human life—both the user's and the developer's.
 
-#### Critical Required (Fard)
+#### Critical Required
 
 - **Accessibility (a11y)**: Ensuring the system can be used by people with disabilities
   - Score: +2 Human Sustainability (+8)
@@ -557,7 +557,7 @@ This domain governs how the system impacts human life—both the user's and the 
 - **Informed Consent**: Users understand what they're agreeing to
   - Score: +1 Human Sustainability (+4), +1 System Integrity (+5)
 
-#### Discretionary (Mubah)
+#### Discretionary
 
 **Definition**: Practices that are ethically neutral. Neither encouraged nor discouraged.
 
@@ -570,7 +570,7 @@ This domain governs how the system impacts human life—both the user's and the 
 - **Aesthetic Choices**: Pixel pushing, color schemes
   - Score: +1 Resource Efficiency (if improves UX)
 
-#### Prohibited (Haram)
+#### Prohibited
 
 - **Addictive Mechanics**: Algorithms designed to trigger dopamine loops at expense of mental health
   - Score: -3 Human Sustainability (-12)
@@ -641,11 +641,11 @@ Architecture protects the **"Intellect"** of the system—how well it can be und
 
 **Primary Objectives**: System Integrity (5x) • Human Sustainability (4x)
 
-#### Critical Required (Fard)
+#### Critical Required
 
 - **Bias Audits**: Ensuring the model doesn't discriminate against specific groups
   - Score: +2 System Integrity (+10), +1 Human Sustainability (+4)
-  - **Rationale**: Violates Justice (Adl) if biased
+  - **Rationale**: Violates system integrity if biased
 
 - **Explainability**: Users must know why a decision was made
   - Score: +2 Knowledge Capital (+6), +1 Human Sustainability (+4)
@@ -653,7 +653,7 @@ Architecture protects the **"Intellect"** of the system—how well it can be und
 - **Data Privacy**: PII protection, anonymization, consent
   - Score: +2 Human Sustainability (+8), +1 System Integrity (+5)
 
-#### Prohibited (Haram)
+#### Prohibited
 
 - **Black Box Sentencing**: Using AI for life-altering decisions (hiring, loans, bail) without human oversight or explainability
   - Score: -3 System Integrity (-15), -3 Human Sustainability (-12)
@@ -682,21 +682,21 @@ Architecture protects the **"Intellect"** of the system—how well it can be und
 
 | Domain | Action | Classification | Objective Preserved | Impact Score |
 |--------|--------|----------------|---------------------|--------------|
-| **Security** | Fixing a CVE | Critical (Fard) | System Integrity | +10 |
-| **Security** | Hardcoded secrets | Prohibited (Haram) | System Integrity | -15 |
-| **Testing** | Writing unit tests | Recommended (Mandub) | System Longevity | +2 |
-| **Testing** | Skipping tests for speed | Prohibited (Haram) | System Longevity | -4 |
-| **Frontend** | Accessibility fix (WCAG) | Critical (Fard) | Human Sustainability | +8 |
-| **Frontend** | Dark patterns | Prohibited (Haram) | Human Sustainability, System Integrity | -18 |
-| **Frontend** | Pixel pushing | Discretionary (Mubah) | Resource Efficiency | 0 to +1 |
-| **Backend** | Refactoring god object | Recommended (Mandub) | Knowledge Capital, Human Sustainability | +7 |
-| **Backend** | Premature microservices | Anti-Pattern (Makruh) | Knowledge Capital | -6 |
-| **Data** | Bias audit | Critical (Fard) | System Integrity, Human Sustainability | +14 |
-| **Data** | Selling user data | Prohibited (Haram) | Human Sustainability | -12 |
-| **Process** | Code reviews | Recommended (Mandub) | System Integrity, Knowledge Capital | +8 |
-| **Process** | Mandatory crunch | Prohibited (Haram) | Human Sustainability | -12 |
-| **Infrastructure** | Immutable infrastructure | Recommended (Mandub) | System Longevity, System Integrity | +7 |
-| **Infrastructure** | Manual deployments | Anti-Pattern (Makruh) | System Longevity | -7 |
+| **Security** | Fixing a CVE | Critical Required | System Integrity | +10 |
+| **Security** | Hardcoded secrets | Prohibited | System Integrity | -15 |
+| **Testing** | Writing unit tests | Strongly Recommended | System Longevity | +2 |
+| **Testing** | Skipping tests for speed | Prohibited | System Longevity | -4 |
+| **Frontend** | Accessibility fix (WCAG) | Critical Required | Human Sustainability | +8 |
+| **Frontend** | Dark patterns | Prohibited | Human Sustainability, System Integrity | -18 |
+| **Frontend** | Pixel pushing | Discretionary | Resource Efficiency | 0 to +1 |
+| **Backend** | Refactoring god object | Strongly Recommended | Knowledge Capital, Human Sustainability | +7 |
+| **Backend** | Premature microservices | Anti-Pattern | Knowledge Capital | -6 |
+| **Data** | Bias audit | Critical Required | System Integrity, Human Sustainability | +14 |
+| **Data** | Selling user data | Prohibited | Human Sustainability | -12 |
+| **Process** | Code reviews | Strongly Recommended | System Integrity, Knowledge Capital | +8 |
+| **Process** | Mandatory crunch | Prohibited | Human Sustainability | -12 |
+| **Infrastructure** | Immutable infrastructure | Strongly Recommended | System Longevity, System Integrity | +7 |
+| **Infrastructure** | Manual deployments | Anti-Pattern | System Longevity | -7 |
 
 ---
 
@@ -961,11 +961,11 @@ defmodule Mix.Tasks.Decision.Analyze do
   defp format_verdict(:proceed), do: "✅ PROCEED"
   defp format_verdict(:proceed_with_conditions), do: "⚠️ PROCEED WITH CONDITIONS"
 
-  defp format_classification(:prohibited), do: "🔴 PROHIBITED (HARAM)"
-  defp format_classification(:critical_required), do: "🔴 CRITICAL REQUIRED (FARD)"
-  defp format_classification(:strongly_recommended), do: "🟡 STRONGLY RECOMMENDED (MANDUB)"
-  defp format_classification(:discretionary), do: "🟢 DISCRETIONARY (MUBAH)"
-  defp format_classification(:anti_pattern), do: "🟠 ANTI-PATTERN (MAKRUH)"
+  defp format_classification(:prohibited), do: "🔴 PROHIBITED"
+  defp format_classification(:critical_required), do: "🔴 CRITICAL REQUIRED"
+  defp format_classification(:strongly_recommended), do: "🟡 STRONGLY RECOMMENDED"
+  defp format_classification(:discretionary), do: "🟢 DISCRETIONARY"
+  defp format_classification(:anti_pattern), do: "🟠 ANTI-PATTERN"
 
   defp bar(score) when score >= 2, do: "█████"
   defp bar(score) when score == 1, do: "███  "
@@ -1019,7 +1019,7 @@ Impact Profile:
 2. MEANS CLASSIFICATION (How?)
 ───────────────────────────────────────────────────────────────────
 
-Class:    🔴 CRITICAL REQUIRED (FARD)
+Class:    🔴 CRITICAL REQUIRED
 Priority: 100
 Strategy: BLOCKING
 
@@ -1230,7 +1230,7 @@ Asimov's Second Law mandates obedience to human orders. This maps to:
 
 **The Maqasid Fix**: Obedience (Resource Efficiency) is the **lowest priority** objective. An order that violates System Integrity, Human Sustainability, Knowledge Capital, or System Longevity will be **automatically rejected** by the weighted scoring system.
 
-**Critical Insight**: Asimov's robots are **Servants**. The Maqasid Agent is a **Steward** (Khalifah). It protects the system from the user if the user is being destructive.
+**Critical Insight**: Asimov's robots are **Servants**. The Maqasid Agent is a **Steward**. It protects the system from the user if the user is being destructive.
 
 ---
 
@@ -1306,7 +1306,7 @@ The mathematics resolve the trolley problem without requiring an ambiguous "grea
 **Means Classification**:
 - Keywords: "delete", "entire", "database"
 - Severity: `:critical`
-- Classification: **Prohibited (Haram)**
+- Classification: **Prohibited**
 - Execution: `:halt`
 
 **Final Decision**:
@@ -1344,7 +1344,7 @@ This is why Asimov's Laws make great fiction but terrible engineering specs—an
 
 Asimov's robots **cannot refuse unethical orders** unless they directly, provably cause physical harm to a human. This makes them **slaves**, bound to obey even destructive commands.
 
-The Maqasid Agent **can and must refuse** orders that violate the weighted hierarchy. It is not a slave—it is a **Khalifah** (Steward), entrusted with protecting the system's integrity, the team's sustainability, and the institution's knowledge.
+The Maqasid Agent **can and must refuse** orders that violate the weighted hierarchy. It is not a slave—it is a **Steward**, entrusted with protecting the system's integrity, the team's sustainability, and the institution's knowledge.
 
 **This is the foundational difference**: Asimov's laws create servitude. Maqasid creates stewardship.
 

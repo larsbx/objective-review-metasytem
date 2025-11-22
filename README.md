@@ -110,17 +110,17 @@ graph TD
 
 **Key Objectives (weighted hierarchy)**: System Integrity (5x) • Human Sustainability (4x) • Knowledge Capital (3x) • System Longevity (2x) • Resource Efficiency (1x)
 
-**Means Classifications**: Critical Required (Fard, Priority 100, blocking) • Strongly Recommended (Mandub, 70, best_effort) • Discretionary (Mubah, 50, opportunistic) • Anti-Pattern (Makruh, 20, skip) • Prohibited (Haram, 0, halt)
+**Means Classifications**: Critical Required (Priority 100, blocking) • Strongly Recommended (70, best_effort) • Discretionary (50, opportunistic) • Anti-Pattern (20, skip) • Prohibited (0, halt)
 
 **Best For**: Resolving conflicts between competing priorities • Autonomous agent decision-making • Code review decisions • Architecture trade-offs • CI/CD ethical guardrails • Preventing burnout, security lapses, and technical debt • Task prioritization and queue management
 
-**Framework**: Maqasid al-Shariah (objectives) + Ahkam al-Khamsa (means) • Dual-engine decision matrix • Automated classification • Priority-based execution strategies • Keyword detection for auto-classification
+**Framework**: Objectives Engine (Maqasid) + Means Classification Engine (Ahkam) • Dual-engine decision matrix • Automated classification • Priority-based execution strategies • Keyword detection for auto-classification
 
 **Implementation**: CLI tool (`mix decision.analyze`) • Autonomous agent loop • Decision engine with mathematical guarantees • CI/CD integration patterns • ADR templates • Incident post-mortem categorization • Agent human-in-the-loop protocols • Task queue processing with auto-filtering
 
 **Guarantees**: Lower-priority gains cannot justify higher-priority harms • Security cannot be sacrificed for speed • Team wellbeing cannot be compromised for velocity • Prohibited and anti-pattern actions automatically rejected
 
-**New in v1.2**: Asimov's Three Laws comparison addendum • Demonstrates how Maqasid framework addresses fundamental flaws in Asimov's linguistic rules • Slave vs. Steward (Khalifah) distinction • Mathematical precision vs. definitional ambiguity • "Agents That Say No" - professional engineers that refuse unethical directives
+**New in v1.2**: Asimov's Three Laws comparison addendum • Demonstrates how Maqasid framework addresses fundamental flaws in Asimov's linguistic rules • Slave vs. Steward distinction • Mathematical precision vs. definitional ambiguity • "Agents That Say No" - professional engineers that refuse unethical directives
 
 ---
 
@@ -269,7 +269,7 @@ graph TD
 | Aspect | ⚖️ Ethics Framework | ⚖️ Ethical Engineering | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience | ♿ Accessibility | 📝 Content & Communication |
 |--------|-------------------|----------------------|----------------------|---------------|--------------------|--------------------|-------------------|----------------|---------------------------|
 | **Focus** | Decision framework & trade-offs | Domain implementation & categorization | Mathematical correctness | Human readability | Data reliability | System security | User success | Universal access | Content clarity & effectiveness |
-| **Verification Method** | Weighted score algorithm | Ethical audits, Fard/Haram classification | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing | Content audits, user feedback |
+| **Verification Method** | Weighted score algorithm | Ethical audits, means classification | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing | Content audits, user feedback |
 | **Automation Tools** | CI/CD ethics bot, decision engine | Security + A11y + Privacy + Bias tools | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B | axe, WAVE, Pa11y, Lighthouse | Vale, alex, link checkers |
 | **Learning Curve** | ✓ Low | ✓ Medium | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium | ✓ Medium | ✓ Low-Medium |
 | **Adoption Scope** | ✓ Universal (meta-framework) | ✓ Universal (moral imperative) | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal | ✓ Universal (legally required) | ✓ Universal |
