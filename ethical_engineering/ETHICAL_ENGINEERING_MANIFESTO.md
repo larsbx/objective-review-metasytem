@@ -1,6 +1,6 @@
 # Ethical Engineering Manifesto: 20 Foundational Principles
 
-**Version**: 1.1
+**Version**: 1.2
 **Classification**: Public
 **License**: CC0 - Public Domain
 **Last Updated**: 2025-11-22
@@ -10,7 +10,7 @@
 ## Quick Navigation
 
 - **New to ethical engineering?** → Start with [Core Principles](#core-principles) and [The Five Objectives](#the-five-objectives-maqasid)
-- **Building autonomous agents?** → See [Three-Layer Ethical Architecture](#three-layer-ethical-architecture-for-autonomous-agents)
+- **Building autonomous agents?** → See [Three-Layer Ethical Architecture](#three-layer-ethical-architecture-for-autonomous-agents) and [OODA Loop Integration](#ooda-loop-integration-classification-driven-decision-cycle)
 - **Building an ethical framework?** → See [Implementation Checklists](#implementation-checklists) and [Maturity Model](#ethical-engineering-maturity-model)
 - **Understanding the categorization?** → Review [Ethical Categorization System](#ethical-categorization-system)
 - **Domain-specific guidance?** → See [Domain Applications](#domain-applications)
@@ -386,6 +386,290 @@ Layer 3 (Means):
   - Result: ✅ Execute in priority queue
 
 → Executed after critical tasks, before discretionary tasks
+```
+
+---
+
+### OODA Loop Integration: Classification-Driven Decision Cycle
+
+For practical implementation, the three-layer architecture integrates with the **OODA (Observe-Orient-Decide-Act) Loop**, creating a classification-driven decision engine.
+
+**OODA Loop Overview**:
+1. **Observe**: Collect raw input (code change, system event, user request)
+2. **Orient**: Classify using the Five-Fold Matrix (Fard/Mandub/Mubah/Makruh/Haram)
+3. **Decide**: Select execution strategy based on classification
+4. **Act**: Execute with appropriate priority and retry logic
+
+#### Implementation: Classification-Driven OODA Engine
+
+```elixir
+defmodule OODALoop.DecisionEngine do
+  @moduledoc """
+  Implements the OODA loop where the 'Decide' phase is governed
+  by the Five-Fold Classification Matrix.
+  """
+
+  alias VerificationSystem.DecisionMatrix
+
+  def run_cycle(agent_state, observation) do
+    # 1. OBSERVE: Raw input
+    raw_data = observation
+
+    # 2. ORIENT: Classify the observation using ethical matrix
+    classification = classify(raw_data)
+
+    # 3. DECIDE: Select strategy based on classification
+    strategy = DecisionMatrix.config().execution_strategy[classification.category]
+
+    # 4. ACT: Execute based on priority
+    execute_action(agent_state, classification, strategy)
+  end
+
+  defp classify(data) do
+    indicators = DecisionMatrix.config().indicators
+
+    cond do
+      matches?(data, indicators.prohibited) ->
+        %{
+          category: :prohibited,
+          rationale: "Safety Violation",
+          action: :halt
+        }
+
+      matches?(data, indicators.critical_required) ->
+        %{
+          category: :critical_required,
+          rationale: "Correctness Blocker",
+          action: :fix_immediately
+        }
+
+      matches?(data, indicators.anti_pattern) ->
+        %{
+          category: :anti_pattern,
+          rationale: "Counter-productive",
+          action: :skip
+        }
+
+      matches?(data, indicators.strongly_recommended) ->
+        %{
+          category: :strongly_recommended,
+          rationale: "Quality Improvement",
+          action: :schedule
+        }
+
+      true ->
+        %{
+          category: :discretionary,
+          rationale: "Optional",
+          action: :evaluate_resources
+        }
+    end
+  end
+
+  defp execute_action(state, classification, strategy) do
+    case strategy.execution do
+      :halt ->
+        {:error, :halted, "PROHIBITED: #{classification.rationale}"}
+
+      :blocking ->
+        # Must succeed or loop retries
+        {:ok, perform_critical_fix(state, classification)}
+
+      :best_effort ->
+        # Try once, proceed if fails
+        perform_enhancement(state, classification)
+        {:ok, state}
+
+      :skip ->
+        Logger.warning("Skipping Anti-Pattern: #{classification.rationale}")
+        {:ok, state}
+
+      :opportunistic ->
+        if state.resources > 0.5 do
+          perform_tweak(state, classification)
+        end
+        {:ok, state}
+    end
+  end
+end
+```
+
+#### Agent-Specific Classification Rules
+
+Different agent types apply the Five-Fold Classification to their specific domains:
+
+**Layer 0: Architecture Agent**
+
+| Category | Classification | Observation Example | Action |
+|---|---|---|---|
+| **Prohibited (Haram)** | Unsafe Topology | "Design requires circular synchronous calls between nodes" | HALT. Redesign required. |
+| **Critical (Fard)** | Invariant Violation | "Latency bound O(N) violated by proposed O(N²) flow" | Block. Refine specification. |
+| **Recommended (Mandub)** | Resilience | "System should survive simultaneous failure of 2 nodes" | Add redundancy to spec. |
+| **Anti-Pattern (Makruh)** | Over-Abstraction | "Abstracting message passing into generic 'EventBus'" | Skip. YAGNI principle. |
+| **Discretionary (Mubah)** | Naming | "Rename 'Node' to 'ServerPeer' for clarity" | Rename if time permits. |
+
+**Layer 1a: Specification Agent (TLA+)**
+
+| Category | Classification | Observation Example | Action |
+|---|---|---|---|
+| **Prohibited (Haram)** | Undefined Behavior | "Spec relies on uninitialized variable state" | HALT. Fix Init predicate. |
+| **Critical (Fard)** | Model Failure | "TLC found a deadlock state" | Block. Fix Next state relation. |
+| **Recommended (Mandub)** | Refinement | "Add invariant to check message queue bounds" | Add to .tla file. |
+| **Anti-Pattern (Makruh)** | Speculative Generality | "Modeling features not yet in requirements" | Skip. Remove extra variables. |
+| **Discretionary (Mubah)** | Formatting | "Align TLA+ conjunction lists" | Format document. |
+
+**Layer 1b: Implementation Agent (Elixir)**
+
+| Category | Classification | Observation Example | Action |
+|---|---|---|---|
+| **Prohibited (Haram)** | Safety Bypass | "Using Process.exit(pid, :kill) without trapping exits" | HALT. Use proper supervision. |
+| **Critical (Fard)** | Type Error | "Dialyzer: Function has no local return" | Block. Fix success typing. |
+| **Recommended (Mandub)** | Telemetry | "Missing :telemetry.span on public API" | Inject telemetry hooks. |
+| **Anti-Pattern (Makruh)** | Premature Optimization | "Replacing Enum.map with manual recursion for speed" | Skip. Use standard lib. |
+| **Discretionary (Mubah)** | Refactoring | "Extract helper function for clarity" | Refactor if time permits. |
+
+**Layer 1c: Test Agent**
+
+| Category | Classification | Observation Example | Action |
+|---|---|---|---|
+| **Prohibited (Haram)** | False Confidence | "Test mocks the module under test (self-mocking)" | HALT. Rewrite test. |
+| **Critical (Fard)** | Property Failure | "Property failed: shrunk to [0, -1]" | Block. Report bug to Implementation Agent. |
+| **Recommended (Mandub)** | Test Adequacy | "Mutation score 85% (target 90%)" | Generate 5 more properties. |
+| **Anti-Pattern (Makruh)** | Fragile Test | "Test relies on Process.sleep(100)" | Skip. Use assert_receive instead. |
+| **Discretionary (Mubah)** | Documentation | "Add @moduledoc to test file" | Add docs if time permits. |
+
+**Layer 2: Proof Agent**
+
+| Category | Classification | Observation Example | Action |
+|---|---|---|---|
+| **Prohibited (Haram)** | Unsound Proof | "Coq proof uses Admitted on critical theorem" | HALT. Proof must be Qed. |
+| **Critical (Fard)** | Race Condition | "Concuerror found trace causing crash" | Block. Escalate to Architect. |
+| **Recommended (Mandub)** | Linearizability | "Check if history is linearizable" | Run Knossos check. |
+| **Anti-Pattern (Makruh)** | Deep Proof | "Proving correctness of standard library Map.put" | Skip. Trust the BEAM VM. |
+| **Discretionary (Mubah)** | Cleanup | "Remove unused intermediate lemmas" | Delete dead code. |
+
+#### Convergence Criteria: System Verification Complete
+
+The system reaches convergence (verification complete) when agents achieve equilibrium based on the classification matrix:
+
+```elixir
+defmodule ConvergenceCheck do
+  @moduledoc """
+  Determines if the multi-agent system has converged to a stable,
+  verified state based on the Five-Fold Classification.
+  """
+
+  def check_status(agent_reports) do
+    # Aggregate counts across all agents
+    counts = aggregate_classifications(agent_reports)
+
+    cond do
+      # 1. PROHIBITED DETECTED: Immediate Failure
+      counts.prohibited > 0 ->
+        {:error, :unsafe,
+         "System contains #{counts.prohibited} PROHIBITED violations"}
+
+      # 2. CRITICAL PENDING: Verification Incomplete
+      counts.critical_required > 0 ->
+        {:pending,
+         "Blocking on #{counts.critical_required} CRITICAL tasks"}
+
+      # 3. RECOMMENDED PENDING: Acceptable but not Ideal
+      counts.strongly_recommended > 0 ->
+        {:ok, :acceptable,
+         "System valid. #{counts.strongly_recommended} improvements suggested"}
+
+      # 4. IDEAL STATE: All Required and Recommended Done
+      true ->
+        {:ok, :perfect,
+         "System converged. All critical and recommended actions complete"}
+    end
+  end
+
+  defp aggregate_classifications(agent_reports) do
+    Enum.reduce(agent_reports,
+      %{prohibited: 0, critical_required: 0, strongly_recommended: 0,
+        anti_pattern: 0, discretionary: 0},
+      fn report, acc ->
+        Map.update!(acc, report.classification, &(&1 + 1))
+      end
+    )
+  end
+end
+```
+
+#### Benefits of OODA Integration
+
+**1. Prevents Over-Engineering**
+- Agents stop wasting cycles on anti-patterns (Makruh)
+- LLM prevented from spiraling into unnecessary abstractions
+- Focus maintained on critical and recommended tasks
+
+**2. Absolute Safety**
+- Prohibited (Haram) actions trigger immediate HALT
+- No hallucinated "quick fixes" that bypass safety
+- System cannot proceed with unresolved safety violations
+
+**3. Automatic Prioritization**
+- Critical (Fard) fixes always execute before discretionary (Mubah) tweaks
+- Resource allocation follows ethical priorities
+- Type errors and race conditions addressed before code cleanup
+
+**4. Graceful Convergence**
+- Clear exit criteria based on classification counts
+- System knows when verification is "good enough" vs. "perfect"
+- Acceptable states defined (e.g., critical done, recommended pending)
+
+**5. Auditable Decision Trail**
+- Every OODA cycle produces classification rationale
+- Complete trace: Observe → Orient (classify) → Decide (strategy) → Act (execute)
+- Explainable AI through ethical categorization
+
+#### Example: Complete OODA Cycle
+
+```
+OBSERVATION: Agent detects "Using String.to_atom/1 on user input"
+
+ORIENT (Classify):
+  - Matches: indicators.prohibited (arbitrary atom creation)
+  - Category: :prohibited
+  - Rationale: "Atom table exhaustion attack vector"
+  - Action: :halt
+
+DECIDE:
+  - Strategy: execution_strategy[:prohibited]
+  - Execution: :halt
+  - Retry: false
+
+ACT:
+  - Result: {:error, :halted, "PROHIBITED: Atom table exhaustion attack"}
+  - Next: Escalate to human review
+  - System: Blocks all downstream agents until fixed
+
+→ Agent cannot proceed. Human intervention required.
+```
+
+```
+OBSERVATION: Agent detects "Dialyzer reports no_return warning"
+
+ORIENT (Classify):
+  - Matches: indicators.critical_required (type system violation)
+  - Category: :critical_required
+  - Rationale: "Type correctness blocker"
+  - Action: :fix_immediately
+
+DECIDE:
+  - Strategy: execution_strategy[:critical_required]
+  - Execution: :blocking
+  - Retry: 3 attempts
+
+ACT:
+  - Attempt 1: Fix type specification
+  - Attempt 2: Dialyzer re-run → Success
+  - Result: {:ok, state_with_fixed_types}
+  - Next: Continue to next OODA cycle
+
+→ Critical issue resolved. Agent proceeds to next observation.
 ```
 
 ---

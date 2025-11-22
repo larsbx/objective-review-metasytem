@@ -216,7 +216,7 @@ graph TD
 
 ### ⚖️ Ethical Engineering
 
-**[Ethical Engineering Manifesto](./ethical_engineering/ETHICAL_ENGINEERING_MANIFESTO.md)** • v1.1 • [Changelog](./ethical_engineering/CHANGELOG.md) • 20 principles
+**[Ethical Engineering Manifesto](./ethical_engineering/ETHICAL_ENGINEERING_MANIFESTO.md)** • v1.2 • [Changelog](./ethical_engineering/CHANGELOG.md) • 20 principles
 
 **At a Glance**: Ethical framework for software development with autonomous agent architecture • All developers, security engineers, product managers, data scientists, AI/ML engineers • Medium learning curve • Immediate ROI (avoid harm, build trust) + Long-term (sustainability) • Universal (moral imperative)
 
@@ -227,13 +227,16 @@ graph TD
 **Framework**:
 - **Five Objectives (Maqasid)** with weighted priorities: System Integrity [5×] • Human Sustainability [4×] • Knowledge Capital [3×] • System Longevity [2×] • Resource Efficiency [1×]
 - **Three-Layer Ethical Architecture**: Scope Policy (structural safety) → Objectives Analysis (value alignment) → Means Classification (execution strategy)
+- **OODA Loop Integration**: Observe → Orient (classify) → Decide (strategy) → Act (execute with priority)
 - **Mathematical Decision Framework**: Weighted scoring with conflict resolution for autonomous systems
 
 **Domains Covered**: Security & Reliability • DevOps & Infrastructure • Product & UX • Software Architecture • Data Science & AI • Testing & QA • Code Quality
 
-**Implementation**: Per-principle checklists (7 domains) • Three-layer autonomous agent architecture with code examples • 5-level ethical maturity model • Weighted scoring system • 30-day and 3-month learning paths • Domain-specific application guides (web, mobile, API, data pipeline, autonomous agents) • Trade-offs framework • Tool ecosystem map (50+ tools)
+**Implementation**: Per-principle checklists (7 domains) • Three-layer autonomous agent architecture with code examples • OODA Loop decision engine • Agent-specific classification rules (5 agent types) • Convergence criteria for multi-agent systems • 5-level ethical maturity model • Weighted scoring system • 30-day and 3-month learning paths • Domain-specific application guides (web, mobile, API, data pipeline, autonomous agents) • Trade-offs framework • Tool ecosystem map (50+ tools)
 
-**New in v1.1**: Three-layer defense-in-depth architecture for autonomous agents • Weighted priority system for Five Objectives • Mathematical decision framework with scoring examples • Elixir implementation examples
+**New in v1.2**: OODA Loop integration with classification-driven decision cycle • Agent-specific classification rules for Architecture/Spec/Implementation/Test/Proof agents • Convergence criteria (Unsafe → Pending → Acceptable → Perfect) • Complete Elixir implementation examples
+
+**Previously in v1.1**: Three-layer defense-in-depth architecture for autonomous agents • Weighted priority system for Five Objectives • Mathematical decision framework with scoring examples
 
 **Related**: Provides moral framework integrating 🔒 Security + ♿ Accessibility + 🎨 UX + 📊 Data + ✨ Vibe Coding + 🔬 Formal Verification + 📝 Content
 
