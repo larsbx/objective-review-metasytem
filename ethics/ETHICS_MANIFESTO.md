@@ -1486,7 +1486,18 @@ When objectives conflict, the hierarchy resolves the tension:
 
 ## Related Manifestos
 
-This Ethics Manifesto provides the **decision framework** that underlies all other manifestos in this repository:
+This Ethics Framework provides the **mathematical decision engine** for ethical software engineering.
+
+### Companion Manifesto
+
+**[⚖️ Ethical Engineering: 20 Foundational Principles](./ETHICAL_ENGINEERING_MANIFESTO.md)** - Provides detailed implementation guidance, maturity model, and domain-specific checklists. Use together:
+
+- **Ethics Framework** (this document): Calculate weighted scores, resolve trade-offs, make decisions
+- **Ethical Engineering**: Implement the 20 principles, follow checklists, progress through maturity levels
+
+### Integration with Other Manifestos
+
+This framework underlies all other manifestos in this repository:
 
 - **🔬 Formal Verification**: Implements System Integrity (5x) through mathematical proofs
 - **🔒 Security Hardening**: Directly maps to System Integrity (5x) and Human Sustainability (4x)
@@ -1496,13 +1507,13 @@ This Ethics Manifesto provides the **decision framework** that underlies all oth
 - **♿ Accessibility**: Critical component of Human Sustainability (4x)
 - **📝 Content & Communication**: Serves Knowledge Capital (3x)
 
-**Use this manifesto to resolve conflicts between other manifestos' principles.**
+**Use this framework to resolve conflicts between manifestos' principles.**
 
 ---
 
 ## Version History
 
-See [CHANGELOG.md](./CHANGELOG.md) for detailed version history.
+See [CHANGELOG_FRAMEWORK.md](./CHANGELOG_FRAMEWORK.md) for detailed version history.
 
 ---
 

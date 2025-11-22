@@ -5,11 +5,14 @@
 **License**: CC0 - Public Domain
 **Last Updated**: 2025-11-22
 
+**Companion**: [Ethics Framework: Decision Engine](./ETHICS_MANIFESTO.md) - Use together for complete ethical engineering practice
+
 ---
 
 ## Quick Navigation
 
-- **New to ethical engineering?** → Start with [Core Principles](#core-principles) and [The Five Objectives](#the-five-objectives-maqasid)
+- **New to ethical engineering?** → Start with [Core Principles](#core-principles) and [The Five Objectives](#the-five-objectives)
+- **Making trade-off decisions?** → See the [Ethics Framework](./ETHICS_MANIFESTO.md) for weighted scoring
 - **Building an ethical framework?** → See [Implementation Checklists](#implementation-checklists) and [Maturity Model](#ethical-engineering-maturity-model)
 - **Understanding the categorization?** → Review [Ethical Categorization System](#ethical-categorization-system)
 - **Domain-specific guidance?** → See [Domain Applications](#domain-applications)
@@ -34,17 +37,19 @@ Code is not neutral. Systems shape behavior. Engineering choices affect real liv
 
 ---
 
-## The Five Objectives (Maqasid)
+## The Five Objectives
 
 All engineering practices serve five fundamental objectives:
 
-1. **Hifz al-Din (System Integrity)**: Protecting the fundamental "truth" and correctness of the system
-2. **Hifz al-Mal (Resource Efficiency)**: Using computational and human resources wisely
-3. **Hifz al-Nasl (System Longevity)**: Ensuring code survives and evolves across generations
-4. **Hifz al-Nafs (Human Sustainability)**: Protecting the wellbeing of users and developers
-5. **Hifz al-Aql (Knowledge Capital)**: Preserving and enhancing collective understanding
+1. **System Integrity**: Protecting the fundamental "truth" and correctness of the system
+2. **Resource Efficiency**: Using computational and human resources wisely
+3. **System Longevity**: Ensuring code survives and evolves across generations
+4. **Human Sustainability**: Protecting the wellbeing of users and developers
+5. **Knowledge Capital**: Preserving and enhancing collective understanding
 
 These objectives are interdependent. A system that is technically perfect but harms users fails. Code that is brilliant but unmaintainable fails. Security without usability fails. This manifesto integrates all five.
+
+**For weighted decision-making** using these objectives, see the [Ethics Framework](./ETHICS_MANIFESTO.md) which provides mathematical scoring (5x-4x-3x-2x-1x) to resolve trade-offs.
 
 ---
 
@@ -52,35 +57,35 @@ These objectives are interdependent. A system that is technically perfect but ha
 
 Engineering practices fall into five categories, from mandatory to prohibited:
 
-### Fard (Critical Required) 🔴
+### Critical Required 🔴
 **Mandatory practices that preserve fundamental integrity.**
 
 Actions that are non-negotiable because they prevent direct harm to systems, users, or teams. Violating these is unethical and often illegal.
 
 **Examples**: Encryption, input validation, accessibility, privacy compliance, CVE remediation
 
-### Mandub (Strongly Recommended) 🟡
+### Strongly Recommended 🟡
 **Highly beneficial practices that improve quality and sustainability.**
 
 Not strictly mandatory, but their absence creates technical debt, fragility, and long-term risk. Professional excellence requires these.
 
 **Examples**: Comprehensive testing, CI/CD automation, documentation, code review, immutable infrastructure
 
-### Mubah (Discretionary) 🟢
+### Discretionary 🟢
 **Neutral practices where context determines appropriateness.**
 
 Neither required nor discouraged. Use engineering judgment based on specific needs, constraints, and trade-offs.
 
 **Examples**: Feature flags, A/B testing aesthetic choices, specific technology selections, architectural patterns
 
-### Makruh (Anti-Pattern) 🟠
+### Anti-Pattern 🟠
 **Discouraged practices that introduce risk or technical debt.**
 
 Not forbidden, but avoid unless there's strong justification. These practices degrade quality over time.
 
 **Examples**: Manual deployments, configuration drift, god objects, premature optimization, clever code
 
-### Haram (Prohibited) 🔴
+### Prohibited 🔴
 **Unethical practices that cause direct harm.**
 
 Actions that violate fundamental ethical principles. These must never be done, regardless of business pressure.
@@ -97,7 +102,7 @@ Actions that violate fundamental ethical principles. These must never be done, r
 
 This domain protects the fundamental "truth" of the system.
 
-#### I. Encryption as Foundation (Fard 🔴)
+#### I. Encryption as Foundation 🔴
 **Data at rest and in transit must be encrypted.**
 
 Unencrypted data violates user trust (Amanah). Every communication channel, every storage system must protect confidentiality and integrity.
@@ -113,11 +118,11 @@ Unencrypted data violates user trust (Amanah). Every communication channel, ever
 
 **Trade-off**: Minimal performance impact vs. catastrophic breach risk. Always encrypt.
 
-**Anti-pattern** (Haram 🔴): Transmitting credentials or PII over HTTP, storing passwords in plaintext, committing encryption keys to version control.
+**Anti-pattern** 🔴: Transmitting credentials or PII over HTTP, storing passwords in plaintext, committing encryption keys to version control.
 
 ---
 
-#### II. Access Control as Default (Fard 🔴)
+#### II. Access Control as Default 🔴
 **Implement role-based access control (RBAC) to prevent unauthorized state mutation.**
 
 Default deny. Explicit allow. Principle of least privilege. Every action requires authentication and authorization.
@@ -147,7 +152,7 @@ def delete_user(user_id, actor):
 
 ---
 
-#### III. Input Validation as Defense (Fard 🔴)
+#### III. Input Validation as Defense 🔴
 **Sanitize all inputs to prevent injection attacks.**
 
 Never trust user input. Validate type, format, range. Encode outputs. Parameterize queries. Prevent corruption of truth.
@@ -161,11 +166,11 @@ Never trust user input. Validate type, format, range. Encode outputs. Parameteri
 
 **Tools**: OWASP ESAPI, DOMPurify, SQL prepared statements
 
-**Anti-pattern** (Haram 🔴): String concatenation in SQL, `eval()` on user input, innerHTML without sanitization, disabled CSP.
+**Anti-pattern** 🔴: String concatenation in SQL, `eval()` on user input, innerHTML without sanitization, disabled CSP.
 
 ---
 
-#### IV. Vulnerability Remediation (Fard 🔴)
+#### IV. Vulnerability Remediation 🔴
 **Critical CVEs must be patched within SLA.**
 
 Knowingly shipping vulnerable code is negligent. Monitor dependencies. Automate scanning. Remediate promptly.
@@ -179,7 +184,7 @@ Knowingly shipping vulnerable code is negligent. Monitor dependencies. Automate 
 
 **Trade-off**: Update churn vs. exploitation risk. Security wins.
 
-**Anti-pattern** (Haram 🔴): Ignoring CVE notifications, deferring critical patches indefinitely, disabling security scanners.
+**Anti-pattern** 🔴: Ignoring CVE notifications, deferring critical patches indefinitely, disabling security scanners.
 
 ---
 
@@ -189,7 +194,7 @@ Knowingly shipping vulnerable code is negligent. Monitor dependencies. Automate 
 
 This domain ensures code survives and evolves across generations.
 
-#### V. Immutable Infrastructure (Mandub 🟡)
+#### V. Immutable Infrastructure 🟡
 **Replace servers rather than patching them.**
 
 Mutable servers drift. Immutable infrastructure ensures consistency—a form of integrity. Infrastructure as code. Cattle, not pets.
@@ -203,11 +208,11 @@ Mutable servers drift. Immutable infrastructure ensures consistency—a form of 
 
 **Trade-off**: Initial complexity vs. long-term reproducibility. Highly recommended for cloud-native systems.
 
-**Anti-pattern** (Makruh 🟠): Manual server configuration, "snowflake" servers, in-place patching without version control.
+**Anti-pattern** 🟠: Manual server configuration, "snowflake" servers, in-place patching without version control.
 
 ---
 
-#### VI. Comprehensive CI/CD (Mandub 🟡)
+#### VI. Comprehensive CI/CD 🟡
 **Automate the deployment ritual to remove human error.**
 
 Manual deployments create variance. Automation creates consistency. Every commit flows through the same pipeline.
@@ -223,11 +228,11 @@ Manual deployments create variance. Automation creates consistency. Every commit
 
 **Trade-off**: Setup time vs. deployment reliability. Essential for teams >3 engineers.
 
-**Anti-pattern** (Makruh 🟠): Manual deployments, "works on my machine" syndrome, skipping tests to ship faster.
+**Anti-pattern** 🟠: Manual deployments, "works on my machine" syndrome, skipping tests to ship faster.
 
 ---
 
-#### VII. Disaster Recovery Readiness (Mandub 🟡)
+#### VII. Disaster Recovery Readiness 🟡
 **Practice for failure to ensure system survival.**
 
 Backups without testing are hope, not strategy. Run fire drills. Document runbooks. Ensure the system can recover.
@@ -249,7 +254,7 @@ Backups without testing are hope, not strategy. Run fire drills. Document runboo
 
 This domain protects the wellbeing of users and developers.
 
-#### VIII. Accessibility as Requirement (Fard 🔴)
+#### VIII. Accessibility as Requirement 🔴
 **Systems must be usable by people with disabilities.**
 
 Excluding disabled users causes harm. WCAG AA compliance is not optional—it's a moral and legal obligation.
@@ -266,11 +271,11 @@ Excluding disabled users causes harm. WCAG AA compliance is not optional—it's 
 
 **Trade-off**: None. Accessibility benefits all users and is legally required.
 
-**Anti-pattern** (Haram 🔴): Skipping accessibility, keyboard traps, removing focus outlines, inaccessible forms.
+**Anti-pattern** 🔴: Skipping accessibility, keyboard traps, removing focus outlines, inaccessible forms.
 
 ---
 
-#### IX. Privacy Compliance (Fard 🔴)
+#### IX. Privacy Compliance 🔴
 **Protect the user's "digital self."**
 
 Privacy is a human right. GDPR, CCPA, and similar laws codify this. Collect minimum data. Honor user choices. Be transparent.
@@ -287,16 +292,16 @@ Privacy is a human right. GDPR, CCPA, and similar laws codify this. Collect mini
 
 **Trade-off**: None. Privacy violations carry massive fines and reputational damage.
 
-**Anti-pattern** (Haram 🔴): Selling user data without consent, dark patterns in consent flows, retaining data indefinitely, unclear privacy policies.
+**Anti-pattern** 🔴: Selling user data without consent, dark patterns in consent flows, retaining data indefinitely, unclear privacy policies.
 
 ---
 
-#### X. Ethical Design (Fard 🔴)
+#### X. Ethical Design 🔴
 **Reject addictive mechanics and dark patterns.**
 
 Algorithms designed to manipulate users violate human sustainability. Respect user agency. Don't exploit psychological vulnerabilities.
 
-**Examples of Haram**:
+**Prohibited Examples**:
 - Infinite scroll designed to maximize engagement time
 - Notifications engineered to trigger FOMO
 - Hidden unsubscribe buttons
@@ -313,7 +318,7 @@ Algorithms designed to manipulate users violate human sustainability. Respect us
 
 ---
 
-#### XI. Developer Sustainability (Fard 🔴)
+#### XI. Developer Sustainability 🔴
 **Protect team wellbeing. Reject crunch culture.**
 
 Burnout harms people. Harming your team violates Hifz al-Nafs. Sustainable pace produces better work than hero culture.
@@ -328,7 +333,7 @@ Burnout harms people. Harming your team violates Hifz al-Nafs. Sustainable pace 
 
 **Trade-off**: None. Burned-out engineers produce low-quality code and quit.
 
-**Anti-pattern** (Haram 🔴): Death marches, glorifying overwork, penalizing work-life balance, toxic on-call without support.
+**Anti-pattern** 🔴: Death marches, glorifying overwork, penalizing work-life balance, toxic on-call without support.
 
 ---
 
@@ -338,7 +343,7 @@ Burnout harms people. Harming your team violates Hifz al-Nafs. Sustainable pace 
 
 Architecture protects the "intellect" of the system.
 
-#### XII. Domain-Driven Design (Mandub 🟡)
+#### XII. Domain-Driven Design 🟡
 **Align code with real-world business language.**
 
 When code mirrors domain concepts, meaning is preserved. Ubiquitous language bridges business and engineering.
@@ -352,11 +357,11 @@ When code mirrors domain concepts, meaning is preserved. Ubiquitous language bri
 
 **Trade-off**: Upfront modeling time vs. long-term clarity. Excellent for complex business logic.
 
-**Anti-pattern** (Makruh 🟠): Generic CRUD operations obscuring business rules, technical jargon instead of domain language.
+**Anti-pattern** 🟠: Generic CRUD operations obscuring business rules, technical jargon instead of domain language.
 
 ---
 
-#### XIII. Documentation as Code (Mandub 🟡)
+#### XIII. Documentation as Code 🟡
 **Record architectural decisions. Preserve institutional knowledge.**
 
 Without documentation, the "intellect" of the team dies when senior engineers leave. ADRs capture the "why."
@@ -372,11 +377,11 @@ Without documentation, the "intellect" of the team dies when senior engineers le
 
 **Trade-off**: Writing time vs. knowledge transfer. Essential for teams >5 or long-lived systems.
 
-**Anti-pattern** (Makruh 🟠): Tribal knowledge only, outdated documentation, "the code is the documentation."
+**Anti-pattern** 🟠: Tribal knowledge only, outdated documentation, "the code is the documentation."
 
 ---
 
-#### XIV. Appropriate Abstraction (Mandub 🟡)
+#### XIV. Appropriate Abstraction 🟡
 **Avoid premature optimization and over-engineering.**
 
 Premature microservices add cognitive load without benefit. God objects make code impossible to reason about. Right-size abstractions.
@@ -387,7 +392,7 @@ Premature microservices add cognitive load without benefit. God objects make cod
 - YAGNI: You Aren't Gonna Need It
 - Measure before optimizing
 
-**Anti-pattern** (Makruh 🟠):
+**Anti-pattern** 🟠:
 - Premature microservices for small systems
 - God objects with 50+ methods
 - Over-engineered frameworks for simple problems
@@ -399,7 +404,7 @@ Premature microservices add cognitive load without benefit. God objects make cod
 
 **Objective**: System Integrity (Truth) & Human Sustainability
 
-#### XV. Bias Audits (Fard 🔴)
+#### XV. Bias Audits 🔴
 **Ensure models don't discriminate.**
 
 Biased models violate justice (Adl). Test for disparate impact. Use representative datasets. Monitor for drift.
@@ -415,11 +420,11 @@ Biased models violate justice (Adl). Test for disparate impact. Use representati
 
 **Trade-off**: None. Discriminatory AI is unethical and often illegal.
 
-**Anti-pattern** (Haram 🔴): Training on biased datasets without mitigation, ignoring disparate impact, deploying without bias testing.
+**Anti-pattern** 🔴: Training on biased datasets without mitigation, ignoring disparate impact, deploying without bias testing.
 
 ---
 
-#### XVI. Explainability (Fard 🔴)
+#### XVI. Explainability 🔴
 **Users must know why a decision was made.**
 
 Black-box decisions violate Hifz al-Aql. Provide explanations. Enable appeals. Maintain human oversight for consequential decisions.
@@ -433,11 +438,11 @@ Black-box decisions violate Hifz al-Aql. Provide explanations. Enable appeals. M
 
 **Trade-off**: Model complexity vs. transparency. Regulated domains require explainability by law.
 
-**Anti-pattern** (Haram 🔴): Black-box sentencing (hiring, loans, bail) without human oversight, unexplainable deep learning for critical decisions.
+**Anti-pattern** 🔴: Black-box sentencing (hiring, loans, bail) without human oversight, unexplainable deep learning for critical decisions.
 
 ---
 
-#### XVII. Human Oversight (Fard 🔴)
+#### XVII. Human Oversight 🔴
 **AI must not make life-altering decisions alone.**
 
 Automated hiring, loan approval, or bail decisions without human review are unethical. AI assists; humans decide.
@@ -457,7 +462,7 @@ Automated hiring, loan approval, or bail decisions without human review are unet
 
 **Objective**: System Longevity (Hifz al-Nasl) & System Integrity (Hifz al-Din)
 
-#### XVIII. Comprehensive Testing (Mandub 🟡)
+#### XVIII. Comprehensive Testing 🟡
 **Test at multiple levels to protect against regressions.**
 
 Tests are a form of documentation and insurance. They preserve correctness over time as the system evolves.
@@ -473,7 +478,7 @@ Tests are a form of documentation and insurance. They preserve correctness over 
 
 ---
 
-#### XIX. Continuous Monitoring (Mandub 🟡)
+#### XIX. Continuous Monitoring 🟡
 **Observe system behavior in production.**
 
 Tests prove code works in isolation. Monitoring proves it works in reality. Instrument everything. Alert on anomalies.
@@ -493,7 +498,7 @@ Tests prove code works in isolation. Monitoring proves it works in reality. Inst
 
 **Objective**: Knowledge Capital (Hifz al-Aql)
 
-#### XX. Readability as Priority (Mandub 🟡)
+#### XX. Readability as Priority 🟡
 **Code is read 10× more than written.**
 
 Optimize for human comprehension. Clear names. Obvious structure. Boring over clever. Future maintainers will thank you.
@@ -507,7 +512,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 **Trade-off**: None. Readable code is maintainable code.
 
-**Anti-pattern** (Makruh 🟠): Clever one-liners, cryptic abbreviations, deeply nested conditionals, god functions.
+**Anti-pattern** 🟠: Clever one-liners, cryptic abbreviations, deeply nested conditionals, god functions.
 
 ---
 
@@ -515,7 +520,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 ### Security & Reliability (Domain 1)
 
-**Fard (Critical Required)**:
+**Critical Required**:
 - [ ] TLS 1.3 for all network traffic
 - [ ] AES-256 encryption for data at rest
 - [ ] RBAC or ABAC enforced at application layer
@@ -524,14 +529,14 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 - [ ] CVE scanning in CI/CD pipeline
 - [ ] Critical CVEs patched within 24 hours
 
-**Mandub (Strongly Recommended)**:
+**Strongly Recommended**:
 - [ ] Security headers (CSP, HSTS, X-Frame-Options)
 - [ ] Dependency scanning (Dependabot, Snyk)
 - [ ] Secret management (Vault, AWS Secrets Manager)
 - [ ] Security audit logs
 - [ ] Penetration testing (annual)
 
-**Haram (Prohibited)**:
+**Prohibited**:
 - [ ] Verify no hardcoded secrets in repository
 - [ ] Verify no plaintext passwords
 - [ ] Verify no HTTP for sensitive data
@@ -540,7 +545,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 ### DevOps & Infrastructure (Domain 2)
 
-**Mandub (Strongly Recommended)**:
+**Strongly Recommended**:
 - [ ] Infrastructure as Code (Terraform, Pulumi)
 - [ ] Containerization (Docker)
 - [ ] CI/CD pipeline with automated tests
@@ -549,7 +554,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 - [ ] Disaster recovery plan documented
 - [ ] DR drill conducted (quarterly)
 
-**Makruh (Anti-Pattern to Avoid)**:
+**Anti-Pattern**:
 - [ ] Eliminate manual server configuration
 - [ ] Eliminate SSH access to production
 - [ ] Eliminate in-place patching
@@ -558,7 +563,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 ### Product & UX (Domain 3)
 
-**Fard (Critical Required)**:
+**Critical Required**:
 - [ ] WCAG 2.1 AA compliance
 - [ ] Keyboard navigation for all interactions
 - [ ] Screen reader testing
@@ -568,7 +573,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 - [ ] No dark patterns in UI
 - [ ] No addictive mechanics
 
-**Makruh (Discretionary)**:
+**Discretionary**:
 - [ ] Feature flags for gradual rollout
 - [ ] A/B testing framework
 
@@ -576,14 +581,14 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 ### Architecture (Domain 4)
 
-**Mandub (Strongly Recommended)**:
+**Strongly Recommended**:
 - [ ] Architecture Decision Records (ADRs)
 - [ ] README for each module
 - [ ] API documentation (OpenAPI)
 - [ ] Domain-driven design for complex logic
 - [ ] Onboarding documentation
 
-**Makruh (Anti-Pattern to Avoid)**:
+**Anti-Pattern**:
 - [ ] Avoid premature microservices
 - [ ] Refactor god objects (>500 LOC or >20 methods)
 - [ ] Avoid premature optimization
@@ -599,7 +604,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 - [ ] Human oversight for high-stakes decisions
 - [ ] Right to appeal automated decisions
 
-**Haram (Prohibited)**:
+**Prohibited**:
 - [ ] No automated hiring without human review
 - [ ] No loan decisions without human oversight
 - [ ] No bail/sentencing without explainability
@@ -656,7 +661,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 ### Web Application Checklist
 
-**Critical (Fard)**:
+**Critical Required**:
 - Encryption (HTTPS/TLS)
 - Authentication & authorization (RBAC)
 - Input validation & output encoding
@@ -664,7 +669,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 - GDPR privacy compliance
 - CVE remediation
 
-**Recommended (Mandub)**:
+**Strongly Recommended**:
 - CI/CD pipeline
 - Comprehensive testing (unit, integration, E2E)
 - Monitoring & alerting
@@ -674,14 +679,14 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 ### Mobile Application Checklist
 
-**Critical (Fard)**:
+**Critical Required**:
 - Secure data storage (encrypted)
 - Certificate pinning for API calls
 - Accessibility (screen reader, dynamic type)
 - Privacy: minimal permissions, clear consent
 - No dark patterns
 
-**Recommended (Mandub)**:
+**Strongly Recommended**:
 - Crash reporting & analytics
 - Automated testing
 - Release automation
@@ -690,14 +695,14 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 ### API/Backend Service Checklist
 
-**Critical (Fard)**:
+**Critical Required**:
 - Authentication (JWT, OAuth2)
 - Rate limiting
 - Input validation
 - Encryption in transit
 - Audit logging
 
-**Recommended (Mandub)**:
+**Strongly Recommended**:
 - OpenAPI documentation
 - Comprehensive tests
 - Circuit breakers for resilience
@@ -707,12 +712,12 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 ### Data Pipeline Checklist
 
-**Critical (Fard)**:
+**Critical Required**:
 - PII encryption
 - Access controls for data stores
 - Data retention policies
 
-**Recommended (Mandub)**:
+**Strongly Recommended**:
 - Idempotent pipelines
 - Data quality tests
 - Lineage tracking
@@ -724,26 +729,26 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 | Domain | If the action is... | It is mapped to... | Because it preserves... |
 |---|---|---|---|
-| Security | Encrypting data | Critical (Fard) | System Integrity + Trust |
-| Security | Fixing a CVE | Critical (Fard) | System Integrity |
-| Security | Hardcoding secrets | Prohibited (Haram) | System Integrity |
-| DevOps | Immutable infrastructure | Recommended (Mandub) | System Longevity |
-| DevOps | Manual deployments | Anti-Pattern (Makruh) | System Longevity |
-| Testing | Writing unit tests | Recommended (Mandub) | System Longevity |
-| Frontend | Accessibility fix | Critical (Fard) | Human Sustainability |
-| Frontend | Dark patterns | Prohibited (Haram) | Human Sustainability |
-| Frontend | Pixel pushing | Discretionary (Mubah) | Resource Efficiency |
-| UX | Privacy compliance | Critical (Fard) | Human Sustainability |
-| UX | Addictive mechanics | Prohibited (Haram) | Human Sustainability |
-| Backend | Refactoring | Recommended (Mandub) | Knowledge Capital |
-| Architecture | Documentation (ADRs) | Recommended (Mandub) | Knowledge Capital |
-| Architecture | God objects | Anti-Pattern (Makruh) | Knowledge Capital |
-| Data/AI | Bias audits | Critical (Fard) | Justice + Human Sustainability |
-| Data/AI | Explainability | Critical (Fard) | Knowledge Capital + Trust |
-| Data/AI | Black-box sentencing | Prohibited (Haram) | Human Sustainability |
-| Data | Selling user data | Prohibited (Haram) | Human Sustainability |
-| Process | Sustainable pace | Critical (Fard) | Human Sustainability |
-| Process | Crunch / Burnout culture | Prohibited (Haram) | Human Sustainability |
+| Security | Encrypting data | Critical Required | System Integrity + Trust |
+| Security | Fixing a CVE | Critical Required | System Integrity |
+| Security | Hardcoding secrets | Prohibited | System Integrity |
+| DevOps | Immutable infrastructure | Strongly Recommended | System Longevity |
+| DevOps | Manual deployments | Anti-Pattern | System Longevity |
+| Testing | Writing unit tests | Strongly Recommended | System Longevity |
+| Frontend | Accessibility fix | Critical Required | Human Sustainability |
+| Frontend | Dark patterns | Prohibited | Human Sustainability |
+| Frontend | Pixel pushing | Discretionary | Resource Efficiency |
+| UX | Privacy compliance | Critical Required | Human Sustainability |
+| UX | Addictive mechanics | Prohibited | Human Sustainability |
+| Backend | Refactoring | Strongly Recommended | Knowledge Capital |
+| Architecture | Documentation (ADRs) | Strongly Recommended | Knowledge Capital |
+| Architecture | God objects | Anti-Pattern | Knowledge Capital |
+| Data/AI | Bias audits | Critical Required | Justice + Human Sustainability |
+| Data/AI | Explainability | Critical Required | Knowledge Capital + Trust |
+| Data/AI | Black-box sentencing | Prohibited | Human Sustainability |
+| Data | Selling user data | Prohibited | Human Sustainability |
+| Process | Sustainable pace | Critical Required | Human Sustainability |
+| Process | Crunch / Burnout culture | Prohibited | Human Sustainability |
 
 ---
 
@@ -820,13 +825,13 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 - **Resolution**: For non-consequential decisions (recommendations), optimize. For high-stakes decisions (loans, hiring), explainability wins.
 
 **Scenario**: Accessibility vs. fast iteration
-- **Resolution**: Core WCAG A/AA is Fard (non-negotiable). AAA features can follow in increments.
+- **Resolution**: Core WCAG A/AA is Critical Required (non-negotiable). AAA features can follow in increments.
 
 **Scenario**: Security vs. usability
-- **Resolution**: Find the balance. MFA is Fard. 60-character minimum passwords are Makruh (anti-pattern).
+- **Resolution**: Find the balance. MFA is Critical Required. 60-character minimum passwords are Makruh (anti-pattern).
 
 **Scenario**: Developer velocity vs. testing
-- **Resolution**: Unit tests for critical business logic are Mandub. 100% coverage including trivial code is Makruh.
+- **Resolution**: Unit tests for critical business logic are Mandub. 100% coverage including trivial code is Anti-Pattern.
 
 ---
 
@@ -883,7 +888,7 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 ### Individual Engineer
 1. **This week**: Run security scanner on your current project
 2. **This month**: Audit accessibility of one feature you built
-3. **This quarter**: Implement one Fard principle that's missing
+3. **This quarter**: Implement one Critical Required principle that's missing
 
 ### Team
 1. **Sprint 1**: Establish security baseline (encryption, RBAC, input validation)
@@ -903,13 +908,13 @@ Optimize for human comprehension. Clear names. Obvious structure. Boring over cl
 
 This manifesto integrates and extends:
 
-- **🔬 Formal Verification**: Fard for safety-critical paths (Domain 1)
-- **✨ Vibe Coding**: Mandub for knowledge capital (Domain 4, Principle XX)
-- **🔒 Security Hardening**: Fard for encryption, access control, input validation (Domain 1)
-- **🎨 User Experience**: Fard for accessibility, ethical design (Domain 3)
+- **🔬 Formal Verification**: Critical Required for safety-critical paths (Domain 1)
+- **✨ Vibe Coding**: Strongly Recommended for knowledge capital (Domain 4, Principle XX)
+- **🔒 Security Hardening**: Critical Required for encryption, access control, input validation (Domain 1)
+- **🎨 User Experience**: Critical Required for accessibility, ethical design (Domain 3)
 - **♿ Accessibility**: Fard - detailed implementation of Principle VIII (Domain 3)
-- **📊 Data & Analytics**: Mandub for data quality, lineage (Domain 5)
-- **📝 Content & Communication**: Mandub for documentation (Domain 4)
+- **📊 Data & Analytics**: Strongly Recommended for data quality, lineage (Domain 5)
+- **📝 Content & Communication**: Strongly Recommended for documentation (Domain 4)
 
 Ethical Engineering provides the **moral framework**. Other manifestos provide the **technical implementation**.
 
