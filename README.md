@@ -32,6 +32,7 @@ All manifestos follow a consistent structure (Title & Version • Core Principle
   - [Manifesto Structure](#manifesto-structure)
 - [Quick Selection Guide](#quick-selection-guide)
 - [Manifesto Index](#manifesto-index)
+  - [⚖️ Ethics Framework](#️-ethics-framework)
   - [🔬 Formal Verification](#-formal-verification)
   - [✨ Vibe Coding](#-vibe-coding)
   - [📊 Data & Analytics](#-data--analytics)
@@ -58,14 +59,17 @@ All manifestos follow a consistent structure (Title & Version • Core Principle
 
 | If your priority is... | Start with | Also consider |
 |------------------------|-----------|---------------|
-| **Code correctness & safety** | 🔬 Formal Verification | ✨ Vibe Coding + 🔒 Security |
-| **Code readability & maintainability** | ✨ Vibe Coding | 🎨 UX (if frontend) |
-| **Data reliability & quality** | 📊 Data & Analytics | 🔒 Security Hardening |
-| **System security & resilience** | 🔒 Security Hardening | 🔬 Formal (critical systems) |
-| **User satisfaction & usability** | 🎨 User Experience | ✨ Vibe Coding + ♿ Accessibility |
-| **Universal access & legal compliance** | ♿ Accessibility | 🎨 UX (broader context) |
-| **Content clarity & documentation** | 📝 Content & Communication | ✨ Vibe Coding + 🎨 UX |
-| **General software quality** | ✨ Vibe Coding | Context-dependent |
+| **Making ethical trade-off decisions** | ⚖️ Ethics Framework | All other manifestos (Ethics resolves conflicts) |
+| **Code correctness & safety** | 🔬 Formal Verification + ⚖️ Ethics | ✨ Vibe Coding + 🔒 Security |
+| **Code readability & maintainability** | ✨ Vibe Coding + ⚖️ Ethics | 🎨 UX (if frontend) |
+| **Data reliability & quality** | 📊 Data & Analytics + ⚖️ Ethics | 🔒 Security Hardening |
+| **System security & resilience** | 🔒 Security Hardening + ⚖️ Ethics | 🔬 Formal (critical systems) |
+| **User satisfaction & usability** | 🎨 User Experience + ⚖️ Ethics | ✨ Vibe Coding + ♿ Accessibility |
+| **Universal access & legal compliance** | ♿ Accessibility + ⚖️ Ethics | 🎨 UX (broader context) |
+| **Content clarity & documentation** | 📝 Content & Communication + ⚖️ Ethics | ✨ Vibe Coding + 🎨 UX |
+| **General software quality** | ⚖️ Ethics + ✨ Vibe Coding | Context-dependent |
+
+**Note**: The ⚖️ Ethics Framework is recommended for **all** contexts as it provides the decision-making structure for prioritizing and resolving conflicts between other manifestos.
 
 ### Decision Tree
 
@@ -93,6 +97,24 @@ graph TD
 ---
 
 ## Manifesto Index
+
+### ⚖️ Ethics Framework
+
+**[Ethics Manifesto: A Computable Framework for Software Engineering](./ethics/ETHICS_MANIFESTO.md)** • v1.0 • [Changelog](./ethics/CHANGELOG.md) • 5 foundational objectives
+
+**At a Glance**: Mathematical decision framework • All roles • Low learning curve • Immediate ROI • Universal (foundational)
+
+**Key Objectives (weighted hierarchy)**: System Integrity (5x) • Human Sustainability (4x) • Knowledge Capital (3x) • System Longevity (2x) • Resource Efficiency (1x)
+
+**Best For**: Resolving conflicts between competing priorities • Autonomous agent decision-making • Code review decisions • Architecture trade-offs • CI/CD ethical guardrails • Preventing burnout, security lapses, and technical debt
+
+**Framework**: Maqasid al-Shariah translated to software engineering • Weighted score algorithm (Σ Impact × Weight) • Three recommendation levels (proceed, conditional, reject) • Domain mappings across Security, DevOps, UX, Architecture, and AI/ML
+
+**Implementation**: Decision engine with mathematical guarantees • CI/CD integration patterns • ADR templates • Incident post-mortem categorization • Agent human-in-the-loop protocols • 4-phase adoption roadmap
+
+**Guarantees**: Lower-priority gains cannot justify higher-priority harms • Security cannot be sacrificed for speed • Team wellbeing cannot be compromised for velocity
+
+---
 
 ### 🔬 Formal Verification
 
@@ -236,23 +258,31 @@ graph TD
 
 ## Comparison Matrix
 
-| Aspect | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience | ♿ Accessibility | 📝 Content & Communication | ⚖️ Ethical Engineering |
-|--------|----------------------|---------------|--------------------|--------------------|-------------------|----------------|---------------------------|----------------------|
-| **Focus** | Mathematical correctness | Human readability | Data reliability | System security | User success | Universal access | Content clarity & effectiveness | Moral framework & human sustainability |
-| **Verification Method** | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing, user testing with disabled users | Content audits, user feedback, readability scores | Ethical audits, compliance checks, team wellbeing surveys |
-| **Automation Tools** | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B | axe, WAVE, Pa11y, Lighthouse | Vale, alex, link checkers, analytics | Integration of Security + A11y + Privacy + Bias detection tools |
-| **Learning Curve** | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium | ✓ Medium | ✓ Low-Medium | ✓ Medium |
-| **Adoption Scope** | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal | ✓ Universal (legally required) | ✓ Universal | ✓ Universal (moral imperative) |
-| **ROI Timeline** | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium | ✓ Immediate (avoid lawsuits) + Long-term | ✓ Immediate (reduced support) | ✓ Immediate (trust + compliance) + Long-term (sustainability) |
-| **Team Size Impact** | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) | Low-Medium (all roles) | Low (all roles) | Low (all roles - cultural shift) |
-| **Criticality** | Safety-critical systems | All systems | Data-driven systems | All systems | All systems | All systems (legal requirement) | All systems with documentation/UI | All systems (ethical obligation) |
+| Aspect | ⚖️ Ethics Framework | ⚖️ Ethical Engineering | 🔬 Formal Verification | ✨ Vibe Coding | 📊 Data & Analytics | 🔒 Security Hardening | 🎨 User Experience | ♿ Accessibility | 📝 Content & Communication |
+|--------|-------------------|----------------------|----------------------|---------------|--------------------|--------------------|-------------------|----------------|---------------------------|
+| **Focus** | Decision framework & trade-offs | Domain implementation & categorization | Mathematical correctness | Human readability | Data reliability | System security | User success | Universal access | Content clarity & effectiveness |
+| **Verification Method** | Weighted score algorithm | Ethical audits, Fard/Haram classification | Formal proofs | Code review + tests | Data quality tests | Pen testing, audits, scanning | Usability testing + analytics | WCAG audits, screen reader testing | Content audits, user feedback |
+| **Automation Tools** | CI/CD ethics bot, decision engine | Security + A11y + Privacy + Bias tools | Theorem provers, SMT solvers | Linters, formatters | Observability, monitoring | SAST, DAST, SCA, SIEM | A11y tools, analytics, A/B | axe, WAVE, Pa11y, Lighthouse | Vale, alex, link checkers |
+| **Learning Curve** | ✓ Low | ✓ Medium | ⚠️ Very High | ✓ Medium | ⚠️ Medium-High | ✓ Medium | ✓ Medium | ✓ Medium | ✓ Low-Medium |
+| **Adoption Scope** | ✓ Universal (meta-framework) | ✓ Universal (moral imperative) | Specialized | ✓ Universal | Data-intensive | ✓ Universal (required) | ✓ Universal | ✓ Universal (legally required) | ✓ Universal |
+| **ROI Timeline** | ✓ Immediate (prevents bad decisions) | ✓ Immediate (trust) + Long-term | Long-term (years) | ✓ Immediate | Medium (months) | ✓ Immediate (avoid breach) | ✓ Immediate-Medium | ✓ Immediate (avoid lawsuits) | ✓ Immediate (reduced support) |
+| **Team Size Impact** | Low (applies to all decisions) | Low (cultural shift) | High (specialist knowledge) | Low (general practice) | Medium (platform teams) | Low-Medium (all engineers) | Low-Medium (designers) | Low-Medium (all roles) | Low (all roles) |
+| **Criticality** | All systems (decision meta-framework) | All systems (ethical obligation) | Safety-critical systems | All systems | Data-driven systems | All systems | All systems | All systems (legal requirement) | All systems with documentation/UI |
+
+**Note**: The two ethics manifestos are **complementary**:
+- **⚖️ Ethics Framework**: Provides mathematical decision engine for resolving trade-offs (use for: architecture decisions, PR reviews, conflict resolution)
+- **⚖️ Ethical Engineering**: Provides domain-specific implementation guidance with ethical categorization (use for: daily practice, domain checklists, team culture)
 
 ---
 
 ## Selection by Role
 
+**Note**: Both ethics manifestos are foundational for **all roles**:
+- **⚖️ Ethics Framework**: Use for decision-making and resolving conflicts between manifestos
+- **⚖️ Ethical Engineering**: Use for domain-specific implementation guidance and daily practice
+
 ### Developers (Backend/Fullstack)
-1. **Start**: ✨ Vibe Coding (Core principles) + 🔒 Security Hardening (basics) + ⚖️ Ethical Engineering (Domains 1, 2, 4, 6, 7)
+1. **Start**: ⚖️ Ethics Framework (decision-making) + ⚖️ Ethical Engineering (Domains 1, 2, 4, 6, 7) + ✨ Vibe Coding (Core principles) + 🔒 Security Hardening (basics)
 2. **Add**: 📊 Data & Analytics (if data-heavy) OR 🎨 UX (if user-facing)
 3. **Consider**: 🔬 Formal Verification (for critical components)
 4. **Ethics Focus**: Encryption, access control, input validation, sustainable pace, code readability
@@ -340,6 +370,7 @@ graph TD
 
 | Manifesto | Phase 1 | Phase 2 | Phase 3 |
 |-----------|---------|---------|---------|
+| **⚖️ Ethics Framework** | Week 1 (learn 5 objectives, use in decisions) | Month 1 (integrate in code reviews, ADRs) | Month 2+ (CI/CD automation, agent integration) |
 | **🔬 Formal Verification** | 30-day intro (1 component) | 3-month deep dive (module) | 6-12 month (subsystem) |
 | **✨ Vibe Coding** | Weeks 1-2 (formatting, naming) | Months 1-2 (immutability, cohesion) | Months 3-6 (types, composition) |
 | **📊 Data & Analytics** | Month 1 (observability, SLOs) | Months 2-4 (quality, contracts) | Months 5-12 (lineage, mesh) |
@@ -352,6 +383,7 @@ graph TD
 
 | Manifesto | Team Training | Tool Investment | External Expertise |
 |-----------|---------------|-----------------|-------------------|
+| ⚖️ Ethics | ✓ Very Low (1-hour workshop) | ✓ Very Low (decision templates) | Not needed |
 | 🔬 Formal | ⚠️ High (specialist courses) | Medium (proof assistants) | Often required |
 | ✨ Vibe | ✓ Low (internal workshops) | Low (linters, formatters) | Rarely needed |
 | 📊 Data | Medium (platform training) | ⚠️ High (platform tools) | Sometimes needed |
@@ -364,6 +396,7 @@ graph TD
 
 | Manifesto | Leading Indicators | Lagging Indicators |
 |-----------|-------------------|-------------------|
+| ⚖️ Ethics | % decisions scored, ADRs with ethics analysis | Bad trade-offs prevented, burnout incidents, ethical violations |
 | 🔬 Formal | % code formally verified | Bug density in critical paths |
 | ✨ Vibe | Code review approval time | Time to onboard new devs |
 | 📊 Data | Data quality test coverage | Data incident frequency |
@@ -378,15 +411,19 @@ graph TD
 
 Cross-cutting philosophy across all manifestos:
 
-| Theme | Application |
-|-------|-------------|
-| **Quality by Design** | Build in correctness/quality from start, not retrofit |
-| **Incremental Adoption** | Progressive enhancement from basic → advanced |
-| **Explicit Over Implicit** | Make invariants, contracts, expectations explicit |
-| **Automation Matters** | Leverage tooling for enforcement & verification |
-| **Cost-Benefit Awareness** | Apply techniques proportional to criticality |
-| **Documentation as Code** | Maintain docs alongside implementation |
-| **Security as Foundation** | Security integrated at every layer and phase |
+| Theme | Application | Ethics Framework Objective |
+|-------|-------------|---------------------------|
+| **Ethics as Decision Framework** | Use weighted objectives to resolve trade-offs | All 5 objectives (meta-framework) |
+| **Quality by Design** | Build in correctness/quality from start, not retrofit | System Integrity (5x) |
+| **Human Sustainability** | Prevent burnout, support wellbeing, manage cognitive load | Human Sustainability (4x) |
+| **Incremental Adoption** | Progressive enhancement from basic → advanced | Resource Efficiency (1x) |
+| **Explicit Over Implicit** | Make invariants, contracts, expectations explicit | Knowledge Capital (3x) |
+| **Automation Matters** | Leverage tooling for enforcement & verification | System Longevity (2x) |
+| **Cost-Benefit Awareness** | Apply techniques proportional to criticality | Ethics score calculation |
+| **Documentation as Code** | Maintain docs alongside implementation | Knowledge Capital (3x) |
+| **Security as Foundation** | Security integrated at every layer and phase | System Integrity (5x) |
+
+**The Ethics Framework provides the mathematical foundation for prioritizing these themes when they conflict.**
 
 ---
 
