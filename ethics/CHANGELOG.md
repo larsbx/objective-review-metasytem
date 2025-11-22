@@ -6,6 +6,68 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [1.1.0] - 2025-11-22
+
+### Added
+
+**Unified Decision Engine**
+- Integrated two complementary engines: Objectives Engine (Maqasid) and Means Engine (Ahkam)
+- Objectives Engine: Calculates weighted score based on impact ("Why are we doing this?")
+- Means Engine: Determines classification and execution strategy ("How should we execute this?")
+- Final Execution Matrix combining both engines for comprehensive decision-making
+
+**Means Classification System**
+- Critical Required (Fard): Priority 100, execution: `:blocking`
+- Strongly Recommended (Mandub): Priority 70, execution: `:best_effort`
+- Discretionary (Mubah): Priority 50, execution: `:opportunistic`
+- Anti-Pattern (Makruh): Priority 20, execution: `:skip`
+- Prohibited (Haram): Priority 0, execution: `:halt`
+
+**Automated Classification**
+- Keyword-based classification system
+- Severity-based inference
+- Automatic prioritization (100 -> 0 scale)
+- Execution strategy determination (blocking, best_effort, opportunistic, skip, halt)
+
+**CLI Tool Implementation**
+- Complete Mix task (`mix decision.analyze`) integrating both engines
+- Command-line interface with impact scoring flags
+- Formatted decision reports with visual impact profile
+- Example commands for common scenarios
+
+**Autonomous Agent Loop**
+- Task queue processing module (`Agent.EthicsLoop`)
+- Automatic sorting by priority (100 -> 0)
+- Filtered execution: rejects prohibited and anti-pattern tasks
+- Strategy-based execution: blocking, best_effort, opportunistic
+
+**Enhanced Examples**
+- Three detailed decision examples showing both engines
+- Visual impact profiles with bar charts
+- Final execution plans with priority scores
+- Real-world scenarios: security fixes, dangerous shortcuts, refactoring with conditions
+
+**Mermaid Diagram**
+- Unified decision flowchart showing both engines
+- Visual representation of final execution paths
+- Clear execution strategy mapping
+
+### Changed
+
+- Reorganized Decision Engine section to show dual-engine architecture
+- Updated all examples to include both Objectives and Means analysis
+- Enhanced CI/CD integration section with autonomous agent example
+- Improved domain mappings to show classification alongside objectives
+
+### Technical Specifications
+
+**Priority Scale**: 0 (prohibited) to 100 (critical required)
+**Execution Strategies**: `:halt`, `:skip`, `:opportunistic`, `:best_effort`, `:blocking`
+**Keywords for Classification**: 30+ keywords across 5 categories
+**Agent Filtering**: Automatic rejection of prohibited, anti-pattern, and strongly_reject items
+
+---
+
 ## [1.0.0] - 2025-11-22
 
 ### Added

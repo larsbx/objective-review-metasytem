@@ -100,19 +100,25 @@ graph TD
 
 ### ⚖️ Ethics Framework
 
-**[Ethics Manifesto: A Computable Framework for Software Engineering](./ethics/ETHICS_MANIFESTO.md)** • v1.0 • [Changelog](./ethics/CHANGELOG.md) • 5 foundational objectives
+**[Ethics Manifesto: A Computable Framework for Software Engineering](./ethics/ETHICS_MANIFESTO.md)** • v1.1 • [Changelog](./ethics/CHANGELOG.md) • Dual-engine framework
 
-**At a Glance**: Mathematical decision framework • All roles • Low learning curve • Immediate ROI • Universal (foundational)
+**At a Glance**: Unified decision framework with Objectives + Means engines • All roles • Low learning curve • Immediate ROI • Universal (foundational)
+
+**Two Complementary Engines**:
+1. **Objectives Engine (Maqasid)**: Weighted score calculation (5x-1x hierarchy) answering "Why?"
+2. **Means Engine (Ahkam)**: Classification & prioritization (100-0 scale) answering "How?"
 
 **Key Objectives (weighted hierarchy)**: System Integrity (5x) • Human Sustainability (4x) • Knowledge Capital (3x) • System Longevity (2x) • Resource Efficiency (1x)
 
-**Best For**: Resolving conflicts between competing priorities • Autonomous agent decision-making • Code review decisions • Architecture trade-offs • CI/CD ethical guardrails • Preventing burnout, security lapses, and technical debt
+**Means Classifications**: Critical Required (Fard, Priority 100, blocking) • Strongly Recommended (Mandub, 70, best_effort) • Discretionary (Mubah, 50, opportunistic) • Anti-Pattern (Makruh, 20, skip) • Prohibited (Haram, 0, halt)
 
-**Framework**: Maqasid al-Shariah translated to software engineering • Weighted score algorithm (Σ Impact × Weight) • Three recommendation levels (proceed, conditional, reject) • Domain mappings across Security, DevOps, UX, Architecture, and AI/ML
+**Best For**: Resolving conflicts between competing priorities • Autonomous agent decision-making • Code review decisions • Architecture trade-offs • CI/CD ethical guardrails • Preventing burnout, security lapses, and technical debt • Task prioritization and queue management
 
-**Implementation**: Decision engine with mathematical guarantees • CI/CD integration patterns • ADR templates • Incident post-mortem categorization • Agent human-in-the-loop protocols • 4-phase adoption roadmap
+**Framework**: Maqasid al-Shariah (objectives) + Ahkam al-Khamsa (means) • Dual-engine decision matrix • Automated classification • Priority-based execution strategies • Keyword detection for auto-classification
 
-**Guarantees**: Lower-priority gains cannot justify higher-priority harms • Security cannot be sacrificed for speed • Team wellbeing cannot be compromised for velocity
+**Implementation**: CLI tool (`mix decision.analyze`) • Autonomous agent loop • Decision engine with mathematical guarantees • CI/CD integration patterns • ADR templates • Incident post-mortem categorization • Agent human-in-the-loop protocols • Task queue processing with auto-filtering
+
+**Guarantees**: Lower-priority gains cannot justify higher-priority harms • Security cannot be sacrificed for speed • Team wellbeing cannot be compromised for velocity • Prohibited and anti-pattern actions automatically rejected
 
 ---
 

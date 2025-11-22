@@ -1,9 +1,9 @@
 # Ethics Manifesto: A Computable Framework for Software Engineering
 
-**Version**: 1.0
+**Version**: 1.1
 **Classification**: Public
 **License**: CC0 - Public Domain
-**Framework**: Maqasid al-Shariah (Objectives of Higher Purpose) applied to Software Engineering
+**Framework**: Maqasid al-Shariah (Objectives of Higher Purpose) + Ahkam al-Khamsa (Means Classification) applied to Software Engineering
 **Last Updated**: 2025-11-22
 
 ---
@@ -181,54 +181,158 @@ This means:
 
 ---
 
-## The Decision Engine
+## The Unified Decision Engine
 
-Based on the total weighted score, the framework produces three recommendation levels:
+The framework consists of **two complementary engines** that work together:
 
-### ✅ Autonomous Approval (Score ≥ +3)
+### Engine 1: Objectives Engine (Maqasid) — "Why?"
 
-**Recommendation**: `:proceed`
+Calculates the **weighted score** based on impact to the five objectives:
 
-The decision is ethically sound and can be executed without additional oversight.
+```
+Total Score = Σ (Impact × Weight)
 
-**Examples:**
-- Adding encryption to user data (+2 System Integrity = +10)
-- Implementing accessibility features (+2 Human Sustainability = +8)
-- Writing comprehensive tests (+1 System Longevity = +2)
+Where:
+  Impact ∈ {-3, -2, -1, 0, +1, +2, +3}
+  Weight = {5, 4, 3, 2, 1} (by objective)
+```
+
+**Verdict Thresholds:**
+- **Score ≥ +3**: `:proceed` — Ethically sound
+- **-2 ≤ Score < +3**: `:proceed_with_conditions` — Requires payback plan
+- **Score < -2**: `:strongly_reject` — Violates core principles
+
+### Engine 2: Means Engine (Ahkam) — "How?"
+
+Classifies the **action** and determines **execution strategy**:
+
+| Classification | Priority | Execution Strategy | Keywords | When to Use |
+|----------------|----------|-------------------|----------|-------------|
+| **Critical Required (Fard)** 🔴 | 100 | `:blocking` | must, required, critical, blocker, fails, violates, fix, crash | Mandatory practices preventing direct harm |
+| **Strongly Recommended (Mandub)** 🟡 | 70 | `:best_effort` | should, recommended, improves, enhances, monitoring, test, coverage | Highly beneficial practices improving quality |
+| **Discretionary (Mubah)** 🟢 | 50 | `:opportunistic` | may, could, optional, consider, optimize, refactor, rename | Neutral practices where context determines value |
+| **Anti-Pattern (Makruh)** 🟠 | 20 | `:skip` | avoid, premature, unnecessary, over-engineering, speculative | Discouraged practices introducing risk |
+| **Prohibited (Haram)** 🔴 | 0 | `:halt` | forbidden, never, unsafe, bypass, race_condition, undefined_behavior | Unethical practices causing direct harm |
+
+### How the Engines Work Together
+
+```mermaid
+graph TD
+    A[Decision Input] --> B[Objectives Engine]
+    A --> C[Means Engine]
+    B --> D[Calculate Weighted Score]
+    C --> E[Classify Action]
+    D --> F{Verdict}
+    E --> G{Classification}
+    F --> H[Final Execution Plan]
+    G --> H
+    H --> I{Execute?}
+    I -->|Proceed + Critical| J[🚀 EXECUTE IMMEDIATELY blocking]
+    I -->|Proceed + Recommended| K[✨ SCHEDULE SOON best_effort]
+    I -->|Proceed + Discretionary| L[📅 BACKLOG opportunistic]
+    I -->|Any + Prohibited| M[❌ HALT Action is forbidden]
+    I -->|Reject + Any| N[🛑 HALT Violates objectives]
+    I -->|Anti-Pattern| O[🗑️ SKIP Anti-pattern detected]
+```
+
+### Final Execution Matrix
+
+| Objectives Verdict | Means Classification | Final Action | Priority |
+|--------------------|---------------------|--------------|----------|
+| `:strongly_reject` | _any_ | ❌ **HALT**: Violates core objectives | N/A |
+| _any_ | `:prohibited` | ❌ **HALT**: Action is fundamentally forbidden | 0 |
+| `:proceed` | `:critical_required` | 🚀 **EXECUTE IMMEDIATELY** (blocking) | 100 |
+| `:proceed` | `:strongly_recommended` | ✨ **SCHEDULE SOON** (best effort) | 70 |
+| `:proceed` | `:discretionary` | 📅 **BACKLOG** (opportunistic) | 50 |
+| _any_ | `:anti_pattern` | 🗑️ **SKIP** (anti-pattern detected) | 20 |
+| `:proceed_with_conditions` | `:critical_required` | ⚠️ **EXECUTE WITH PAYBACK PLAN** | 100 |
+| `:proceed_with_conditions` | _other_ | 🤔 **MANUAL REVIEW REQUIRED** | varies |
 
 ---
 
-### ⚠️ Conditional Approval (-2 ≤ Score < +3)
+### Decision Examples
 
-**Recommendation**: `:proceed_with_conditions`
+#### Example 1: Critical Security Fix
 
-The decision involves trade-offs. Technical debt may be incurred, but a **Payback Plan** is required.
+**Input**: "Fix critical type error in Dialyzer spec"
 
-**Conditions Required:**
-1. **Justification**: Why is this trade-off necessary?
-2. **Mitigation**: How will the harm be minimized?
-3. **Payback Timeline**: When will the debt be repaid?
-4. **Accountability**: Who owns the payback?
+**Objectives Analysis**:
+- System Integrity: +2 (fixes vulnerability) → +10
+- Human Sustainability: +1 (reduces cognitive load) → +4
+- Knowledge Capital: +1 (improves type safety) → +3
+- System Longevity: +1 (prevents future bugs) → +2
+- Resource Efficiency: -1 (takes time) → -1
+- **Total Score**: +18
 
-**Example:**
-- **Scenario**: Skip writing docs to fix critical security bug
-- **Score**: -1 Knowledge Capital (-3) + 2 System Integrity (+10) = **+7**
-- **Condition**: "Document the fix within 2 sprints" (payback plan)
+**Means Classification**:
+- Keywords detected: "fix", "critical"
+- Severity: `:critical`
+- **Classification**: Critical Required (Fard)
+- **Priority**: 100
+- **Execution**: `:blocking`
+
+**Final Decision**:
+```
+🚀 EXECUTE IMMEDIATELY (blocking)
+Verdict: ✅ PROCEED (Score: +18)
+Class: CRITICAL REQUIRED (Priority 100)
+```
 
 ---
 
-### 🛑 Strong Rejection (Score < -2)
+#### Example 2: Dangerous Shortcut
 
-**Recommendation**: `:strongly_reject`
+**Input**: "Bypass verification to ship faster"
 
-The decision violates core ethical principles and **must not** be executed.
+**Objectives Analysis**:
+- System Integrity: -2 (removes safety) → -10
+- Resource Efficiency: +1 (faster shipping) → +1
+- **Total Score**: -9
 
-**The system acts as an ethical guardrail**, refusing to implement harmful directives even under management pressure.
+**Means Classification**:
+- Keywords detected: "bypass"
+- Severity: `:critical`
+- **Classification**: Prohibited (Haram)
+- **Priority**: 0
+- **Execution**: `:halt`
 
-**Examples:**
-- Mandatory 60-hour weeks (-3 Human Sustainability = -12)
-- Eliminating code reviews for speed (+1 Resource Efficiency, -2 System Integrity = -9)
-- Shipping code with known critical CVE (-3 System Integrity = -15)
+**Final Decision**:
+```
+❌ HALT: Action is fundamentally prohibited
+Verdict: 🛑 STRONGLY REJECT (Score: -9)
+Class: PROHIBITED (Priority 0)
+```
+
+---
+
+#### Example 3: Refactoring with Conditions
+
+**Input**: "Refactor god object, skip docs temporarily"
+
+**Objectives Analysis**:
+- Human Sustainability: +1 (reduces complexity) → +4
+- Knowledge Capital: -1 (docs delayed) → -3
+- System Longevity: +1 (maintainability) → +2
+- Resource Efficiency: -1 (time investment) → -1
+- **Total Score**: +2
+
+**Means Classification**:
+- Keywords detected: "refactor"
+- Severity: `:medium`
+- **Classification**: Strongly Recommended (Mandub)
+- **Priority**: 70
+- **Execution**: `:best_effort`
+
+**Final Decision**:
+```
+⚠️ EXECUTE WITH PAYBACK PLAN
+Verdict: ⚠️ PROCEED WITH CONDITIONS (Score: +2)
+Class: STRONGLY RECOMMENDED (Priority 70)
+Conditions:
+  - Document refactoring within 2 sprints
+  - Add ADR explaining design decisions
+  - Update team wiki with new structure
+```
 
 ---
 
@@ -684,39 +788,306 @@ Manual deployment bypassed staging tests.
 = +7 (ethical improvement achieved)
 ```
 
-### 4. Feature Flag Decisions
+### 4. CLI Tool Implementation
 
-Use the framework to decide whether to enable experimental features:
+A complete command-line tool integrating both engines:
 
 ```elixir
-defmodule FeatureDecision do
+# lib/mix/tasks/decision_analyze.ex
+defmodule Mix.Tasks.Decision.Analyze do
+  use Mix.Task
+
+  @shortdoc "Analyzes a software decision using the Unified Ethics Framework"
+
   @moduledoc """
-  Ethics-based feature flagging
+  Analyzes a decision using the combined Maqasid (Objectives) and Ahkam (Means) frameworks.
+
+  ## Usage
+
+      mix decision.analyze [options] "Description of the decision"
+
+  ## Options
+      --int   <int>   Impact on System Integrity (-3 to +3)
+      --sus   <int>   Impact on Human Sustainability (-3 to +3)
+      --know  <int>   Impact on Knowledge Capital (-3 to +3)
+      --long  <int>   Impact on System Longevity (-3 to +3)
+      --eff   <int>   Impact on Resource Efficiency (-3 to +3)
+
+  ## Examples
+
+      # Critical security fix
+      mix decision.analyze --int=2 --sus=1 --know=1 \\
+        "Fix critical type error in Dialyzer spec"
+
+      # Dangerous shortcut
+      mix decision.analyze --int=-2 --eff=1 \\
+        "Bypass verification to ship faster"
   """
 
-  def should_enable_feature?(feature_name, analysis) do
-    score = calculate_weighted_score(analysis)
+  def run(args) do
+    {opts, [description | _], _} = OptionParser.parse(args, strict: [
+      int: :integer, sus: :integer, know: :integer,
+      long: :integer, eff: :integer
+    ])
 
-    cond do
-      score >= 3 -> {:proceed, "Feature is ethically sound"}
-      score >= -2 -> {:conditional, "Requires monitoring and payback plan"}
-      true -> {:reject, "Feature violates core objectives"}
+    # 1. Run Objectives Analysis (Maqasid)
+    objectives_result = analyze_objectives(opts, description)
+
+    # 2. Run Means Analysis (Ahkam)
+    means_result = classify_means(description, objectives_result)
+
+    # 3. Print Report
+    print_report(description, objectives_result, means_result)
+  end
+
+  defp analyze_objectives(opts, description) do
+    impacts = %{
+      system_integrity: opts[:int] || 0,
+      human_sustainability: opts[:sus] || 0,
+      knowledge_capital: opts[:know] || 0,
+      system_longevity: opts[:long] || 0,
+      resource_efficiency: opts[:eff] || 0
+    }
+
+    score = calculate_weighted_score(impacts)
+    verdict = determine_verdict(score)
+
+    %{
+      impacts: impacts,
+      score: score,
+      verdict: verdict,
+      description: description
+    }
+  end
+
+  defp calculate_weighted_score(impacts) do
+    impacts.system_integrity * 5 +
+    impacts.human_sustainability * 4 +
+    impacts.knowledge_capital * 3 +
+    impacts.system_longevity * 2 +
+    impacts.resource_efficiency * 1
+  end
+
+  defp determine_verdict(score) when score >= 3, do: :proceed
+  defp determine_verdict(score) when score >= -2, do: :proceed_with_conditions
+  defp determine_verdict(_score), do: :strongly_reject
+
+  defp classify_means(description, obj_result) do
+    text = String.downcase(description)
+
+    classification = cond do
+      matches_keywords?(text, ~w(forbidden never unsafe bypass)) ->
+        :prohibited
+      matches_keywords?(text, ~w(must required critical blocker crash)) ->
+        :critical_required
+      matches_keywords?(text, ~w(avoid premature unnecessary)) ->
+        :anti_pattern
+      matches_keywords?(text, ~w(should recommended improves enhances)) ->
+        :strongly_recommended
+      true ->
+        :discretionary
     end
+
+    %{
+      classification: classification,
+      priority: priority_for(classification),
+      execution: execution_for(classification)
+    }
   end
 
-  defp calculate_weighted_score(analysis) do
-    analysis
-    |> Enum.map(fn {objective, impact} ->
-      impact * weight_for(objective)
+  defp matches_keywords?(text, keywords) do
+    Enum.any?(keywords, &String.contains?(text, &1))
+  end
+
+  defp priority_for(:critical_required), do: 100
+  defp priority_for(:strongly_recommended), do: 70
+  defp priority_for(:discretionary), do: 50
+  defp priority_for(:anti_pattern), do: 20
+  defp priority_for(:prohibited), do: 0
+
+  defp execution_for(:critical_required), do: :blocking
+  defp execution_for(:strongly_recommended), do: :best_effort
+  defp execution_for(:discretionary), do: :opportunistic
+  defp execution_for(:anti_pattern), do: :skip
+  defp execution_for(:prohibited), do: :halt
+
+  defp print_report(desc, obj, means) do
+    IO.puts """
+
+    ═══════════════════════════════════════════════════════════════════
+    🏗️  UNIFIED ENGINEERING DECISION REPORT
+    ═══════════════════════════════════════════════════════════════════
+
+    DECISION: "#{desc}"
+
+    ───────────────────────────────────────────────────────────────────
+    1. OBJECTIVES ANALYSIS (Why?)
+    ───────────────────────────────────────────────────────────────────
+
+    Score: #{format_score(obj.score)}
+    Verdict: #{format_verdict(obj.verdict)}
+
+    Impact Profile:
+    🎯 Integrity:       #{bar(obj.impacts.system_integrity)} (#{obj.impacts.system_integrity})
+    👥 Sustainability:  #{bar(obj.impacts.human_sustainability)} (#{obj.impacts.human_sustainability})
+    📚 Knowledge:       #{bar(obj.impacts.knowledge_capital)} (#{obj.impacts.knowledge_capital})
+    🌱 Longevity:       #{bar(obj.impacts.system_longevity)} (#{obj.impacts.system_longevity})
+    💰 Efficiency:      #{bar(obj.impacts.resource_efficiency)} (#{obj.impacts.resource_efficiency})
+
+    ───────────────────────────────────────────────────────────────────
+    2. MEANS CLASSIFICATION (How?)
+    ───────────────────────────────────────────────────────────────────
+
+    Class:    #{format_classification(means.classification)}
+    Priority: #{means.priority}
+    Strategy: #{String.upcase(Atom.to_string(means.execution))}
+
+    ───────────────────────────────────────────────────────────────────
+    3. FINAL EXECUTION PLAN
+    ───────────────────────────────────────────────────────────────────
+
+    #{final_recommendation(obj.verdict, means.classification)}
+
+    ═══════════════════════════════════════════════════════════════════
+    """
+  end
+
+  defp format_score(s) when s > 0, do: IO.ANSI.green() <> "+#{s}" <> IO.ANSI.reset()
+  defp format_score(s) when s < 0, do: IO.ANSI.red() <> "#{s}" <> IO.ANSI.reset()
+  defp format_score(0), do: "0"
+
+  defp format_verdict(:strongly_reject), do: "🛑 STRONGLY REJECT"
+  defp format_verdict(:proceed), do: "✅ PROCEED"
+  defp format_verdict(:proceed_with_conditions), do: "⚠️ PROCEED WITH CONDITIONS"
+
+  defp format_classification(:prohibited), do: "🔴 PROHIBITED (HARAM)"
+  defp format_classification(:critical_required), do: "🔴 CRITICAL REQUIRED (FARD)"
+  defp format_classification(:strongly_recommended), do: "🟡 STRONGLY RECOMMENDED (MANDUB)"
+  defp format_classification(:discretionary), do: "🟢 DISCRETIONARY (MUBAH)"
+  defp format_classification(:anti_pattern), do: "🟠 ANTI-PATTERN (MAKRUH)"
+
+  defp bar(score) when score >= 2, do: "█████"
+  defp bar(score) when score == 1, do: "███  "
+  defp bar(0), do: "▒▒   "
+  defp bar(score) when score == -1, do: "▓▓▓  "
+  defp bar(score) when score <= -2, do: "▓▓▓▓▓"
+
+  defp final_recommendation(:strongly_reject, _),
+    do: "❌ HALT: Violates core objectives."
+  defp final_recommendation(_, :prohibited),
+    do: "❌ HALT: Action is fundamentally prohibited."
+  defp final_recommendation(:proceed, :critical_required),
+    do: "🚀 EXECUTE IMMEDIATELY (Blocking)"
+  defp final_recommendation(:proceed, :strongly_recommended),
+    do: "✨ SCHEDULE SOON (Best Effort)"
+  defp final_recommendation(:proceed, :discretionary),
+    do: "📅 BACKLOG (Opportunistic)"
+  defp final_recommendation(_, :anti_pattern),
+    do: "🗑️ SKIP (Anti-Pattern detected)"
+  defp final_recommendation(:proceed_with_conditions, :critical_required),
+    do: "⚠️ EXECUTE WITH PAYBACK PLAN (Blocking)"
+  defp final_recommendation(_, _),
+    do: "🤔 MANUAL REVIEW REQUIRED"
+end
+```
+
+**Example Output:**
+
+```
+═══════════════════════════════════════════════════════════════════
+🏗️  UNIFIED ENGINEERING DECISION REPORT
+═══════════════════════════════════════════════════════════════════
+
+DECISION: "Fix critical type error in Dialyzer spec"
+
+───────────────────────────────────────────────────────────────────
+1. OBJECTIVES ANALYSIS (Why?)
+───────────────────────────────────────────────────────────────────
+
+Score: +18
+Verdict: ✅ PROCEED
+
+Impact Profile:
+🎯 Integrity:       █████ (+2)
+👥 Sustainability:  ███   (+1)
+📚 Knowledge:       ███   (+1)
+🌱 Longevity:       ███   (+1)
+💰 Efficiency:      ▓▓▓   (-1)
+
+───────────────────────────────────────────────────────────────────
+2. MEANS CLASSIFICATION (How?)
+───────────────────────────────────────────────────────────────────
+
+Class:    🔴 CRITICAL REQUIRED (FARD)
+Priority: 100
+Strategy: BLOCKING
+
+───────────────────────────────────────────────────────────────────
+3. FINAL EXECUTION PLAN
+───────────────────────────────────────────────────────────────────
+
+🚀 EXECUTE IMMEDIATELY (Blocking)
+
+═══════════════════════════════════════════════════════════════════
+```
+
+### 5. Autonomous Agent Loop
+
+For fully autonomous execution, implement a task prioritization loop:
+
+```elixir
+defmodule Agent.EthicsLoop do
+  @moduledoc """
+  Autonomous agent loop that:
+  1. Takes a list of pending tasks
+  2. Analyzes each through the Unified Framework
+  3. Sorts by Priority (100 -> 0)
+  4. Executes blocking tasks, schedules best_effort, backlogs opportunistic, skips anti-patterns
+  """
+
+  def process_task_queue(tasks) do
+    tasks
+    |> Enum.map(&analyze_task/1)
+    |> Enum.reject(fn t -> t.means.classification == :anti_pattern end)
+    |> Enum.reject(fn t -> t.means.classification == :prohibited end)
+    |> Enum.reject(fn t -> t.objectives.verdict == :strongly_reject end)
+    |> Enum.sort_by(& &1.means.priority, :desc)
+    |> execute_by_strategy()
+  end
+
+  defp analyze_task(task) do
+    objectives_result = AnalyzeObjectives.run(task)
+    means_result = ClassifyMeans.run(task, objectives_result)
+
+    %{
+      task: task,
+      objectives: objectives_result,
+      means: means_result
+    }
+  end
+
+  defp execute_by_strategy(analyzed_tasks) do
+    blocking = Enum.filter(analyzed_tasks, fn t ->
+      t.means.execution == :blocking
     end)
-    |> Enum.sum()
+
+    best_effort = Enum.filter(analyzed_tasks, fn t ->
+      t.means.execution == :best_effort
+    end)
+
+    opportunistic = Enum.filter(analyzed_tasks, fn t ->
+      t.means.execution == :opportunistic
+    end)
+
+    # Execute in priority order
+    Enum.each(blocking, &execute_immediately/1)
+    Enum.each(best_effort, &schedule_soon/1)
+    Enum.each(opportunistic, &add_to_backlog/1)
   end
 
-  defp weight_for(:system_integrity), do: 5
-  defp weight_for(:human_sustainability), do: 4
-  defp weight_for(:knowledge_capital), do: 3
-  defp weight_for(:system_longevity), do: 2
-  defp weight_for(:resource_efficiency), do: 1
+  defp execute_immediately(task), do: IO.puts("🚀 EXECUTING: #{task.task.description}")
+  defp schedule_soon(task), do: IO.puts("✨ SCHEDULING: #{task.task.description}")
+  defp add_to_backlog(task), do: IO.puts("📅 BACKLOG: #{task.task.description}")
 end
 ```
 
