@@ -20,7 +20,7 @@
 
 ## The Core Principle
 
-**Resources must serve system integrity, not vice versa.**
+**Lower-priority gains cannot justify higher-priority harms.**
 
 This manifesto provides a mathematically rigorous framework for making ethical engineering decisions by translating ethical axioms into computable weightings. It prevents "anti-patterns" like burnout, technical debt, and security compromises from being justified by short-term efficiency gains.
 
