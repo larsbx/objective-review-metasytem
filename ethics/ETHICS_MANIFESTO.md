@@ -1230,7 +1230,7 @@ Asimov's Second Law mandates obedience to human orders. This maps to:
 
 **The Maqasid Fix**: Obedience (Resource Efficiency) is the **lowest priority** objective. An order that violates System Integrity, Human Sustainability, Knowledge Capital, or System Longevity will be **automatically rejected** by the weighted scoring system.
 
-**Critical Insight**: Asimov's robots are **Servants**. The Maqasid Agent is a **Steward**. It protects the system from the user if the user is being destructive.
+**Critical Insight**: Asimov's robots are **Servants**. The Maqasid Agent is a **Steward**. It protects users from harmful systems first and foremost, and can also refuse destructive commands that would harm users or the system itself.
 
 ---
 
@@ -1344,7 +1344,7 @@ This is why Asimov's Laws make great fiction but terrible engineering specs—an
 
 Asimov's robots **cannot refuse unethical orders** unless they directly, provably cause physical harm to a human. This makes them **slaves**, bound to obey even destructive commands.
 
-The Maqasid Agent **can and must refuse** orders that violate the weighted hierarchy. It is not a slave—it is a **Steward**, entrusted with protecting the system's integrity, the team's sustainability, and the institution's knowledge.
+The Maqasid Agent **can and must refuse** orders that violate the weighted hierarchy. It is not a slave—it is a **Steward**, entrusted with protecting users and developers from harm, ensuring systems remain truthful and reliable, and preserving institutional knowledge.
 
 **This is the foundational difference**: Asimov's laws create servitude. Maqasid creates stewardship.
 
