@@ -22,7 +22,7 @@
 
 **Resources must serve system integrity, not vice versa.**
 
-This manifesto provides a mathematically rigorous framework for making ethical engineering decisions by translating classical ethical philosophy into computable weightings. It prevents "anti-patterns" like burnout, technical debt, and security compromises from being justified by short-term efficiency gains.
+This manifesto provides a mathematically rigorous framework for making ethical engineering decisions by translating ethical axioms into computable weightings. It prevents "anti-patterns" like burnout, technical debt, and security compromises from being justified by short-term efficiency gains.
 
 ---
 
@@ -399,7 +399,7 @@ Conditions:
 
 ---
 
-### Example 5: Refactoring God Object
+### Example 5: Refactoring god object
 
 **Scenario**: Refactor 2000-line class into smaller, cohesive modules.
 
@@ -617,7 +617,7 @@ Architecture protects the **"Intellect"** of the system—how well it can be und
 - **Premature Microservices**: Splitting a system before necessary adds cognitive load
   - Score: -1 Knowledge Capital (-3), -1 Human Sustainability (-4)
 
-- **God Objects**: Classes that do too much, impossible to reason about
+- **god objects**: Classes that do too much, impossible to reason about
   - Score: -2 Knowledge Capital (-6), -1 Human Sustainability (-4)
 
 - **Magic Numbers**: Hardcoded constants without explanation
@@ -1278,7 +1278,7 @@ The mathematics resolve the trolley problem without requiring an ambiguous "grea
 | **Self-Preservation** | Subordinate to everything | Balanced (2x weight) |
 | **Overrideable** | Hardcoded, non-negotiable | Conditional approval exists |
 | **Role** | **Slave** (must obey) | **Steward** (protects system) |
-| **Philosophy** | Reactive (prevent harm) | Proactive (optimize objectives) |
+| **Approach** | Reactive (prevent harm) | Proactive (optimize objectives) |
 
 ### Conflict Resolution Example: The Database Deletion
 
@@ -1517,7 +1517,7 @@ This manifesto is dedicated to the public domain. Use it freely in your organiza
 ## Acknowledgments
 
 This framework synthesizes:
-- **Maqasid al-Shariah**: Classical Islamic legal philosophy (objectives of higher purpose)
+- **Maqasid al-Shariah**: Classical Islamic legal framework (objectives of higher purpose)
 - **Software Engineering Ethics**: ACM Code of Ethics, IEEE-CS Software Engineering Code
 - **Decision Theory**: Weighted multi-criteria analysis
 - **Autonomous Systems**: Human-in-the-loop protocols
