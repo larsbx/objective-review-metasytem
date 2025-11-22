@@ -216,19 +216,24 @@ graph TD
 
 ### ⚖️ Ethical Engineering
 
-**[Ethical Engineering Manifesto](./ethical_engineering/ETHICAL_ENGINEERING_MANIFESTO.md)** • v1.0 • [Changelog](./ethical_engineering/CHANGELOG.md) • 20 principles
+**[Ethical Engineering Manifesto](./ethical_engineering/ETHICAL_ENGINEERING_MANIFESTO.md)** • v1.1 • [Changelog](./ethical_engineering/CHANGELOG.md) • 20 principles
 
-**At a Glance**: Ethical framework for software development • All developers, security engineers, product managers, data scientists • Medium learning curve • Immediate ROI (avoid harm, build trust) + Long-term (sustainability) • Universal (moral imperative)
+**At a Glance**: Ethical framework for software development with autonomous agent architecture • All developers, security engineers, product managers, data scientists, AI/ML engineers • Medium learning curve • Immediate ROI (avoid harm, build trust) + Long-term (sustainability) • Universal (moral imperative)
 
 **Key Principles (tiered by ethical categorization)**: **Fard/Critical Required** (Encryption • Access Control • Input Validation • Vulnerability Remediation • Accessibility • Privacy Compliance • Ethical Design • Developer Sustainability • Bias Audits • Explainability • Human Oversight for AI) • **Mandub/Recommended** (Immutable Infrastructure • CI/CD • Disaster Recovery • Domain-Driven Design • Documentation • Testing • Monitoring • Code Readability) • **Mubah/Discretionary** (Technology choices, feature flags, A/B testing) • **Makruh/Anti-Pattern** (Manual deployments, god objects, premature optimization) • **Haram/Prohibited** (Hardcoded secrets, dark patterns, ignoring CVEs, selling user data, burnout culture, black-box AI for high-stakes decisions)
 
-**Best For**: All software development contexts • User-facing applications with personal data • Safety-critical systems • AI/ML systems • Compliance-driven environments • Organizations building ethical culture • Long-lived systems requiring sustainability
+**Best For**: All software development contexts • **Autonomous agents and agentic systems** • User-facing applications with personal data • Safety-critical systems • AI/ML systems • Compliance-driven environments • Organizations building ethical culture • Long-lived systems requiring sustainability
 
-**Framework**: Five Objectives (Maqasid): System Integrity (Hifz al-Din) • Resource Efficiency (Hifz al-Mal) • System Longevity (Hifz al-Nasl) • Human Sustainability (Hifz al-Nafs) • Knowledge Capital (Hifz al-Aql)
+**Framework**:
+- **Five Objectives (Maqasid)** with weighted priorities: System Integrity [5×] • Human Sustainability [4×] • Knowledge Capital [3×] • System Longevity [2×] • Resource Efficiency [1×]
+- **Three-Layer Ethical Architecture**: Scope Policy (structural safety) → Objectives Analysis (value alignment) → Means Classification (execution strategy)
+- **Mathematical Decision Framework**: Weighted scoring with conflict resolution for autonomous systems
 
 **Domains Covered**: Security & Reliability • DevOps & Infrastructure • Product & UX • Software Architecture • Data Science & AI • Testing & QA • Code Quality
 
-**Implementation**: Per-principle checklists (7 domains) • 5-level ethical maturity model • 30-day and 3-month learning paths • Domain-specific application guides (web, mobile, API, data pipeline) • Trade-offs framework • Tool ecosystem map (50+ tools)
+**Implementation**: Per-principle checklists (7 domains) • Three-layer autonomous agent architecture with code examples • 5-level ethical maturity model • Weighted scoring system • 30-day and 3-month learning paths • Domain-specific application guides (web, mobile, API, data pipeline, autonomous agents) • Trade-offs framework • Tool ecosystem map (50+ tools)
+
+**New in v1.1**: Three-layer defense-in-depth architecture for autonomous agents • Weighted priority system for Five Objectives • Mathematical decision framework with scoring examples • Elixir implementation examples
 
 **Related**: Provides moral framework integrating 🔒 Security + ♿ Accessibility + 🎨 UX + 📊 Data + ✨ Vibe Coding + 🔬 Formal Verification + 📝 Content
 

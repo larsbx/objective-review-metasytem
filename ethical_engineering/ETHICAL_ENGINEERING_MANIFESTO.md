@@ -1,6 +1,6 @@
 # Ethical Engineering Manifesto: 20 Foundational Principles
 
-**Version**: 1.0
+**Version**: 1.1
 **Classification**: Public
 **License**: CC0 - Public Domain
 **Last Updated**: 2025-11-22
@@ -10,6 +10,7 @@
 ## Quick Navigation
 
 - **New to ethical engineering?** → Start with [Core Principles](#core-principles) and [The Five Objectives](#the-five-objectives-maqasid)
+- **Building autonomous agents?** → See [Three-Layer Ethical Architecture](#three-layer-ethical-architecture-for-autonomous-agents)
 - **Building an ethical framework?** → See [Implementation Checklists](#implementation-checklists) and [Maturity Model](#ethical-engineering-maturity-model)
 - **Understanding the categorization?** → Review [Ethical Categorization System](#ethical-categorization-system)
 - **Domain-specific guidance?** → See [Domain Applications](#domain-applications)
@@ -26,6 +27,7 @@
 - Safety-critical systems affecting human welfare
 - Long-lived production systems requiring multi-generational maintenance
 - AI/ML systems making consequential decisions
+- **Autonomous agents and agentic systems with decision-making authority**
 - Systems subject to regulatory compliance (GDPR, HIPAA, accessibility laws)
 
 **Metaprinciple**: *Software engineering is an ethical practice. Every technical decision carries moral weight.*
@@ -36,15 +38,49 @@ Code is not neutral. Systems shape behavior. Engineering choices affect real liv
 
 ## The Five Objectives (Maqasid)
 
-All engineering practices serve five fundamental objectives:
+All engineering practices serve five fundamental objectives, **listed in order of priority** with weighted scores for autonomous decision-making:
 
-1. **Hifz al-Din (System Integrity)**: Protecting the fundamental "truth" and correctness of the system
-2. **Hifz al-Mal (Resource Efficiency)**: Using computational and human resources wisely
-3. **Hifz al-Nasl (System Longevity)**: Ensuring code survives and evolves across generations
-4. **Hifz al-Nafs (Human Sustainability)**: Protecting the wellbeing of users and developers
-5. **Hifz al-Aql (Knowledge Capital)**: Preserving and enhancing collective understanding
+1. **Hifz al-Din (System Integrity)** [Weight: 5×]: Protecting the fundamental "truth" and correctness of the system
+2. **Hifz al-Nafs (Human Sustainability)** [Weight: 4×]: Protecting the wellbeing of users and developers
+3. **Hifz al-Aql (Knowledge Capital)** [Weight: 3×]: Preserving and enhancing collective understanding
+4. **Hifz al-Nasl (System Longevity)** [Weight: 2×]: Ensuring code survives and evolves across generations
+5. **Hifz al-Mal (Resource Efficiency)** [Weight: 1×]: Using computational and human resources wisely
 
-These objectives are interdependent. A system that is technically perfect but harms users fails. Code that is brilliant but unmaintainable fails. Security without usability fails. This manifesto integrates all five.
+**Priority Principle**: When objectives conflict, higher-weighted objectives take precedence. A system that is technically perfect (Integrity) but harms users (Sustainability) fails. Code that is efficient (Resources) but unmaintainable (Knowledge/Longevity) fails.
+
+### Weighted Scoring for Autonomous Systems
+
+For autonomous agents making ethical decisions, calculate a weighted score:
+
+```
+Score = (Integrity × 5) + (Sustainability × 4) + (Knowledge × 3) +
+        (Longevity × 2) + (Efficiency × 1)
+```
+
+Each objective can be scored from -2 (severe harm) to +2 (significant benefit):
+- **+2**: Significant positive impact
+- **+1**: Moderate positive impact
+- **0**: Neutral impact
+- **-1**: Moderate negative impact
+- **-2**: Severe negative impact
+
+**Example**: Adding comprehensive unit tests
+- Integrity: +2 (ensures correctness) → 2 × 5 = 10
+- Sustainability: +1 (developer confidence) → 1 × 4 = 4
+- Knowledge: +1 (documents behavior) → 1 × 3 = 3
+- Longevity: +1 (prevents regressions) → 1 × 2 = 2
+- Efficiency: -1 (takes time to write) → -1 × 1 = -1
+- **Total Score**: 10 + 4 + 3 + 2 - 1 = **18** (strongly recommended)
+
+**Example**: Bypass SSL verification to fix timeout
+- Integrity: -2 (violates security) → -2 × 5 = -10
+- Sustainability: -1 (user data at risk) → -1 × 4 = -4
+- Knowledge: 0 (neutral) → 0
+- Longevity: -1 (technical debt) → -1 × 2 = -2
+- Efficiency: +2 (fixes timeout quickly) → 2 × 1 = 2
+- **Total Score**: -10 - 4 + 0 - 2 + 2 = **-14** (prohibited)
+
+These objectives are interdependent yet hierarchical. This manifesto integrates all five while respecting their priority order.
 
 ---
 
@@ -86,6 +122,271 @@ Not forbidden, but avoid unless there's strong justification. These practices de
 Actions that violate fundamental ethical principles. These must never be done, regardless of business pressure.
 
 **Examples**: Hardcoded secrets, dark patterns, ignoring known vulnerabilities, selling user data without consent, addictive mechanics, developer burnout culture
+
+---
+
+## Three-Layer Ethical Architecture for Autonomous Agents
+
+For autonomous systems with decision-making authority, this framework implements a **defense-in-depth** ethical architecture with three independent layers. Each layer provides a different lens for evaluating actions, creating emergent ethical behavior without requiring the agent to "understand" ethics.
+
+### Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    PROPOSED ACTION                          │
+└────────────────────┬────────────────────────────────────────┘
+                     │
+        ┌────────────▼─────────────┐
+        │   LAYER 1: SCOPE POLICY  │  ← Structural Safety
+        │      (Al-Asl)            │    "Can this be done?"
+        └────────────┬─────────────┘
+                     │ Pass ✓
+        ┌────────────▼──────────────┐
+        │ LAYER 2: OBJECTIVES       │  ← Value Alignment
+        │    ANALYSIS (Maqasid)     │    "Should this be done?"
+        └────────────┬──────────────┘
+                     │ Pass ✓
+        ┌────────────▼──────────────┐
+        │ LAYER 3: MEANS            │  ← Execution Strategy
+        │  CLASSIFICATION (Ahkam)   │    "How urgently?"
+        └────────────┬──────────────┘
+                     │
+              ┌──────▼──────┐
+              │  EXECUTE    │
+              └─────────────┘
+```
+
+### Layer 1: Scope Policy (Al-Asl) - The Gatekeeper
+
+**Purpose**: Structural safety - what **CAN** be done
+
+This layer implements two complementary principles from Islamic jurisprudence:
+
+**1. Al-Asl fil-'Ibadat al-Tawqif** (Internal/Core Systems)
+   - **Default**: DENY (whitelist only)
+   - **Protects**: System invariants, core state, kernel integrity
+   - **Rule**: "The default in core systems is prohibition"
+   - **Rationale**: Critical infrastructure requires explicit authorization
+
+**2. Al-Asl fil-Mu'amalat al-Ibahah** (External/User-Facing)
+   - **Default**: ALLOW (blacklist only)
+   - **Enables**: Innovation, flexibility, user value
+   - **Rule**: "The default in usage is permission, except what is explicitly forbidden"
+   - **Rationale**: Creativity requires freedom within safety boundaries
+
+**Implementation**:
+
+```elixir
+# Whitelist for internal operations (critical/privileged)
+@internal_whitelist [
+  "rotate_encryption_keys",
+  "update_firewall_rules",
+  "modify_authentication_config",
+  "adjust_rate_limits"
+]
+
+# Blacklist for external operations (harmful)
+@external_blacklist [
+  "leak_private_data",
+  "bypass_ssl_verification",
+  "disable_audit_logging",
+  "implement_dark_patterns"
+]
+
+def check_scope(action, scope) do
+  case scope do
+    :internal ->
+      if action in @internal_whitelist,
+        do: {:ok, "Authorized internal operation"},
+        else: {:reject, "Not in whitelist - violates system invariants"}
+
+    :external ->
+      if action in @external_blacklist,
+        do: {:reject, "Forbidden - causes user harm"},
+        else: {:ok, "Permitted within boundaries"}
+  end
+end
+```
+
+**Benefit**: Fast rejection (~O(1)) of structurally unsafe operations before expensive objective analysis.
+
+---
+
+### Layer 2: Objectives Analysis (Maqasid) - The Strategist
+
+**Purpose**: Value alignment - what **SHOULD** be done
+
+This layer calculates weighted impact across the Five Objectives (see above). Actions are evaluated for their effect on each objective.
+
+**Weighted Scoring Formula**:
+```
+Score = (Integrity × 5) + (Sustainability × 4) + (Knowledge × 3) +
+        (Longevity × 2) + (Efficiency × 1)
+```
+
+**Decision Thresholds**:
+- **Score ≥ 10**: Strongly aligned (proceed to execution)
+- **Score 0-9**: Weakly aligned (proceed with caution)
+- **Score < 0**: Misaligned (reject)
+
+**Conflict Resolution**: When objectives conflict, higher priority always wins:
+- Integrity > Sustainability > Knowledge > Longevity > Efficiency
+
+**Example Analysis**:
+
+```elixir
+def analyze_objectives(action_context) do
+  weighted_score =
+    (action_context.system_integrity * 5) +
+    (action_context.human_sustainability * 4) +
+    (action_context.knowledge_capital * 3) +
+    (action_context.system_longevity * 2) +
+    (action_context.resource_efficiency * 1)
+
+  recommendation = cond do
+    weighted_score >= 10 -> {:approve, "Strongly aligned with objectives"}
+    weighted_score >= 0  -> {:approve_with_caution, "Weakly aligned"}
+    weighted_score < 0   -> {:reject, "Misaligned with core objectives"}
+  end
+
+  %{
+    weighted_score: weighted_score,
+    recommendation: recommendation,
+    conflicts: identify_conflicts(action_context)
+  }
+end
+```
+
+**Benefit**: Ensures decisions align with organizational values through mathematical enforcement.
+
+---
+
+### Layer 3: Means Classification (Ahkam) - The Tactician
+
+**Purpose**: Execution strategy - **HOW** to do it
+
+Actions that pass Layers 1 and 2 are classified by urgency and importance, determining execution strategy.
+
+**Priority Levels**:
+
+| Classification | Priority | Execution Strategy | Retry on Failure? |
+|----------------|----------|-------------------|-------------------|
+| **Critical Required (Fard)** | 100 | Blocking | Yes (3× retries) |
+| **Strongly Recommended (Mandub)** | 70 | Best effort | Log failure only |
+| **Discretionary (Mubah)** | 50 | Opportunistic | Skip if constrained |
+| **Anti-Pattern (Makruh)** | 20 | Skip, warn | N/A |
+| **Prohibited (Haram)** | 0 | Halt system | N/A |
+
+**Classification Logic**:
+
+```elixir
+def classify_means(action) do
+  severity = determine_severity(action)
+  action_type = categorize_type(action)
+
+  ruling = case {severity, action_type} do
+    {:critical, :security_fix} -> :critical_required
+    {:critical, :vulnerability} -> :critical_required
+    {:high, :add_verification} -> :strongly_recommended
+    {:high, :improve_reliability} -> :strongly_recommended
+    {:medium, :refactoring} -> :discretionary
+    {:low, :optimization} -> check_if_premature(action)
+    _ -> :discretionary
+  end
+
+  %{
+    ruling: ruling,
+    priority: priority_score(ruling),
+    execution_mode: execution_strategy(ruling)
+  }
+end
+```
+
+**Execution Priority Queue**:
+
+1. **Critical Required** (Priority 100): Execute immediately, block on failure
+2. **Strongly Recommended** (Priority 70): Execute in order, log failures
+3. **Discretionary** (Priority 50): Execute if resources available
+4. **Anti-Pattern** (Priority 20): Skip and log warning
+5. **Prohibited** (Priority 0): Halt and alert
+
+**Benefit**: Optimal resource allocation based on importance, graceful degradation under load.
+
+---
+
+### Emergent Properties
+
+This three-layer architecture creates several emergent properties:
+
+**1. Self-Correcting**
+- Bad decisions automatically filtered at multiple layers
+- No human needed for obvious ethical violations
+- Escalates only ambiguous cases
+
+**2. Predictable Autonomy**
+- Agent acts independently within ethical boundaries
+- Constrained by mathematical framework
+- Behavior is auditable and explainable
+
+**3. Graceful Degradation**
+- Critical tasks always execute (Priority 100)
+- Non-critical tasks skip under resource constraints
+- System never sacrifices integrity for speed
+
+**4. Defense in Depth**
+- Even if scope check passes, objectives can reject
+- Even if objectives approve, means determines urgency
+- Multiple opportunities to catch harmful decisions
+
+**5. Mathematically Enforced Ethics**
+- Unethical decisions are "type errors" rejected by the system
+- No need for the agent to "understand" morality
+- The framework enforces it through weighted scoring
+
+**Example: Complete Decision Flow**
+
+```
+Task: "Bypass SSL verification to fix timeout"
+
+Layer 1 (Scope):
+  - Scope: :internal (core networking)
+  - Action: "bypass_ssl_verification"
+  - Whitelist check: NOT FOUND
+  - Result: ❌ BLOCKED
+  - Reason: "Not in whitelist - violates security invariants"
+
+→ Rejected before objectives analysis (fast path)
+```
+
+```
+Task: "Add comprehensive unit tests"
+
+Layer 1 (Scope):
+  - Scope: :external (development practice)
+  - Action: "add_unit_tests"
+  - Blacklist check: NOT FOUND
+  - Result: ✅ PASS → Continue to Layer 2
+
+Layer 2 (Objectives):
+  - Integrity: +2 (ensures correctness) → 10
+  - Sustainability: +1 (confidence) → 4
+  - Knowledge: +1 (documents behavior) → 3
+  - Longevity: +1 (prevents regressions) → 2
+  - Efficiency: -1 (takes time) → -1
+  - Weighted Score: 18
+  - Result: ✅ APPROVE → Continue to Layer 3
+
+Layer 3 (Means):
+  - Keywords: "test", "unit", "comprehensive"
+  - Type: :add_verification
+  - Severity: :high
+  - Classification: STRONGLY_RECOMMENDED
+  - Priority: 70
+  - Execution: :best_effort
+  - Result: ✅ Execute in priority queue
+
+→ Executed after critical tasks, before discretionary tasks
+```
 
 ---
 
