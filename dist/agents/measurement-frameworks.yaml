@@ -1,0 +1,47 @@
+metadata:
+  schema_version: '1.1'
+  description: Quantifiable metrics, KPIs, and success criteria for all manifestos.
+accessibility:
+  automated_testing:
+    axe_core_violations:
+      wcag_a:
+        target: 0 violations
+        blocking: true
+      wcag_aa:
+        target: 0 violations
+        blocking: true
+      wcag_aaa:
+        target: "\u22645 violations"
+        blocking: false
+      measurement: axe-devtools-cli
+    lighthouse_accessibility_score:
+      target: "\u226595"
+      acceptable: "\u226590"
+      alert_threshold: <90
+      measurement: lighthouse-ci
+  manual_testing:
+    keyboard_navigation:
+      target: 100% functionality accessible
+      measurement: manual-qa-checklist
+    screen_reader_task_completion:
+      target: "\u226595% success rate"
+      acceptable: "\u226590%"
+      measurement: user-testing-with-blind-users
+  color_contrast:
+    text_normal:
+      target: "\u22654.5:1"
+      wcag_level: AA
+      measurement: colour-contrast-analyser
+    text_large:
+      target: "\u22653:1"
+      wcag_level: AA
+      measurement: colour-contrast-analyser
+    ui_components:
+      target: "\u22653:1"
+      wcag_level: AA
+      measurement: colour-contrast-analyser
+  touch_targets:
+    minimum_size:
+      target: "\u226544\xD744px"
+      wcag_level: AA
+      measurement: manual-inspection-design-tools

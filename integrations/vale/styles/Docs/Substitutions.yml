@@ -1,0 +1,16 @@
+extends: substitution
+message: "Avoid using '%s'. Try '%s' instead."
+level: suggestion
+ignorecase: true
+swap:
+  "obviously": "clear"
+  "simply": ""
+  "just": ""
+  "of course": ""
+  "clearly": ""
+  "everyone knows": ""
+  "easy": "straightforward"
+  "trivial": "straightforward"
+  "guys": "team|folks|everyone"
+  "crazy": "very|extremely"
+  "insane": "very|extremely"

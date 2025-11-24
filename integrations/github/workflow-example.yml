@@ -1,0 +1,54 @@
+# This is an example GitHub Actions workflow to demonstrate how the
+# manifesto tools can be integrated into a CI/CD pipeline.
+
+name: "Manifesto Checks"
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-advise:
+    name: "Build & Advise"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v3
+
+      - name: "Set up Python"
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: "Install dependencies"
+        run: pip install pyyaml
+
+      - name: "Build agent data"
+        id: build
+        run: python scripts/build_agents_data.py
+
+      - name: "Run advisor (non-interactive)"
+        id: advise
+        run: |
+          echo "--- Running Advisor for a User-Facing Product ---"
+          python scripts/advisor.py --priority user-facing-product
+
+  lint-docs-with-vale:
+    name: "Lint Docs w/ Vale"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v3
+
+      - name: "Run Vale"
+        uses: errata-ai/vale-action@v1
+        with:
+          # This action will automatically find the .vale.ini config
+          # and run it against all markdown files in the repo.
+          files: '["accessibility", "content_communication", "data_analytics", "ethics", "formal_verification", "security_hardening", "user_experience", "vibe_coding"]'
+        env:
+          # Set the token to get GitHub status checks
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,29 +1,29 @@
-# Contributing to Code Review Manifestos
+# Contributing to code review manifestos
 
 Thank you for your interest in improving these manifestos! This document provides guidelines for contributing.
 
-## Quick Start
+## Quick start
 
 1. **Fork** this repository
 2. **Create a feature branch**: `git checkout -b feature/improve-security-principle-3`
-3. **Make your changes** following our [Style Guide](./STYLE_GUIDE.md)
+3. **Make your changes** following our [Style guide](./STYLE_GUIDE.md)
 4. **Run quality checks** (see below)
 5. **Submit a pull request** with a clear description
 
 ---
 
-## Content Standards
+## Content standards
 
 All contributions must follow the [Content & Communication Manifesto](./content_communication/CONTENT_COMMUNICATION_MANIFESTO.md) principles:
 
-### Core Requirements (Must Have)
+### Core requirements (must have)
 - ✅ **Clarity**: Simple, direct language; active voice; concrete examples
 - ✅ **Semantic Hierarchy**: Proper heading structure (H1 → H2 → H3, no skips)
 - ✅ **Precision**: Consistent terminology; define jargon; use glossary terms
 - ✅ **Accessibility**: WCAG 2.1 AA compliance; semantic markup; descriptive links
 - ✅ **Empathy**: Inclusive language; blame-free; respectful tone
 
-### Standard Requirements (Production Quality)
+### Standard requirements (production quality)
 - ✅ **Examples**: Show anti-pattern AND correct pattern for each principle
 - ✅ **Actionability**: Provide concrete guidance, not abstract theory
 - ✅ **Scannability**: Use headings, lists, tables, code blocks
@@ -32,9 +32,9 @@ All contributions must follow the [Content & Communication Manifesto](./content_
 
 ---
 
-## Types of Contributions
+## Types of contributions
 
-### 1. Typos & Minor Fixes
+### 1. Typos and minor fixes
 **No issue needed** — just submit a PR with clear description.
 
 **Examples**:
@@ -43,7 +43,7 @@ All contributions must follow the [Content & Communication Manifesto](./content_
 - Update outdated tool versions
 - Fix code example syntax errors
 
-### 2. Clarifications & Examples
+### 2. Clarifications and examples
 **Create an issue first** to discuss approach.
 
 **Examples**:
@@ -52,7 +52,7 @@ All contributions must follow the [Content & Communication Manifesto](./content_
 - Add "when to violate" guidance
 - Provide additional context
 
-### 3. New Principles or Manifestos
+### 3. New principles or manifestos
 **Create an issue with detailed proposal** before implementation.
 
 **Include in proposal**:
@@ -64,11 +64,11 @@ All contributions must follow the [Content & Communication Manifesto](./content_
 
 ---
 
-## Quality Checks
+## Quality checks
 
 Before submitting your PR, run these checks:
 
-### Automated Checks (Run Locally)
+### Automated checks (run locally)
 
 ```bash
 # 1. Check for broken links
@@ -88,7 +88,7 @@ typos
 vale **/*.md
 ```
 
-### Manual Review Checklist
+### Manual review checklist
 
 Before submitting, verify:
 
@@ -103,7 +103,7 @@ Before submitting, verify:
 
 ---
 
-## Review Process
+## Review process
 
 1. **Submit PR**: Include clear title and description
 2. **Automated checks**: CI runs link checking, markdown linting, spell check
@@ -116,7 +116,7 @@ Before submitting, verify:
 
 ---
 
-## Versioning & Changelogs
+## Versioning and changelogs
 
 We follow [Semantic Versioning](https://semver.org/):
 
@@ -145,7 +145,7 @@ For changes requiring version bumps, update `CHANGELOG.md` in the manifesto dire
 
 ---
 
-## Style Guidelines
+## Style guidelines
 
 See [STYLE_GUIDE.md](./STYLE_GUIDE.md) for detailed guidance on:
 
@@ -154,7 +154,7 @@ See [STYLE_GUIDE.md](./STYLE_GUIDE.md) for detailed guidance on:
 - Terminology (use controlled vocabulary)
 - Examples (anti-pattern vs. pattern format)
 
-### Quick Style Reference
+### Quick style reference
 
 **Voice**:
 - ✅ Second person: "You should...", "Your code..."
@@ -173,7 +173,7 @@ See [STYLE_GUIDE.md](./STYLE_GUIDE.md) for detailed guidance on:
 
 ---
 
-## Contribution Recognition
+## Contribution recognition
 
 Contributors are recognized in:
 - PR description and commit messages
@@ -184,15 +184,15 @@ We may add a CONTRIBUTORS.md file in the future to highlight major contributions
 
 ---
 
-## Code of Conduct
+## Code of conduct
 
-### Expected Behavior
+### Expected behavior
 - Be respectful and inclusive
 - Provide constructive feedback
 - Accept constructive criticism gracefully
 - Focus on what is best for the community
 
-### Unacceptable Behavior
+### Unacceptable behavior
 - Harassment, discrimination, or personal attacks
 - Trolling, insulting/derogatory comments
 - Public or private harassment
