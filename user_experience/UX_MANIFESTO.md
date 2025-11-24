@@ -1,547 +1,276 @@
-# User Experience Manifesto: 17 Foundational Principles
+---
+id: "user-experience"
+title: "The User Experience Manifesto"
+version: "2.1"
+status: "current"
+focus: "User success, satisfaction, and ethical design"
+primary_users: ["designers", "product-managers", "frontend-developers", "ux-researchers"]
+learning_curve: "medium"
+roi_timeline: "immediate-medium"
+adoption_scope: "universal-product-focused"
+principles_count: 15 # As revised
+tier_structure:
+  core: 5
+  standard: 6
+  excellence: 4
+applicability:
+  project_types: ["web-apps", "mobile-apps", "voice-ui", "ar-vr", "iot", "design-systems"]
+  languages: ["javascript", "swift", "kotlin", "html", "css"]
+  contexts: ["user-facing", "b2c", "b2b", "consumer", "enterprise"]
+related_manifestos:
+  complements: ["accessibility", "content-communication", "security-hardening"]
+  prerequisites: []
+  enables: ["user-satisfaction", "conversion", "retention"]
+tools:
+  categories: ["testing", "analytics", "design", "prototyping"]
+  count: 30+
+standards:
+  - "Nielsen Heuristics"
+  - "WCAG 2.1 AA"
+  - "Core Web Vitals"
+  - "Privacy-by-Design"
+measurement:
+  usability_testing:
+    task_success_rate:
+      target: "≥95%"
+      acceptable: "≥90%"
+    time_on_task:
+      target: "≤expected-time"
+    error_rate:
+      target: "≤5%"
+  user_satisfaction:
+    nps: # Net Promoter Score
+      target: "≥50"
+    csat: # Customer Satisfaction
+      target: "≥4.5/5"
+    sus: # System Usability Scale
+      target: "≥80"
+  performance:
+    lcp: # Largest Contentful Paint
+      target: "≤2.5s"
+    fid: # First Input Delay
+      target: "≤100ms"
+    cls: # Cumulative Layout Shift
+      target: "≤0.1"
+---
+# User Experience Manifesto: 15 Foundational Principles
 
-**Version**: 2.0
-**Last Updated**: 2025-11-20
-**Classification**: Public
-**License**: CC0 - Public Domain
+**Version**: 2.1
+**Last Updated**: 2025-11-23
+**Conformance**: WCAG 2.1 Level AA
 
 ---
 
-## Table of Contents
+## Introduction
 
-**Core Principles** (Non-negotiable fundamentals)
-- [I. User Primacy](#i-user-primacy)
-- [II. Clarity Over Cleverness](#ii-clarity-over-cleverness)
-- [III. Progressive Disclosure](#iii-progressive-disclosure)
-- [IV. Consistency & Coherence](#iv-consistency--coherence)
-- [VIII. Accessibility as Foundation](#viii-accessibility-as-foundation)
+The goal of user experience (UX) design is to create products and services that are effective, efficient, and enjoyable to use. This manifesto codifies a set of foundational principles to guide teams in creating user-centric experiences. It asserts that good UX is not a luxury; it is a fundamental requirement for success.
 
-**Standard Principles** (Required for production)
-- [V. Immediate Feedback](#v-immediate-feedback)
-- [VI. Forgiveness & Reversibility](#vi-forgiveness--reversibility)
-- [VII. Recognition Over Recall](#vii-recognition-over-recall)
-- [IX. Efficiency & Flow](#ix-efficiency--flow)
-- [X. Appropriate Defaults](#x-appropriate-defaults)
-- [XI. Contextual Relevance](#xi-contextual-relevance)
-- [XII. Error Prevention Over Error Handling](#xii-error-prevention-over-error-handling)
-- [XVI. Privacy & Ethical Design](#xvi-privacy--ethical-design)
-- [XVII. Navigation & Findability](#xvii-navigation--findability)
-
-**Excellence Principles** (Differentiation tier)
-- [XIII. Aesthetic Integrity](#xiii-aesthetic-integrity)
-- [XIV. Performance as Feature](#xiv-performance-as-feature)
-- [XV. Continuous Validation](#xv-continuous-validation)
-
-**Meta-Sections**
-- [Principle Precedence & Conflict Resolution](#principle-precedence--conflict-resolution)
-- [Corollaries](#corollaries)
-- [Measurement Framework](#measurement-framework)
-- [Changelog](#changelog)
+The ultimate measure of quality is the user's ability to achieve their goals with minimum friction and maximum satisfaction. These principles are a framework for achieving that outcome.
 
 ---
 
-## I. User Primacy
-**Design serves user goals, not organizational convenience or technical elegance.**
+## Guiding Philosophies
 
-Every interface decision optimizes for user success, comprehension, and efficiency. Organizational structure, technical architecture, and aesthetic preferences are subordinate to user needs.
+These mindsets should inform every decision, providing the context in which the following principles are applied.
 
-- User mental models > system implementation models
-- Task completion time + error rate + satisfaction = primary metrics
-- "Because it's easier to implement" ≠ valid design rationale
-
-**Examples:**
-- E-commerce checkout: user's purchase journey > internal order management structure
-- Voice assistant: natural language understanding > command syntax requirements
-- Mobile app: thumb-reachable controls > symmetrical layout
+-   **Simplicity is Hard-Won**: The first draft is never simple enough. True simplicity is achieved by iteratively removing the non-essential until only clarity remains.
+-   **Content-First Design**: The interface serves the content. Design in the absence of content is decoration. The structure, hierarchy, and clarity of the information is paramount.
+-   **Mobile-First & Progressive Enhancement**: Design for the most constrained context first (e.g., small screens, slow networks), then progressively add features and complexity for more capable environments.
+-   **Localization by Design**: Plan for a global audience from day one. Accommodate text expansion, right-to-left (RTL) layouts, and diverse cultural conventions for formats and symbols.
+-   **Respect User Agency**: The user is in control. Your design should respect their choices, system-level preferences (like font size or reduced motion), and provide customization where appropriate.
 
 ---
 
-## II. Clarity Over Cleverness
-**Interfaces shall be immediately comprehensible; novelty must justify cognitive cost.**
+## Core Principles (Non-negotiable Fundamentals)
 
-Prioritize recognition over recall. Use established patterns. Innovation in established domains requires proportional benefit. Novel interaction paradigms (spatial computing, voice, gesture) should be explored with appropriate user guidance. Ambiguity is failure.
+These are the absolute foundations of a good user experience. A failure in any of these areas represents a fundamental failure of the design.
 
-- Standard icons, conventional placements, predictable behaviors
-- `⋮` (kebab menu) recognized > `◎` (custom icon) novel
-- Onboarding time → 0 for common patterns
-- Exception: New paradigms (AR/VR, BCIs) warrant experimentation with progressive tutorials
+### 1. User Primacy
+**Design must serve user goals, not organizational convenience or technical elegance.**
 
-**Examples:**
-- Web form: standard submit button > swipe gesture
-- VR interface: hand gesture tutorial shown first time > assume familiarity
-- IoT device: physical button for critical function > app-only control
+Every decision must be justified by its benefit to the user. The user's mental model of the task should shape the interface, not the system's underlying architecture.
+
+-   **Metrics**: Task completion rate, error rate, and user satisfaction are the primary measures of success.
+-   **Invalid Rationale**: "It's easier to implement this way" is not a valid reason to compromise the user experience.
 
 ---
 
-## III. Progressive Disclosure
-**Reveal complexity incrementally; present minimum viable interface first.**
+### 2. Accessibility as Foundation
+**Interfaces must be perceivable, operable, understandable, and robust for all users, including those with disabilities.**
 
-Expose advanced functionality as users demonstrate need. Default to simplicity. Power users discover depth; novices aren't overwhelmed.
+Accessibility is a legal and moral imperative that benefits everyone. It is not an add-on, but a core requirement.
 
-- Initial view: 3-5 primary actions
-- Secondary features: accessible but not prominent
-- Expert mode: keyboard shortcuts, bulk operations, configuration
-
-**Examples:**
-- Email client: compose/read primary; filters/rules hidden until needed
-- Photo editor: brightness/contrast visible; curves/levels in advanced panel
-- Smart home app: "Turn on lights" primary; scheduling in settings
+-   **Standard**: WCAG 2.1 AA is the minimum baseline.
+-   **Key Practices**: Ensure full keyboard navigation, screen reader compatibility, sufficient color contrast (≥4.5:1), and that color is not the only means of conveying information.
+-   **Respect Preferences**: The system must respect user settings like `prefers-reduced-motion` and system font sizes.
 
 ---
 
-## IV. Consistency & Coherence
-**Similar elements behave identically; patterns propagate system-wide.**
+### 3. Privacy & Ethical Design
+**User data is sacred. The design must be transparent, consensual, and free of manipulative patterns.**
 
-Establish interaction vocabulary; apply uniformly. Button placement, color semantics, keyboard shortcuts, terminology—all consistent across contexts.
+Trust is hard-won and easily lost. Ethical design respects the user's attention, data, and autonomy.
 
-- Primary action: consistent position per reading direction (trailing edge for LTR, leading for RTL)
-- Destructive actions: red, require confirmation
-- Save command: `⌘S` / `Ctrl+S` (desktop), swipe-down gesture (mobile), "Save" voice command—all contexts
-- Touch targets: ≥44×44px across all screens
-
-**Examples:**
-- Cross-platform app: "Send" always blue, always bottom-right (LTR) across web/iOS/Android
-- Design system: danger buttons red system-wide, not red in some contexts, orange in others
-- Multimodal: "Next" works as button tap, voice command, keyboard shortcut identically
+-   **Minimal Data**: Collect only the data necessary to perform the task.
+-   **Explicit Consent**: Use clear, plain language to explain why data is needed. Opt-in is required.
+-   **No Dark Patterns**: Never use deceptive UI to trick users into actions they did not intend (e.g., hidden costs, confusing subscription flows).
+-   **Explainability**: Algorithmic decisions that affect the user should be explainable. Provide a "Why am I seeing this?" feature for recommendations.
 
 ---
 
-## V. Immediate Feedback
-**Every user action produces perceptible response within 100ms.**
+### 4. Clarity and Recognition
+**Interfaces must be immediately comprehensible. Minimize the user's memory load by making objects, actions, and options visible.**
 
-Acknowledge input instantly. Show progress for long operations. Animate state transitions. Silence breeds uncertainty.
+Users should not have to remember information from one part of the interface to another. Strive for recognition over recall.
 
-- Click → visual feedback (ripple, highlight, state change)
-- `<100ms`: instant, `100ms-1s`: progress indicator, `>1s`: detailed progress + cancellation
-- Failed operations: explicit error message with remediation path
+-   **Use Conventions**: Employ standard icons, conventional placements, and predictable behaviors. Novelty must provide a significant benefit to justify its cognitive cost.
+-   **Show, Don't Tell**: Use dropdowns instead of requiring users to recall and type specific options. Provide auto-complete and lists of recently used items.
+-   **Contextual Help**: Place help and instructions adjacent to the controls they describe.
 
-**Examples:**
-- Button press: ripple animation starts <100ms, even if action takes longer
-- File upload: immediate spinner → progress bar → success checkmark
-- Voice command: visual/audio acknowledgment ("Okay...") before processing
-- AR selection: haptic feedback + visual highlight instantaneous
+**Example**: A booking website should show the selected dates and times throughout the entire checkout flow, rather than requiring the user to remember them.
 
 ---
 
-## VI. Forgiveness & Reversibility
-**Users shall recover from errors without data loss or significant cost.**
+### 5. Consistency & Coherence
+**Similar elements must look and behave in similar ways. Patterns must be applied system-wide.**
 
-Undo available for all destructive actions. Confirmation for irreversible operations. Autosave protects work. Errors are opportunities for guidance.
+A consistent design creates a predictable and learnable experience. This "internal consistency" allows users to transfer knowledge from one part of your product to another.
 
-- `⌘Z` / undo gesture universally available
-- "Delete" → trash/archive; "Permanently delete" → confirmation + delay
-- Draft state preserved across sessions and devices
-- Version history for complex documents
-
-**Examples:**
-- Email: "Undo send" for 10 seconds after sending
-- Photo app: non-destructive editing; original always preserved
-- Smart thermostat: "Return to previous setting" after manual override
-- Voice assistant: "Cancel that" works for last 30 seconds of commands
+-   **Vocabulary**: Establish and consistently apply a vocabulary for colors, terminology, icons, and layout (e.g., the primary action button is always in the same location).
+-   **Platform Standards**: Adhere to the conventions of the platform (iOS, Android, Web) to ensure "external consistency."
+-   **Touch Targets**: Ensure all interactive elements have a minimum touch target of 44x44px.
 
 ---
 
-## VII. Recognition Over Recall
-**Minimize memory load; make options visible; provide contextual cues.**
+## Standard Principles (Required for a Professional Product)
 
-Users shouldn't remember information between screens. Show, don't require memorization. Provide suggestions, defaults, and recently-used items.
+Once the core principles are met, these standards elevate the experience from merely functional to efficient and user-friendly.
 
-- Dropdowns > text input for enumerated options
-- Autocomplete from history
-- Contextual help adjacent to controls, not in separate documentation
-- Exception: Security contexts may require recall (password/PIN entry) when recognition poses risk
+### 6. Immediate Feedback
+**Every user action must produce a perceptible response within 100ms.**
 
-**Examples:**
-- Booking site: show selected dates/times throughout flow, don't require recall
-- Command palette: show recent commands, keyboard shortcuts, descriptions
-- AR assembly: overlay previous step reference while showing current step
-- Voice interface: "You can say things like..." prompt with examples
+The interface must immediately acknowledge all user input. Silence and inaction breed uncertainty and frustration.
+
+-   **< 100ms**: The response feels instantaneous (e.g., a button press highlights immediately).
+-   **100ms - 1s**: A progress indicator (like a spinner) is needed to show the system is working.
+-   **> 1s**: A detailed progress bar with a percentage and a cancellation option is required.
+-   **Failure**: Failed operations must provide an explicit error message with a clear path to resolution.
 
 ---
 
-## VIII. Accessibility as Foundation
-**Interfaces shall be perceivable, operable, understandable, and robust for all users.**
+### 7. Error Prevention
+**Design to make errors difficult to commit in the first place.**
 
-WCAG 2.1 AA minimum; AAA where feasible. Keyboard navigation complete. Screen reader compatible. Color not sole information carrier. Responsive to user needs and preferences.
+A great design anticipates potential mistakes and guides the user away from them. It is always better to prevent an error than to write a good error message.
 
-- Semantic HTML: `<button>` not `<div onclick>`
-- Alt text: descriptive, contextual, not redundant
-- Color contrast ratio ≥ 4.5:1 for text, ≥ 3:1 for UI components
-- Respect `prefers-reduced-motion`, `prefers-contrast`, `prefers-color-scheme`, system font size
-- Captions for audio, transcripts for video, alt text for images
-
-**Examples:**
-- Video player: keyboard controls, captions, audio descriptions, transcript
-- Data visualization: color + pattern/texture; screen reader data table alternative
-- Voice UI: visual feedback for deaf users; audio feedback for blind users
-- AR/VR: audio cues, high-contrast modes, seated/standing alternatives
+-   **Constraints**: Use constraints to prevent invalid input (e.g., disable future dates in a birthdate picker).
+-   **Smart Defaults**: Provide sensible defaults that align with the most common user goals.
+-   **Confirmation**: Require confirmation for destructive actions, and make the confirmation dialog specific (e.g., "Permanently delete this file?").
 
 ---
 
-## IX. Efficiency & Flow
-**Frequent tasks require minimal interaction; expert paths accommodate velocity.**
+### 8. Forgiveness & Reversibility
+**Users must be able to easily recover from errors without significant cost or data loss.**
 
-Reduce clicks for common operations. Keyboard shortcuts for power users. Batch operations available. Remove friction from repetitive workflows.
+Assume users will make mistakes. Empower them to explore the interface without fear by making actions easily reversible.
 
-- Primary user journey: ≤3 clicks/taps to core action
-- Keyboard navigation: complete task without pointing device
-- Bulk operations: select multiple → act once
-- Natural language shortcuts for voice/chat interfaces
+-   **Undo**: A universal "Undo" (`Ctrl+Z`) should be available for most actions.
+-   **Non-Destructive Actions**: Deleting an item should move it to a "Trash" or "Archive" from which it can be recovered, rather than deleting it permanently.
+-   **Autosave**: Preserve the user's work automatically to protect against crashes or accidental closures.
 
-**Examples:**
-- Email: archive in 1 tap from list view; keyboard shortcut from any view
-- Photo management: select 20 photos → apply tag once (not 20 times)
-- Smart home: "Goodnight" routine activates multiple devices
-- Developer tool: command palette with fuzzy search for any action
+**Example**: An email client that offers a 10-second "Undo Send" window after an email is sent.
 
 ---
 
-## X. Appropriate Defaults
-**Initial state optimizes for most common use case; adaptive personalization improves with usage.**
+### 9. Progressive Disclosure
+**Reveal complexity incrementally. Present the minimum viable interface first.**
 
-Defaults reflect 80th percentile behavior on first run. Machine learning surfaces patterns from user behavior. Configuration available but unnecessary.
+Avoid overwhelming users with too many options. Show the most common features by default and allow users to discover advanced functionality as they become more familiar with the product.
 
-- Form fields: pre-populated with likely values
-- Filters: sensible defaults (e.g., "last 30 days")
-- Configuration: sane out-of-box experience
-- Learned preferences: surface usage patterns while respecting explicit settings
-
-**Examples:**
-- Music app: suggests genres from first play; learns preferences over time
-- Calendar: defaults to work hours; adapts to scheduling patterns
-- Thermostat: starts with standard schedule; learns household patterns
-- Voice assistant: default voice/speed; personalizes to speaker patterns
+-   **Initial View**: The default view should contain only the 3-5 most critical actions.
+-   **Secondary Features**: Advanced features should be accessible but not prominent (e.g., in an "Advanced" panel or settings menu).
+-   **Expert Paths**: Provide shortcuts, command palettes, and bulk operations for power users to bypass novice workflows.
 
 ---
 
-## XI. Contextual Relevance
-**Information and actions presented match current user goal and context.**
+### 10. Efficiency & Flow
+**Frequent tasks must be achievable with minimal interaction. The design should facilitate a state of deep focus.**
 
-Adaptive interfaces surface relevant functionality. Hide irrelevant options. Context-sensitive help. Location, time, device, history, and user state inform presentation.
+Optimize the paths for the most common user journeys. Remove every possible point of friction from repetitive workflows.
 
-- Empty states: guide next action
-- Disabled controls: tooltip explains why + how to enable
-- Permissions denied: immediate path to grant access
-- Context switching: preserve state and provide clear re-entry
-
-**Examples:**
-- Map app: suggests home navigation at end of workday
-- Photo app: "Add to album" appears when album open; "Create album" when none exist
-- AR manual: highlights relevant part number when looking at component
-- Voice assistant: "Your meeting starts in 5 minutes" based on calendar + location
+-   **Reduce Clicks**: The core user journey should be achievable in 3 clicks/taps or fewer.
+-   **Keyboard Shortcuts**: Allow power users to perform any primary action without using a mouse.
+-   **Bulk Operations**: If a user can do something once, they should be able to do it to 100 items at once (e.g., bulk-tagging files).
 
 ---
 
-## XII. Error Prevention Over Error Handling
-**Design shall make errors difficult to commit; detection precedes consequence.**
+### 11. Navigation & Findability
+**Users must be able to locate content and orient themselves within the product through multiple, intuitive paths.**
 
-Constraints prevent invalid states. Validation immediate and inline. Progressive validation guides toward valid input before flagging errors. Dangerous actions require explicit intent. Guide toward success path.
+A user should never feel lost. The product's structure should be predictable, and their current location should always be clear.
 
-- Input masks: `(___) ___-____` for phone numbers
-- Inline validation: feedback as user types, not only on submit
-- Destructive buttons: separated, colored differently, require confirmation
-- Smart defaults prevent most common errors
-
-**Examples:**
-- Date picker: future dates disabled for birthdate field
-- Password field: strength meter + requirements shown while typing
-- File upload: format validation before upload attempt
-- Voice command: "Did you mean...?" confirmation for destructive actions
-- AR assembly: warn when selecting wrong part before attempting installation
+-   **Clear Hierarchy**: Keep navigation structures shallow (ideally <3 levels deep).
+-   **Search**: A robust search function is essential for any product with more than ~20 items of content.
+-   **Wayfinding Cues**: Use breadcrumbs, clear headings, and visual landmarks to indicate the user's location.
+-   **Multiple Paths**: Allow users to reach content via navigation, search, and contextual links.
 
 ---
 
-## XIII. Aesthetic Integrity
-**Visual design reinforces hierarchy, function, and brand; decoration is purposeful.**
+## Excellence Principles (The Differentiators)
 
-Typography, color, spacing, and animation serve communication. Visual noise eliminated. Every pixel justified. Beauty emerges from clarity.
+These principles distinguish a good product from a great one. They focus on craft, delight, and continuous improvement.
 
-- Typographic hierarchy: consistent scale (1.125-1.333 ratio); functional variation permitted
-- Whitespace: separates, groups, emphasizes
-- Animation: 200-400ms for transitions, communicates state change
-- Color: functional (success, error, warning, info), not arbitrary
-- Dark mode: proper implementation, not inverted colors
+### 12. Aesthetic Integrity
+**The visual design must reinforce the product's structure, function, and brand identity. Decoration should be purposeful.**
 
-**Examples:**
-- Dashboard: data prominent; chrome minimal; whitespace clarifies relationships
-- Form: visual rhythm through consistent spacing; related fields grouped
-- Notification: color + icon convey severity; animation draws appropriate attention
-- AR overlay: minimal UI; information appears only when relevant; fades when not needed
+Beauty and usability are not in conflict; beauty emerges from clarity and purpose. Every visual element should serve a function.
+
+-   **Hierarchy**: Use typography, color, and spacing to create a clear visual hierarchy that guides the user's attention.
+-   **Whitespace**: Use negative space intentionally to group related items and separate unrelated ones.
+-   **Animation**: Use animation to communicate state changes and guide the user, not for decoration. Keep transitions swift (200-400ms).
 
 ---
 
-## XIV. Performance as Feature
-**Perceived performance equals actual performance; responsiveness is non-negotiable.**
+### 13. Performance as a Feature
+**The perceived speed of the product is a critical design element. Responsiveness is non-negotiable.**
 
-Load time, interaction latency, and animation frame rate directly impact user experience. Optimize rendering. Lazy load non-critical content. Measure real-user metrics across devices and networks.
+A slow interface feels broken. Performance directly impacts user satisfaction and is a form of accessibility, as it disproportionately affects users with older devices or slower connections.
 
-- Initial render: <1s on median device/connection
-- Interaction to feedback: <100ms
-- Animations: 60fps or none at all; respect `prefers-reduced-motion`
-- Skeleton screens, optimistic updates, background loading
-
-**Examples:**
-- Feed: skeleton UI immediately; content streams in; infinite scroll preloads
-- Form submission: optimistic UI update; background sync; rollback on failure
-- Video call: prioritize audio quality; gracefully degrade video on poor connection
-- Voice assistant: local wake word processing; streaming response; no blocking
+-   **Core Web Vitals**: Aim for LCP <2.5s, FID <100ms, CLS <0.1.
+-   **Interaction Latency**: Interactions must be acknowledged in <100ms.
+-   **Optimistic UI**: Update the UI immediately in response to user actions, and handle the background state change asynchronously. Show a success state by default and roll back only if an error occurs.
 
 ---
 
-## XV. Continuous Validation
-**Designs are hypotheses; user testing provides ground truth.**
+### 14. Contextual Relevance
+**The interface should adapt to present the most relevant information and actions based on the user's current goal and context.**
 
-Assumptions require validation. Qualitative and quantitative methods inform iteration. Analytics track behavior; user research explains why. Test with diverse users including those with disabilities.
+The system should be smart enough to anticipate the user's needs based on their state, location, time, and history.
 
-- Usability testing: minimum 5 users per iteration (Nielsen)
-- A/B testing: meaningful sample size, clear success metrics, ethical boundaries
-- Analytics: task completion rate, time-on-task, error frequency, accessibility tool usage
-- User feedback: collected systematically, analyzed rigorously
-- Inclusive research: diverse participants across abilities, cultures, contexts
-
-**Examples:**
-- New checkout flow: A/B test shows completion rate; user interviews reveal why
-- Accessibility: test with screen reader users, not just automated tools
-- Voice UI: test across accents, dialects, noise environments
-- AR feature: test in actual usage environments (lighting, space, movement)
+-   **Empty States**: An empty screen is a design opportunity. Guide the user on what to do next.
+-   **Adaptive Actions**: Show "Add to Album" when an album is open; show "Create New Album" when one isn't.
+-   **Location & Time**: A map app should suggest navigating home at the end of the workday.
 
 ---
 
-## XVI. Privacy & Ethical Design
-**User data is sacred; transparency and consent are non-negotiable.**
+### 15. Continuous Validation
+**Designs are hypotheses that must be validated with real users. The team must be committed to learning and iteration.**
 
-Collect minimum necessary data. Explain usage clearly in plain language. Provide export and deletion. Never manipulate through deceptive patterns. Algorithmic decisions should be explainable.
+You are not the user. Your assumptions, however well-intentioned, must be tested against reality.
 
-- Data collection: explicit opt-in with clear, specific purpose
-- Privacy controls: granular, accessible, persistent across sessions
-- Algorithmic transparency: explain automated decisions affecting users
-- Attention respect: no infinite scroll traps, notification abuse, or dark patterns
-- Right to data: export, deletion, correction easily accessible
-
-**Examples:**
-- Analytics: "Help us improve" with specific data list, not buried in TOS
-- Notification: meaningful opt-in, easy opt-out, frequency controls
-- Recommendation: "Why this suggestion?" explanation available
-- Location: request only when needed; show map of data collected; easy purge
-- Voice assistant: clear indicator when recording; local vs. cloud processing disclosed
-
----
-
-## XVII. Navigation & Findability
-**Users shall locate content through multiple paths; structure mirrors mental models.**
-
-Clear hierarchy. Multiple access patterns (navigation, search, related content, breadcrumbs). Wayfinding cues. Deep linking supported. Users never lost.
-
-- Navigation: <3 levels deep for 80% of content
-- Search: available when content >20 items; filters for >100 items
-- Location indicators: persistent, clickable breadcrumbs
-- Related content: multiple paths to same destination
-- Deep links: any screen directly accessible and shareable
-
-**Examples:**
-- E-commerce: browse by category, search, recent views, recommendations—all reach product
-- Documentation: sidebar navigation, search, breadcrumbs, inline links, table of contents
-- Settings: search bar, categorized list, contextual access from features
-- AR app: spatial anchors serve as navigational landmarks in physical space
-- Voice UI: "Go back," "Start over," "Go to [section]" always available
+-   **Qualitative & Quantitative**: Use analytics to understand *what* users are doing, and use user research (e.g., interviews, usability tests) to understand *why*.
+-   **Usability Testing**: Test with at least 5 users per iteration to uncover the most significant issues.
+-   **Inclusive Research**: Your participant pool must be diverse and include users with disabilities.
 
 ---
 
 ## Principle Precedence & Conflict Resolution
 
-When principles conflict (and they will), apply this hierarchy:
+When principles conflict, use this hierarchy to make decisions:
 
-### 1. Accessibility (VIII) > All Others
-- Legal requirement (ADA, EAA, AODA)
-- Moral imperative
-- Often improves experience for all users
+1.  **Accessibility (2) & Privacy/Ethics (3)**: These are non-negotiable and trump all other considerations.
+2.  **User Primacy (1)**: Use user goals and data from user research to arbitrate conflicts between other principles.
+3.  **Clarity (4)**: When in doubt, choose the clearest and most obvious option.
 
-**Example conflict**: Performance (XIV) vs. Accessibility (VIII)
-- Lazy-loading images improves performance but breaks screen reader navigation
-- **Resolution**: Use proper ARIA labels, alt text, and loading states; optimize image delivery instead
-
-### 2. User Primacy (I) Arbitrates Remaining Conflicts
-- Return to user goals and data
-- What do users need vs. want?
-- Measure impact on task completion
-
-**Example conflict**: Consistency (IV) vs. Contextual Relevance (XI)
-- Standard navigation placement vs. adaptive interface for mobile
-- **Resolution**: User data shows mobile task completion improved 40% with adaptive UI; maintain core patterns but allow context-appropriate variations
-
-### 3. Privacy & Ethics (XVI) > Personalization
-- When efficiency/defaults (X) require data collection that compromises privacy
-- **Resolution**: Offer personalization opt-in; ensure strong default experience without data
-
-### 4. Document Trade-offs Explicitly
-- Create decision log
-- Record which principle took priority and why
-- Revisit decisions with new data
-
----
-
-## Corollaries
-
-### Metaprinciple: Simplicity is Hard-Won Through Iteration
-First draft is never simple enough. Refinement removes unnecessary elements until only essential remains. "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away." —Saint-Exupéry
-
-### Mobile-First, Progressive Enhancement
-Design for constrained context; add capability for larger screens. Touch targets ≥44×44px. Network resilience built-in. Offline functionality where feasible.
-
-### Respect User Agency
-Users control their experience. Provide preferences, respect system settings, allow customization. Never override user choices without explicit permission.
-
-### Content Primacy
-Interface serves content. Typography, readability, and information hierarchy paramount. Chrome minimized. "Content precedes design. Design in the absence of content is not design, it's decoration." —Jeffrey Zeldman
-
-### Localization by Design
-Internationalization considered from inception. Text expansion (30% buffer for translations), RTL layouts, cultural conventions, date/time/currency formats, cultural color associations—all accommodated from day one.
-
-### Performance is Accessibility
-Slow interfaces disproportionately impact users on older devices, limited bandwidth, cognitive disabilities. Performance optimization is inclusive design.
-
-### Multimodal Consistency
-As interfaces span touch, voice, gesture, AR, ensure mental models transfer. Same tasks possible across modalities; output adapts to context.
-
----
-
-## Measurement Framework
-
-Track these metrics to validate adherence to principles:
-
-### Core Metrics (Across All Principles)
-- **Task Success Rate**: ≥90% for primary workflows
-- **Time on Task**: Compare to baseline; aim for consistent reduction
-- **Error Rate**: <5% on common tasks
-- **User Satisfaction**: SUS score ≥68 (average); aim for ≥80
-
-### Principle-Specific Metrics
-
-**I. User Primacy**
-- Task completion rate vs. organizational convenience alternative
-- User preference in A/B testing
-
-**V. Immediate Feedback**
-- P95 interaction latency (<100ms target)
-- Time to first feedback
-- Frame rate during animations (60fps target)
-
-**VI. Forgiveness & Reversibility**
-- Undo usage frequency
-- Data loss incidents (target: 0)
-- Recovery time from errors
-
-**VIII. Accessibility**
-- WCAG conformance level (AA minimum)
-- Screen reader compatibility (test with NVDA, JAWS, VoiceOver)
-- Keyboard navigation completeness (100%)
-- Automated testing (Axe, Pa11y) + manual testing
-
-**IX. Efficiency & Flow**
-- Clicks/taps to complete primary task (≤3 target)
-- Keyboard shortcut adoption by power users
-- Time savings for frequent tasks
-
-**XIV. Performance**
-- Core Web Vitals: LCP <2.5s, FID <100ms, CLS <0.1
-- Time to Interactive <3.5s on median device
-- P75 load time by region/device
-
-**XV. Continuous Validation**
-- Usability test frequency (quarterly minimum)
-- A/B test velocity
-- User feedback incorporation rate
-
-**XVI. Privacy & Ethical Design**
-- Privacy policy readability (8th-grade level or below)
-- Data deletion request fulfillment time
-- User-reported dark patterns (target: 0)
-
-**XVII. Navigation & Findability**
-- Search success rate (≥85%)
-- Navigation depth to key content
-- User-reported "lost" feedback
-
----
-
-## Implementation Guidance
-
-### For New Products
-1. Implement **Core Principles** (I-IV, VIII) from day one
-2. Add **Standard Principles** (V-VII, IX-XII, XVI-XVII) before public launch
-3. Achieve **Excellence Principles** (XIII-XV) through iteration
-
-### For Existing Products
-1. Audit against Core Principles; remediate gaps immediately
-2. Prioritize Standard Principle gaps by user impact
-3. Incrementally improve Excellence Principles
-
-### For Teams
-- **Designers**: Own I-IV, VII, XI, XIII, XVII
-- **Engineers**: Own V, VI, XIV (with designer collaboration)
-- **Researchers**: Own XV (inform all principles)
-- **Product**: Own I, IX, X, XVI (with legal/compliance)
-- **Accessibility Specialists**: Own VIII (advise on all)
-
----
-
-## Changelog
-
-### Version 2.0 (2025-11-20)
-**Added:**
-- Principle XVI: Privacy & Ethical Design
-- Principle XVII: Navigation & Findability
-- Principle Precedence & Conflict Resolution section
-- Measurement Framework with specific metrics
-- Implementation Guidance
-- Table of contents with anchor links
-- Implementation tier categorization (Core/Standard/Excellence)
-- Changelog section
-
-**Modified:**
-- Principle II: Added nuance for novel interaction paradigms
-- Principle IV: Improved cultural awareness (LTR/RTL considerations)
-- Principle VII: Added security exception for recall vs. recognition
-- Principle X: Expanded to include adaptive personalization
-- Principle XII: Added progressive validation guidance
-- Principle XIII: Refined typography guidance (ratio-based vs. fixed count)
-- All principles: Added diverse examples (voice, AR/VR, IoT, multimodal)
-
-**Improved:**
-- Document accessibility: table of contents, clearer hierarchy
-- Cultural awareness: RTL support, localization emphasis
-- Measurement specificity: concrete targets and tools
-
-### Version 1.0 (Previous)
-- Initial 15 principles
-- Basic corollaries
-- Foundational framework
-
----
-
-## Contributing
-
-This manifesto is public domain (CC0). Contributions welcome:
-1. Submit issues for discussion
-2. Propose changes with rationale and examples
-3. Share case studies of principles in practice
-4. Suggest measurement improvements
-
-**Contact**: [Your contact method here]
-
----
-
-## References & Further Reading
-
-- **Nielsen Norman Group**: Usability heuristics, UX research methods
-- **WCAG 2.1**: Web Content Accessibility Guidelines (W3C)
-- **Core Web Vitals**: Google performance metrics
-- **Inclusive Design Principles**: Paciello Group
-- **Design of Everyday Things**: Don Norman
-- **Universal Principles of Design**: Lidwell, Holden, Butler
-
----
-
-**End of Manifesto**
-
-*"The best interface is no interface, but when interfaces are necessary, let them be clear, kind, and invisible in service to the user's goals."*
+**Example Conflict**: `Consistency (5)` vs. `Contextual Relevance (14)`. The standard navigation pattern is on the top, but for a mobile app, it might be more contextually relevant at the bottom for thumb reachability.
+**Resolution**: Defer to `User Primacy (1)`. Does user data show a significant improvement in task completion with the adaptive, context-relevant UI? If so, the deviation from consistency is justified. Document the decision.
