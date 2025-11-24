@@ -1,0 +1,649 @@
+metadata:
+  schema_version: '1.1'
+  description: Index of all manifestos with metadata for AI agent consumption.
+manifestos:
+  accessibility:
+    id: accessibility
+    title: Accessibility Manifesto
+    version: '2.1'
+    status: current
+    focus: Universal access & WCAG compliance
+    primary_users:
+    - frontend-developers
+    - designers
+    - accessibility-specialists
+    - all-developers
+    learning_curve: medium
+    roi_timeline: immediate
+    adoption_scope: universal-legally-required
+    principles_count: 4
+    tier_structure:
+      core: 4
+      standard: 0
+      excellence: 0
+    applicability:
+      project_types:
+      - all-web
+      - all-mobile
+      - government
+      - education
+      - ecommerce
+      - healthcare
+      languages:
+      - html
+      - css
+      - javascript
+      - swift
+      - kotlin
+      contexts:
+      - public-facing
+      - customer-facing
+      - regulated
+    related_manifestos:
+      complements:
+      - user-experience
+      - content-communication
+      prerequisites: []
+      enables:
+      - inclusive-design
+      - legal-compliance
+    tools:
+      categories:
+      - automated-testing
+      - screen-readers
+      - design-validation
+      - ci-cd
+      count: 40+
+    standards:
+    - WCAG 2.1 AA/AAA
+    - Section 508
+    - ADA
+    - EAA (EU)
+    - AODA (Ontario)
+    - EN 301 549
+    measurement:
+      automated_testing:
+        axe_core_violations:
+          wcag_a:
+            target: 0 violations
+            blocking: true
+          wcag_aa:
+            target: 0 violations
+            blocking: true
+          wcag_aaa:
+            target: "\u22645 violations"
+            blocking: false
+          measurement: axe-devtools-cli
+        lighthouse_accessibility_score:
+          target: "\u226595"
+          acceptable: "\u226590"
+          alert_threshold: <90
+          measurement: lighthouse-ci
+      manual_testing:
+        keyboard_navigation:
+          target: 100% functionality accessible
+          measurement: manual-qa-checklist
+        screen_reader_task_completion:
+          target: "\u226595% success rate"
+          acceptable: "\u226590%"
+          measurement: user-testing-with-blind-users
+      color_contrast:
+        text_normal:
+          target: "\u22654.5:1"
+          wcag_level: AA
+          measurement: colour-contrast-analyser
+        text_large:
+          target: "\u22653:1"
+          wcag_level: AA
+          measurement: colour-contrast-analyser
+        ui_components:
+          target: "\u22653:1"
+          wcag_level: AA
+          measurement: colour-contrast-analyser
+      touch_targets:
+        minimum_size:
+          target: "\u226544\xD744px"
+          wcag_level: AA
+          measurement: manual-inspection-design-tools
+    file_path: app/accessibility/ACCESSIBILITY_MANIFESTO.md
+    changelog_path: app/accessibility/CHANGELOG.md
+  content-communication:
+    id: content-communication
+    title: Content & Communication Manifesto
+    version: '2.1'
+    status: current
+    focus: Clear, maintainable, accessible content
+    primary_users:
+    - technical-writers
+    - developers
+    - designers
+    - devrel
+    - content-strategists
+    - product-managers
+    learning_curve: low-medium
+    roi_timeline: immediate
+    adoption_scope: universal
+    principles_count: 5
+    tier_structure:
+      core: 5
+      standard: 0
+      excellence: 0
+    applicability:
+      project_types:
+      - all-with-user-facing-content
+      content_types:
+      - technical-docs
+      - ui-microcopy
+      - error-messages
+      - marketing
+      - support
+      - api-docs
+      contexts:
+      - documentation
+      - user-interfaces
+      - knowledge-bases
+      - developer-portals
+    related_manifestos:
+      complements:
+      - accessibility
+      - user-experience
+      - vibe-coding
+      prerequisites: []
+      enables:
+      - user-comprehension
+      - support-deflection
+      - developer-experience
+    tools:
+      categories:
+      - linters
+      - docs-frameworks
+      - diagram-tools
+      - analytics
+      - i18n
+      count: 50+
+    measurement:
+      readability:
+        flesch_kincaid_grade:
+          target: "\u226410 for general audience"
+          acceptable: "\u226412"
+          measurement: vale-hemingway-app
+        avg_sentence_length:
+          target: 15-20 words
+          acceptable: "\u226425 words"
+          measurement: vale-textstat
+        passive_voice_percentage:
+          target: "\u226410%"
+          acceptable: "\u226415%"
+          measurement: vale-grammarly
+      structural:
+        broken_links:
+          target: '0'
+          acceptable: "\u22641%"
+          measurement: markdown-link-check-linkchecker
+        heading_hierarchy_violations:
+          target: '0'
+          measurement: markdownlint
+      user_impact:
+        search_success_rate:
+          target: "\u226590%"
+          acceptable: "\u226580%"
+          measurement: search-analytics
+        was_this_helpful:
+          target: "\u226580% yes"
+          acceptable: "\u226570%"
+          measurement: feedback-widgets
+    file_path: app/content_communication/CONTENT_COMMUNICATION_MANIFESTO.md
+    changelog_path: app/content_communication/CHANGELOG.md
+  data-analytics:
+    id: data-analytics
+    title: Data & Analytics Manifesto
+    version: '2.1'
+    status: current
+    focus: Data reliability & scalability
+    primary_users:
+    - data-engineers
+    - data-analysts
+    - ml-engineers
+    learning_curve: medium-high
+    roi_timeline: medium-term
+    adoption_scope: data-intensive
+    principles_count: 5
+    tier_structure:
+      core: 5
+      standard: 0
+      excellence: 0
+    applicability:
+      project_types:
+      - data-warehouses
+      - data-pipelines
+      - bi-systems
+      - ml-platforms
+      - data-mesh
+      languages:
+      - sql
+      - python
+      - scala
+      - java
+      contexts:
+      - batch-processing
+      - streaming
+      - analytics
+      - reporting
+    related_manifestos:
+      complements:
+      - security-hardening
+      - vibe-coding
+      prerequisites: []
+      enables:
+      - ml-ops
+      - data-governance
+    tools:
+      categories:
+      - orchestration
+      - quality
+      - observability
+      - governance
+      count: 40+
+    measurement:
+      data_quality:
+        completeness:
+          target: "\u226599%"
+          acceptable: "\u226595%"
+          measurement: great-expectations-dbt-tests
+        accuracy:
+          target: "\u226599.9%"
+          acceptable: "\u226599%"
+          measurement: validation-rules
+        timeliness:
+          target: "\u2264sla"
+          measurement: pipeline-orchestrator
+      slos:
+        pipeline_success_rate:
+          target: "\u226599.9%"
+          acceptable: "\u226599%"
+          measurement: airflow-dagster-metrics
+        data_freshness:
+          target: "\u226415 minutes for real-time"
+          acceptable: "\u22641 hour for near-real-time"
+          measurement: dbt-freshness-checks
+      testing:
+        data_test_coverage:
+          target: "\u226590% of critical tables"
+          measurement: dbt-test-count
+      incident_response:
+        mttr_data_incidents:
+          target: "\u22644 hours"
+          acceptable: "\u22648 hours"
+          measurement: incident-tracking-system
+    file_path: app/data_analytics/DATA_ANALYTICS_MANIFESTO.md
+    changelog_path: app/data_analytics/CHANGELOG.md
+  ethics:
+    id: ethics
+    title: The Quantified Ethics Manifesto
+    version: '2.1'
+    status: current
+    focus: A structured, quantified framework for making ethical engineering decisions
+    primary_users:
+    - all-developers
+    - engineering-managers
+    - product-managers
+    - ai-agents
+    learning_curve: low
+    roi_timeline: immediate
+    adoption_scope: universal
+    principles_count: 5
+    tier_structure:
+      core: 5
+      standard: 0
+      excellence: 0
+    applicability:
+      project_types:
+      - all
+      languages:
+      - all
+      contexts:
+      - all
+    related_manifestos:
+      complements:
+      - all
+      prerequisites: []
+      enables:
+      - decision-making
+      - trade-off-analysis
+      - ethical-guardrails
+    tools:
+      categories:
+      - ci-cd-bots
+      - adr-templates
+      - feature-flag-rules
+      count: 5+
+    measurement:
+      system_integrity:
+        cve_closure_time: <7 days
+        security_incidents: 0 critical
+        uptime: "\u226599.9%"
+      human_sustainability:
+        team_burnout_rate: <5% annually
+        overtime_hours: <5 hr/week avg
+        user_trust_score: "\u22658"
+      knowledge_capital:
+        documentation_coverage: "\u226580%"
+        onboarding_time: <2 weeks
+      system_longevity:
+        test_coverage: "\u226585%"
+        mean_time_to_recover: <1 hour
+      resource_efficiency:
+        cost_per_transaction: trend down
+        cycle_time: trend down
+    file_path: app/ethics/ETHICS_MANIFESTO.md
+    changelog_path: app/ethics/CHANGELOG.md
+  formal-verification:
+    id: formal-verification
+    title: The Formal Verification Manifesto
+    version: '2.1'
+    status: current
+    focus: Mathematical correctness proofs for critical systems
+    primary_users:
+    - safety-engineers
+    - security-researchers
+    - aerospace-developers
+    - kernel-developers
+    learning_curve: very-high
+    roi_timeline: long-term
+    adoption_scope: specialized
+    principles_count: 4
+    tier_structure:
+      core: 4
+      standard: 0
+      excellence: 0
+    applicability:
+      project_types:
+      - safety-critical
+      - security-critical
+      - high-assurance
+      languages:
+      - coq
+      - isabelle
+      - lean
+      - agda
+      - f-star
+      - dafny
+      - tla-plus
+      - spark-ada
+      contexts:
+      - avionics
+      - medical-devices
+      - automotive
+      - cryptography
+      - authentication
+      - consensus-protocols
+    related_manifestos:
+      complements:
+      - security-hardening
+      - vibe-coding
+      prerequisites:
+      - strong-type-systems
+      - discrete-mathematics
+      enables:
+      - provable-security
+      - bug-free-critical-components
+    tools:
+      categories:
+      - proof-assistants
+      - theorem-provers
+      - smt-solvers
+      - model-checkers
+      count: 20+
+    measurement:
+      proof_coverage:
+        critical_functions_verified:
+          target: 100%
+          measurement: proof-assistant-reports
+        lines_of_spec_per_loc:
+          target: 0.1-0.5 for Dafny, 3-10 for Coq
+          measurement: manual-count
+      proof_checking:
+        proof_check_time:
+          target: "\u22645 minutes in CI"
+          acceptable: "\u226415 minutes"
+          measurement: ci-cd-logs
+      defects:
+        critical_bugs_in_verified_code:
+          target: '0'
+          measurement: bug-tracker
+    file_path: app/formal_verification/FORMAL_VERIFICATION_MANIFESTO.md
+    changelog_path: app/formal_verification/CHANGELOG.md
+  security-hardening:
+    id: security-hardening
+    title: The Security Hardening Manifesto
+    version: '2.1'
+    status: current
+    focus: System security & resilience through layered, proactive defense
+    primary_users:
+    - all-developers
+    - security-engineers
+    - devsecops-teams
+    - architects
+    learning_curve: medium
+    roi_timeline: immediate
+    adoption_scope: universal-required
+    principles_count: 6
+    tier_structure:
+      core: 6
+      standard: 0
+      excellence: 0
+    applicability:
+      project_types:
+      - all
+      languages:
+      - all
+      contexts:
+      - fintech
+      - healthcare
+      - government
+      - cloud-native
+      - compliance-driven
+    related_manifestos:
+      complements:
+      - all
+      prerequisites: []
+      enables:
+      - zero-trust
+      - compliance
+      - incident-response
+    tools:
+      categories:
+      - sast
+      - dast
+      - sca
+      - siem
+      - soar
+      - edr
+      - secrets-management
+      - cspm
+      count: 100+
+    standards:
+    - OWASP Top 10
+    - NIST Cybersecurity Framework
+    - CIS Controls
+    - ISO 27001
+    - PCI-DSS
+    - GDPR
+    measurement:
+      vulnerability_management:
+        critical_vuln_sla:
+          target: "\u226424 hours to patch"
+          measurement: vulnerability-management-system
+        high_vuln_sla:
+          target: "\u22647 days to patch"
+          measurement: vulnerability-management-system
+      incident_response:
+        mttd:
+          target: "\u226415 minutes"
+          acceptable: "\u22641 hour"
+          measurement: siem-metrics
+        mttr:
+          target: "\u22641 hour"
+          acceptable: "\u22644 hours"
+          measurement: incident-response-records
+      scanning:
+        sast_scan_frequency:
+          target: every-commit
+          measurement: ci-cd-logs
+        dependency_vulnerabilities:
+          target: 0 critical, 0 high
+          measurement: snyk-dependabot-renovate
+      secrets_management:
+        hardcoded_secrets:
+          target: '0'
+          measurement: trufflehog-gitleaks
+    file_path: app/security_hardening/SECURITY_HARDENING_MANIFESTO.md
+    changelog_path: app/security_hardening/CHANGELOG.md
+  user-experience:
+    id: user-experience
+    title: The User Experience Manifesto
+    version: '2.1'
+    status: current
+    focus: User success, satisfaction, and ethical design
+    primary_users:
+    - designers
+    - product-managers
+    - frontend-developers
+    - ux-researchers
+    learning_curve: medium
+    roi_timeline: immediate-medium
+    adoption_scope: universal-product-focused
+    principles_count: 15
+    tier_structure:
+      core: 5
+      standard: 6
+      excellence: 4
+    applicability:
+      project_types:
+      - web-apps
+      - mobile-apps
+      - voice-ui
+      - ar-vr
+      - iot
+      - design-systems
+      languages:
+      - javascript
+      - swift
+      - kotlin
+      - html
+      - css
+      contexts:
+      - user-facing
+      - b2c
+      - b2b
+      - consumer
+      - enterprise
+    related_manifestos:
+      complements:
+      - accessibility
+      - content-communication
+      - security-hardening
+      prerequisites: []
+      enables:
+      - user-satisfaction
+      - conversion
+      - retention
+    tools:
+      categories:
+      - testing
+      - analytics
+      - design
+      - prototyping
+      count: 30+
+    standards:
+    - Nielsen Heuristics
+    - WCAG 2.1 AA
+    - Core Web Vitals
+    - Privacy-by-Design
+    measurement:
+      usability_testing:
+        task_success_rate:
+          target: "\u226595%"
+          acceptable: "\u226590%"
+        time_on_task:
+          target: "\u2264expected-time"
+        error_rate:
+          target: "\u22645%"
+      user_satisfaction:
+        nps:
+          target: "\u226550"
+        csat:
+          target: "\u22654.5/5"
+        sus:
+          target: "\u226580"
+      performance:
+        lcp:
+          target: "\u22642.5s"
+        fid:
+          target: "\u2264100ms"
+        cls:
+          target: "\u22640.1"
+    file_path: app/user_experience/UX_MANIFESTO.md
+    changelog_path: app/user_experience/CHANGELOG.md
+  vibe-coding:
+    id: vibe-coding
+    title: The Vibe Coding Manifesto
+    version: '2.1'
+    status: current
+    focus: Human readability & maintainability
+    primary_users:
+    - all-developers
+    learning_curve: medium
+    roi_timeline: immediate
+    adoption_scope: universal
+    principles_count: 15
+    tier_structure:
+      core: 6
+      standard: 4
+      advanced: 4
+      specialized: 1
+    applicability:
+      project_types:
+      - all
+      languages:
+      - python
+      - typescript
+      - rust
+      - go
+      - haskell
+      - java
+      contexts:
+      - long-lived-systems
+      - complex-business-logic
+      - libraries
+      - frameworks
+    related_manifestos:
+      complements:
+      - accessibility
+      - content-communication
+      - formal-verification
+      prerequisites: []
+      enables:
+      - security-hardening
+      - data-analytics
+    tools:
+      categories:
+      - linters
+      - formatters
+      - type-checkers
+      count: 20+
+    measurement:
+      cyclomatic_complexity:
+        target: "\u226410"
+        acceptable: "\u226415"
+        alert_threshold: '>15'
+      function_length:
+        target: "\u226425 lines"
+        acceptable: "\u226450 lines"
+      nesting_depth:
+        target: "\u22643"
+      test_coverage:
+        target: "\u226590%"
+        acceptable: "\u226580%"
+    file_path: app/vibe_coding/VIBE_CODING_MANIFESTO.md
+    changelog_path: app/vibe_coding/CHANGELOG.md

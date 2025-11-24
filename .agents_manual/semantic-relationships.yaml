@@ -1,0 +1,9 @@
+relationships:
+  - source: "ethics"
+    target: "security-hardening"
+    type: "requires"
+    description: "Ethical systems must be secure."
+  - source: "user-experience"
+    target: "accessibility"
+    type: "includes"
+    description: "Good UX includes accessibility."

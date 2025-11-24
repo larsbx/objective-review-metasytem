@@ -1,0 +1,208 @@
+metadata:
+  schema_version: '1.1'
+  description: Quantifiable metrics, KPIs, and success criteria for all manifestos.
+accessibility:
+  automated_testing:
+    axe_core_violations:
+      wcag_a:
+        target: 0 violations
+        blocking: true
+      wcag_aa:
+        target: 0 violations
+        blocking: true
+      wcag_aaa:
+        target: "\u22645 violations"
+        blocking: false
+      measurement: axe-devtools-cli
+    lighthouse_accessibility_score:
+      target: "\u226595"
+      acceptable: "\u226590"
+      alert_threshold: <90
+      measurement: lighthouse-ci
+  manual_testing:
+    keyboard_navigation:
+      target: 100% functionality accessible
+      measurement: manual-qa-checklist
+    screen_reader_task_completion:
+      target: "\u226595% success rate"
+      acceptable: "\u226590%"
+      measurement: user-testing-with-blind-users
+  color_contrast:
+    text_normal:
+      target: "\u22654.5:1"
+      wcag_level: AA
+      measurement: colour-contrast-analyser
+    text_large:
+      target: "\u22653:1"
+      wcag_level: AA
+      measurement: colour-contrast-analyser
+    ui_components:
+      target: "\u22653:1"
+      wcag_level: AA
+      measurement: colour-contrast-analyser
+  touch_targets:
+    minimum_size:
+      target: "\u226544\xD744px"
+      wcag_level: AA
+      measurement: manual-inspection-design-tools
+content-communication:
+  readability:
+    flesch_kincaid_grade:
+      target: "\u226410 for general audience"
+      acceptable: "\u226412"
+      measurement: vale-hemingway-app
+    avg_sentence_length:
+      target: 15-20 words
+      acceptable: "\u226425 words"
+      measurement: vale-textstat
+    passive_voice_percentage:
+      target: "\u226410%"
+      acceptable: "\u226415%"
+      measurement: vale-grammarly
+  structural:
+    broken_links:
+      target: '0'
+      acceptable: "\u22641%"
+      measurement: markdown-link-check-linkchecker
+    heading_hierarchy_violations:
+      target: '0'
+      measurement: markdownlint
+  user_impact:
+    search_success_rate:
+      target: "\u226590%"
+      acceptable: "\u226580%"
+      measurement: search-analytics
+    was_this_helpful:
+      target: "\u226580% yes"
+      acceptable: "\u226570%"
+      measurement: feedback-widgets
+data-analytics:
+  data_quality:
+    completeness:
+      target: "\u226599%"
+      acceptable: "\u226595%"
+      measurement: great-expectations-dbt-tests
+    accuracy:
+      target: "\u226599.9%"
+      acceptable: "\u226599%"
+      measurement: validation-rules
+    timeliness:
+      target: "\u2264sla"
+      measurement: pipeline-orchestrator
+  slos:
+    pipeline_success_rate:
+      target: "\u226599.9%"
+      acceptable: "\u226599%"
+      measurement: airflow-dagster-metrics
+    data_freshness:
+      target: "\u226415 minutes for real-time"
+      acceptable: "\u22641 hour for near-real-time"
+      measurement: dbt-freshness-checks
+  testing:
+    data_test_coverage:
+      target: "\u226590% of critical tables"
+      measurement: dbt-test-count
+  incident_response:
+    mttr_data_incidents:
+      target: "\u22644 hours"
+      acceptable: "\u22648 hours"
+      measurement: incident-tracking-system
+ethics:
+  system_integrity:
+    cve_closure_time: <7 days
+    security_incidents: 0 critical
+    uptime: "\u226599.9%"
+  human_sustainability:
+    team_burnout_rate: <5% annually
+    overtime_hours: <5 hr/week avg
+    user_trust_score: "\u22658"
+  knowledge_capital:
+    documentation_coverage: "\u226580%"
+    onboarding_time: <2 weeks
+  system_longevity:
+    test_coverage: "\u226585%"
+    mean_time_to_recover: <1 hour
+  resource_efficiency:
+    cost_per_transaction: trend down
+    cycle_time: trend down
+formal-verification:
+  proof_coverage:
+    critical_functions_verified:
+      target: 100%
+      measurement: proof-assistant-reports
+    lines_of_spec_per_loc:
+      target: 0.1-0.5 for Dafny, 3-10 for Coq
+      measurement: manual-count
+  proof_checking:
+    proof_check_time:
+      target: "\u22645 minutes in CI"
+      acceptable: "\u226415 minutes"
+      measurement: ci-cd-logs
+  defects:
+    critical_bugs_in_verified_code:
+      target: '0'
+      measurement: bug-tracker
+security-hardening:
+  vulnerability_management:
+    critical_vuln_sla:
+      target: "\u226424 hours to patch"
+      measurement: vulnerability-management-system
+    high_vuln_sla:
+      target: "\u22647 days to patch"
+      measurement: vulnerability-management-system
+  incident_response:
+    mttd:
+      target: "\u226415 minutes"
+      acceptable: "\u22641 hour"
+      measurement: siem-metrics
+    mttr:
+      target: "\u22641 hour"
+      acceptable: "\u22644 hours"
+      measurement: incident-response-records
+  scanning:
+    sast_scan_frequency:
+      target: every-commit
+      measurement: ci-cd-logs
+    dependency_vulnerabilities:
+      target: 0 critical, 0 high
+      measurement: snyk-dependabot-renovate
+  secrets_management:
+    hardcoded_secrets:
+      target: '0'
+      measurement: trufflehog-gitleaks
+user-experience:
+  usability_testing:
+    task_success_rate:
+      target: "\u226595%"
+      acceptable: "\u226590%"
+    time_on_task:
+      target: "\u2264expected-time"
+    error_rate:
+      target: "\u22645%"
+  user_satisfaction:
+    nps:
+      target: "\u226550"
+    csat:
+      target: "\u22654.5/5"
+    sus:
+      target: "\u226580"
+  performance:
+    lcp:
+      target: "\u22642.5s"
+    fid:
+      target: "\u2264100ms"
+    cls:
+      target: "\u22640.1"
+vibe-coding:
+  cyclomatic_complexity:
+    target: "\u226410"
+    acceptable: "\u226415"
+    alert_threshold: '>15'
+  function_length:
+    target: "\u226425 lines"
+    acceptable: "\u226450 lines"
+  nesting_depth:
+    target: "\u22643"
+  test_coverage:
+    target: "\u226590%"
+    acceptable: "\u226580%"

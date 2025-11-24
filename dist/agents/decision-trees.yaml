@@ -1,0 +1,13 @@
+decision_trees:
+  generic_guidance:
+    root:
+      question: "What is your primary concern?"
+      options:
+        security:
+          result: "Refer to the Security Hardening Manifesto (Obligatory: Assume Breach)."
+        ethics:
+          result: "Refer to the Quantified Ethics Manifesto (Obligatory: Encryption, Access Control)."
+        code_quality:
+          result: "Refer to the Vibe Coding Manifesto (Obligatory: Collaborative Aesthetics)."
+        accessibility:
+          result: "Refer to the Accessibility Manifesto (Obligatory: WCAG 2.1 AA)."
