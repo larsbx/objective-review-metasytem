@@ -47,6 +47,30 @@ def read_markdown_front_matter(filepath):
         print(f"Error reading or parsing {filepath}: {e}")
     return None
 
+def find_manifesto_file(manifest_dir_path):
+    """
+    Finds the manifesto file in the given directory.
+    Priority:
+    1. Ends with _MANIFESTO.md
+    2. Any .md file with valid front matter
+    """
+    md_files = glob.glob(str(manifest_dir_path / "*.md"))
+    if not md_files:
+        return None
+
+    # First pass: Look for _MANIFESTO.md
+    for md_file in md_files:
+        if md_file.endswith("_MANIFESTO.md"):
+            return Path(md_file)
+
+    # Second pass: Look for any file with valid front matter
+    for md_file in md_files:
+        filepath = Path(md_file)
+        if read_markdown_front_matter(filepath):
+            return filepath
+
+    return None
+
 # --- Main Build Logic ---
 
 def build_manifesto_index():
@@ -62,12 +86,13 @@ def build_manifesto_index():
     }
 
     for manifest_dir in MANIFESTO_DIRS:
-        md_files = glob.glob(str(SRC_ROOT / manifest_dir / "*_MANIFESTO.md"))
-        if not md_files:
+        manifest_dir_path = SRC_ROOT / manifest_dir
+        filepath = find_manifesto_file(manifest_dir_path)
+
+        if not filepath:
+            print(f"Warning: No valid manifesto file found in {manifest_dir}")
             continue
 
-        # Assuming one manifesto markdown per directory
-        filepath = Path(md_files[0])
         front_matter = read_markdown_front_matter(filepath)
 
         if front_matter and 'id' in front_matter:
@@ -76,6 +101,8 @@ def build_manifesto_index():
             front_matter['file_path'] = str(filepath.relative_to(SRC_ROOT.parent)).replace(os.path.sep, '/')
             front_matter['changelog_path'] = str((filepath.parent / "CHANGELOG.md").relative_to(SRC_ROOT.parent)).replace(os.path.sep, '/')
             index_data["manifestos"][manifesto_id] = front_matter
+        else:
+             print(f"Warning: No valid front matter found in {filepath}")
 
     return index_data
 
@@ -91,11 +118,12 @@ def build_measurement_frameworks():
     }
 
     for manifest_dir in MANIFESTO_DIRS:
-        md_files = glob.glob(str(SRC_ROOT / manifest_dir / "*_MANIFESTO.md"))
-        if not md_files:
+        manifest_dir_path = SRC_ROOT / manifest_dir
+        filepath = find_manifesto_file(manifest_dir_path)
+
+        if not filepath:
             continue
 
-        filepath = Path(md_files[0])
         front_matter = read_markdown_front_matter(filepath)
 
         if front_matter and 'id' in front_matter and 'measurement' in front_matter:
