@@ -8,17 +8,20 @@ This directory contains a collection of software engineering manifestos focused 
 
 The project has a unique structure, designed for both human readers and AI agents:
 - **Human-Readable Manifestos**: Each topic (e.g., `security_hardening/`) has a `..._MANIFESTO.md` file written for engineers.
-- **Machine-Readable Agent Data**: The `dist/agents/` directory contains generated YAML files with structured data, intended for tooling and automation.
-
-The Markdown files, which contain YAML front matter, serve as the single source of truth.
+- **Machine-Readable Agent Data**: The `dist/agents/` directory contains generated YAML files with structured data, intended for tooling and automation. The Markdown files, which contain YAML front matter, serve as the single source of truth.
 
 ## Project structure
+
 - `accessibility/`, `content_communication/`, etc.: Directories for each manifesto's human-readable Markdown file.
 - `dist/agents/`: Contains machine-readable data (YAML) generated from the manifestos.
 - `scripts/`: Contains Python scripts for building the agent data and providing interactive advice.
 - `integrations/`: Contains example configurations for third-party tools like Vale and GitHub Actions.
 - `.agents_manual/`: Stores manually maintained YAML files used by the build script.
 - `README.md`: The main entry point to the project.
+
+## Sidebar support
+
+The project includes a `.sidebar.json` file in the root directory, which is used to generate a navigation menu for the documentation. This file is manually maintained and should be updated whenever a new manifesto is added or removed. The `scripts/build_sidebar.py` script reads this file and generates the sidebar in the appropriate format for the documentation tool.
 
 ## Key files
 

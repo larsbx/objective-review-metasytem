@@ -62,7 +62,7 @@ def build_manifesto_index():
     }
 
     for manifest_dir in MANIFESTO_DIRS:
-        md_files = glob.glob(str(SRC_ROOT / manifest_dir / "*.md"))
+        md_files = glob.glob(str(SRC_ROOT / manifest_dir / "*_MANIFESTO.md"))
         if not md_files:
             continue
 
@@ -91,7 +91,7 @@ def build_measurement_frameworks():
     }
 
     for manifest_dir in MANIFESTO_DIRS:
-        md_files = glob.glob(str(SRC_ROOT / manifest_dir / "*.md"))
+        md_files = glob.glob(str(SRC_ROOT / manifest_dir / "*_MANIFESTO.md"))
         if not md_files:
             continue
 

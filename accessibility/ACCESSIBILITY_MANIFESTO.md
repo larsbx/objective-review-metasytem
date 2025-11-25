@@ -10,7 +10,7 @@ roi_timeline: "immediate"
 adoption_scope: "universal-legally-required"
 principles_count: 4 # Was 15, revised to 4 core POUR principles
 tier_structure:
-  core: 4 # All POUR principles are core
+  core: 4
   standard: 0
   excellence: 0
 applicability:
@@ -78,7 +78,7 @@ measurement:
 ---
 # The Accessibility Manifesto
 
-**Version**: 2.0
+**Version**: 2.1
 **Last Updated**: 2025-11-23
 **Conformance**: WCAG 2.1 Level AA
 
@@ -98,80 +98,56 @@ By designing for disability first, we create better products for everyone.
 
 ---
 
-## The Four Core Principles (POUR)
+## The 5 Rulings
 
-Our work is grounded in the four principles of the Web Content Accessibility Guidelines (WCAG). For a product to be accessible, it must be **Perceivable, Operable, Understandable, and Robust.**
+### OBLIGATORY (Core Principles & Tier 1)
+**Mandatory practices. These correspond to WCAG Level A and core POUR principles.**
 
-### 1. Perceivable
-**Users must be able to perceive the information being presented; it can't be invisible to all of their senses.**
+-   **Perceivable - Text Alternatives**: All non-text content (images, icons) must have a text alternative (`alt` text).
+-   **Perceivable - Captions**: All video must have synchronized captions; all audio must have transcripts.
+-   **Operable - Keyboard Accessible**: All functionality must be operable via keyboard. No mouse required.
+-   **Operable - No Keyboard Traps**: Focus must never get stuck in a component.
+-   **Understandable - Error Identification**: Errors in forms must be clearly identified and described in text.
+-   **Robust - Semantic HTML**: Use valid HTML (e.g., `<button>` for buttons, not `<div>`).
 
--   **Provide Text Alternatives**: All non-text content (images, icons, diagrams) must have a text alternative (`alt` text) that serves the equivalent purpose.
--   **Provide Alternatives for Time-Based Media**: All video must have synchronized captions, and all audio must have a transcript. Provide audio descriptions for important visual information in videos.
--   **Create Adaptable Content**: Use semantic structure (see Principle 4) so that content can be presented in different ways (e.g., a screen reader's simplified layout) without losing information.
--   **Ensure Content is Distinguishable**: Make it easy for users to see and hear content. This includes ensuring a minimum color contrast of **4.5:1 for text** and **3:1 for UI components**, and not using color as the *only* way to convey information.
+### ENCOURAGED (Standard - Tier 2)
+**Highly recommended practices. These correspond to WCAG Level AA.**
 
-### 2. Operable
-**Users must be able to operate the interface; the interface cannot require interaction that a user cannot perform.**
+-   **Color Contrast**: Minimum 4.5:1 for normal text, 3:1 for large text and UI components.
+-   **Visible Focus**: Focus indicators must be clearly visible and have good contrast.
+-   **Resize Text**: Text must resize up to 200% without loss of content or functionality.
+-   **Consistent Navigation**: Navigation mechanisms should appear in the same order on every page.
+-   **Descriptive Headings & Labels**: Headings and labels must describe the topic or purpose clearly.
 
--   **Ensure Full Keyboard Accessibility**: All functionality must be operable through a keyboard, without requiring a mouse. The tab order must be logical, and focus states must be clearly visible.
--   **Provide Enough Time**: Give users enough time to read and use content. Avoid arbitrary time limits, and if a session must expire, provide a warning with an option to extend it.
--   **Do Not Cause Seizures or Physical Reactions**: Do not design content that flashes more than three times per second. Respect the `prefers-reduced-motion` media query.
--   **Make Navigation Easy**: Provide users with ways to navigate, find content, and determine where they are. A "skip to main content" link should be the first focusable element on a page.
+### OPTIONAL (Excellence - Tier 3)
+**Discretionary practices for inclusive excellence. WCAG Level AAA.**
 
-### 3. Understandable
-**Users must be able to understand the information as well as the operation of the user interface.**
+-   **Sign Language**: Providing sign language interpretation for media.
+-   **Extended Audio Description**: Detailed narration for video content.
+-   **Target Size (Enhanced)**: Touch targets ≥ 44x44px (AAA level).
+-   **No Interruptions**: Allowing users to suppress interruptions and alerts.
 
--   **Make Text Readable and Comprehensible**: Use plain language appropriate for your audience. Avoid jargon and define acronyms on first use.
--   **Make Content Appear and Operate in Predictable Ways**: Navigation and component behavior should be consistent throughout the product.
--   **Help Users Avoid and Correct Mistakes**: Provide clear error messages that identify the problem and suggest a solution. Required fields in forms should be clearly marked.
+### DISCOURAGED (Anti-Patterns)
+**Practices that degrade accessibility and should be avoided.**
 
-### 4. Robust
-**Content must be robust enough that it can be interpreted reliably by a wide variety of user agents, including assistive technologies.**
+-   **"Click Here" Links**: Use descriptive link text (e.g., "Read the report").
+-   **Positive `tabindex`**: Manually setting `tabindex="1"` etc. disrupts logical flow.
+-   **Removing Focus Outlines**: `outline: none` without a replacement style makes navigation impossible for many.
+-   **Autoplay Media**: Audio/video playing automatically can be disorienting.
+-   **Arbitrary Time Limits**: Requiring actions within a short time window without extension options.
 
--   **Use Valid, Semantic HTML**: Write code that conforms to web standards. Use `<button>` for buttons, `<nav>` for navigation, and `<main>` for the main content area. A `<div>` is not a button.
--   **Use ARIA Correctly**: Use ARIA (Accessible Rich Internet Applications) attributes to enhance semantics where necessary, but never in place of correct native HTML.
--   **Communicate Name, Role, and Value**: Ensure that all custom components report their name, role (e.g., "button"), and state (e.g., "checked") to assistive technologies.
+### PROHIBITED (Forbidden)
+**Practices that create absolute barriers or safety risks.**
 
----
-
-## Getting Started: What You Can Do in 5 Minutes
-
-Accessibility can feel overwhelming. Here are three simple checks you can perform on any web page right now to find high-impact issues.
-
-1.  **Unplug Your Mouse**: Can you use every single feature of the page using only the `Tab`, `Shift+Tab`, `Enter`, `Space`, and arrow keys? Is it always clear where your focus is? If not, you have keyboard accessibility issues.
-2.  **Install an `axe-core` Browser Extension** (like `axe DevTools`): Run the automated scanner. It will catch ~30-50% of WCAG issues, such as missing alt text and insufficient color contrast.
-3.  **Enable a Screen Reader**: Turn on your operating system's built-in screen reader (VoiceOver on Mac, Narrator on Windows) and try to navigate your page. Can you understand the content? Can you operate the controls? This will quickly reveal issues with semantic structure and labeling.
-
----
-
-## A Practical Guide to Implementation
-
-### Conformance Tiers
-Adopt accessibility in progressive stages.
-
--   **Tier 1: Core (WCAG Level A)**
-    -   **Goal**: Meet the legal minimum and remove the most severe barriers.
-    -   **Key Actions**: Ensure keyboard accessibility, provide text alternatives for all images, add captions to videos, and avoid keyboard traps.
--   **Tier 2: Standard (WCAG Level AA)**
-    -   **Goal**: Achieve the industry-standard baseline for accessibility.
-    -   **Key Actions**: Meet color contrast requirements, ensure all UI components have visible focus states, and provide descriptive error messages.
--   **Tier 3: Excellence (WCAG Level AAA & Inclusive Design)**
-    -   **Goal**: Provide a best-in-class, fully inclusive experience.
-    -   **Key Actions**: Test with a diverse group of users with disabilities, provide sign language interpretation for videos, and ensure exceptionally high color contrast.
-
-### Measurement Framework
--   **Automated Testing**: 100% pass rate on an `axe-core` based scanner in your CI/CD pipeline.
--   **Manual Testing**: 100% keyboard operability for all features.
--   **User Testing**: Task completion rates for users of assistive technology should be ≥90% of the rate for users without disabilities.
--   **Bug Tracking**: Treat accessibility issues with the same severity as functional bugs. A WCAG Level A violation is a "critical" bug.
+-   **Flashing Content (>3 times/sec)**: Can trigger seizures. This is a critical safety violation.
+-   **Keyboard Traps**: Locking a user inside a component so they cannot tab out.
+-   **Color-Only Information**: Using color as the *only* visual means of conveying information (e.g., "Press the green button").
+-   **Inaccessible CAPTCHAs**: Preventing users from accessing service due to visual-only challenges.
 
 ---
 
-## Appendices
+## Measurement Framework
 
-*(This section would link to the detailed content from the original manifesto, reformatted as appendices.)*
-
--   **Appendix A: Detailed Implementation Guides for All 15 Original Principles**
--   **Appendix B: Accessibility Tooling Ecosystem**
--   **Appendix C: WCAG 2.1 Quick Reference Guide**
--   **Appendix D: Legal & Compliance Context (ADA, Section 508, EAA)**
+-   **Automated Testing**: 100% pass rate on `axe-core` scanner.
+-   **Manual Testing**: 100% keyboard operability check.
+-   **User Testing**: ≥95% success rate for screen reader users.
