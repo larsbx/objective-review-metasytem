@@ -3,17 +3,24 @@
 
 """
 An interactive command-line tool to provide tailored recommendations
-on which code review manifestos to adopt.
+on which code review manifestos to adopt using a TUI and LLM.
 """
 
 import yaml
 from pathlib import Path
-import argparse
 import sys
+import os
+from dotenv import load_dotenv
+import google.generativeai as genai
+
+from textual.app import App, ComposeResult
+from textual.containers import Container
+from textual.widgets import Button, Header, Footer, Static, Input
 
 # --- Configuration ---
 SRC_ROOT = Path(__file__).parent.parent
 AGENTS_DIR = SRC_ROOT / "dist" / "agents"
+load_dotenv()
 
 # --- Helper Functions ---
 
@@ -27,61 +34,61 @@ def load_agent_data(filename):
     with open(filepath, 'r', encoding='utf-8') as f:
         return yaml.safe_load(f)
 
-def print_recommendation(primary, secondary, rationale):
-    """Prints a formatted recommendation."""
-    print("\n--- Recommendation ---")
-    print(f"✅ Primary Manifesto: {primary.replace('-', ' ').title()}")
-    if secondary:
-        print(f"➡️ Also Consider: {', '.join([s.replace('-', ' ').title() for s in secondary])}")
-    print(f"\nRationale: {rationale}")
-    print("----------------------\n")
+# --- TUI Application ---
 
-def interactive_advisor(decision_tree):
-    """Runs the interactive selection guide."""
-    print("--- Manifesto Advisor ---")
-    print("Please answer the following questions to get a recommendation.")
+class AdvisorApp(App):
+    """A Textual app to provide code review manifesto advice."""
 
-    # 1. Ask about priority
-    priorities = [rule['condition']['value'] for rule in decision_tree['manifesto_selection']['rules']]
-    print("\nWhat is your primary priority for this project?")
-    for i, p in enumerate(priorities, 1):
-        print(f"  {i}. {p.replace('-', ' ').title()}")
+    CSS_PATH = "advisor.css"
 
-    try:
-        choice = int(input(f"Enter number (1-{len(priorities)}): "))
-        if 1 <= choice <= len(priorities):
-            selected_priority = priorities[choice - 1]
-            for rule in decision_tree['manifesto_selection']['rules']:
-                if rule['condition']['value'] == selected_priority:
-                    print_recommendation(rule['primary'], rule.get('secondary', []), rule['rationale'])
-                    break
-        else:
-            print("Invalid choice.")
-    except ValueError:
-        print("Invalid input. Please enter a number.")
+    def compose(self) -> ComposeResult:
+        """Create child widgets for the app."""
+        yield Header()
+        yield Footer()
+        yield Container(
+            Static("Please enter your primary concern or area of focus for code review:", id="question"),
+            Input(placeholder="e.g., 'Improving code security'", id="concern_input"),
+            Button("Get Advice", id="get_advice"),
+            Static(id="advice_display")
+        )
+
+    def on_button_pressed(self, event: Button.Pressed) -> None:
+        """Event handler called when the 'Get Advice' button is pressed."""
+        if event.button.id == "get_advice":
+            concern = self.query_one("#concern_input", Input).value
+            if concern:
+                self.query_one("#advice_display", Static).update("Getting advice...")
+                advice = self.get_llm_advice(concern)
+                self.query_one("#advice_display", Static).update(advice)
+
+    def get_llm_advice(self, concern: str) -> str:
+        """Gets advice from the LLM based on the user's concern."""
+        api_key = os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            return "Error: GEMINI_API_KEY not found in .env file."
+
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel('gemini-pro')
+
+        # For now, just returning a placeholder
+        # In the future, we will build a more sophisticated prompt
+        prompt = f"Based on the concern '{concern}', which code review manifesto should I adopt?"
+        
+        try:
+            response = model.generate_content(prompt)
+            return response.text
+        except Exception as e:
+            return f"An error occurred: {e}"
+
 
 def main():
-    """Main function to run the advisor."""
-    parser = argparse.ArgumentParser(description="A CLI tool to recommend code review manifestos.")
-    parser.add_argument(
-        '--priority',
-        choices=['safety-critical-system', 'user-facing-product', 'data-intensive', 'general-software'],
-        help='Select a project priority for a non-interactive recommendation.'
-    )
-    args = parser.parse_args()
-
-    # Load the decision data
+    """Main function to run the advisor app."""
+    # Load the decision data (or other agent data)
+    # This might be used to provide context to the LLM in the future
     decision_tree = load_agent_data("decision-trees.yaml")
-
-    if args.priority:
-        # Non-interactive mode
-        for rule in decision_tree['manifesto_selection']['rules']:
-            if rule['condition']['value'] == args.priority:
-                print_recommendation(rule['primary'], rule.get('secondary', []), rule['rationale'])
-                break
-    else:
-        # Interactive mode
-        interactive_advisor(decision_tree)
+    
+    app = AdvisorApp()
+    app.run()
 
 if __name__ == "__main__":
     main()
