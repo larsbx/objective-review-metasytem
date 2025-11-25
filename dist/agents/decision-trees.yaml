@@ -1,13 +1,31 @@
-decision_trees:
-  generic_guidance:
-    root:
-      question: "What is your primary concern?"
-      options:
-        security:
-          result: "Refer to the Security Hardening Manifesto (Obligatory: Assume Breach)."
-        ethics:
-          result: "Refer to the Quantified Ethics Manifesto (Obligatory: Encryption, Access Control)."
-        code_quality:
-          result: "Refer to the Vibe Coding Manifesto (Obligatory: Collaborative Aesthetics)."
-        accessibility:
-          result: "Refer to the Accessibility Manifesto (Obligatory: WCAG 2.1 AA)."
+manifesto_selection:
+  rules:
+    - condition:
+        type: priority
+        value: safety-critical-system
+      primary: formal-verification
+      secondary:
+        - security-hardening
+      rationale: For systems where failure can have severe consequences, formal verification provides the highest level of assurance. Security is also a critical secondary consideration.
+    - condition:
+        type: priority
+        value: user-facing-product
+      primary: user-experience
+      secondary:
+        - accessibility
+        - content_communication
+      rationale: User-facing products must prioritize a seamless and inclusive experience. Accessibility and clear communication are key components of this.
+    - condition:
+        type: priority
+        value: data-intensive
+      primary: data_analytics
+      secondary:
+        - ethics
+      rationale: For projects that handle large volumes of data, robust analytics and ethical considerations are paramount to ensure responsible and effective use.
+    - condition:
+        type: priority
+        value: general-software
+      primary: vibe_coding
+      secondary:
+        - content_communication
+      rationale: For general-purpose software, a focus on maintainability, collaboration, and clear communication ensures long-term success and a healthy team environment.
