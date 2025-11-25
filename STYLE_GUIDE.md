@@ -1,4 +1,4 @@
-# Style Guide for Code Review Manifestos
+# Style Guide for Objective Review Metasystem
 
 This guide documents voice, tone, formatting, and terminology standards for all manifestos in this repository.
 

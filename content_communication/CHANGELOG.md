@@ -222,10 +222,10 @@ This manifesto complements:
 - **[Security Hardening Manifesto](../security_hardening/)** v2.0 - Error messages, security disclosures
 - **[Data & Analytics Manifesto](../data_analytics/)** v2.0 - Data documentation, metrics definitions
 
-**See**: [Code Review Manifestos README](../../README.md) for full ecosystem.
+**See**: [Objective Review Metasystem README](../../README.md) for full ecosystem.
 
 ---
 
 **Last Updated**: 2025-11-20
-**Maintained By**: Code Review Manifestos Project
+**Maintained By**: Objective Review Metasystem Project
 **License**: CC0 - Public Domain

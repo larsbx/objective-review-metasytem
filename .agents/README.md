@@ -1,6 +1,6 @@
 # Machine-Readable Manifesto Data
 
-This directory contains structured, machine-readable extractions from the Code Review Manifestos optimized for AI agents and automated tooling.
+This directory contains structured, machine-readable extractions from the Objective Review Metasystem optimized for AI agents and automated tooling.
 
 ## Purpose
 
