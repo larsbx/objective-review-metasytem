@@ -1,8 +1,8 @@
-# Code Review Manifestos
+# Objective Review Metasystem
 
 **A collection of software engineering manifestos for building high-quality, sustainable, and ethical systems.**
 
-This repository aggregates and refines software engineering best practices into a set of actionable manifestos. It's designed for both human engineers seeking guidance and for AI agents that need structured, machine-readable data to assist in code review and system design.
+The Objective Review Metasystem aggregates and refines software engineering best practices into a set of actionable manifestos. It's designed for both human engineers seeking guidance and for AI agents that need structured, machine-readable data to assist in code review and system design.
 
 ---
 

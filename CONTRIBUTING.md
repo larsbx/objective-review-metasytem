@@ -1,4 +1,4 @@
-# Contributing to code review manifestos
+# Contributing to Objective Review Metasystem
 
 Thank you for your interest in improving these manifestos! This document provides guidelines for contributing.
 
