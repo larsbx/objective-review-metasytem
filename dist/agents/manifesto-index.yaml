@@ -105,8 +105,8 @@ manifestos:
           target: "\u226544\xD744px"
           wcag_level: AA
           measurement: manual-inspection-design-tools
-    file_path: app/accessibility/ACCESSIBILITY_MANIFESTO.md
-    changelog_path: app/accessibility/CHANGELOG.md
+    file_path: objective-review-metasytem/accessibility/ACCESSIBILITY_MANIFESTO.md
+    changelog_path: objective-review-metasytem/accessibility/CHANGELOG.md
   content-communication:
     id: content-communication
     title: Content & Communication Manifesto
@@ -192,8 +192,8 @@ manifestos:
           target: "\u226580% yes"
           acceptable: "\u226570%"
           measurement: feedback-widgets
-    file_path: app/content_communication/CONTENT_COMMUNICATION_MANIFESTO.md
-    changelog_path: app/content_communication/CHANGELOG.md
+    file_path: objective-review-metasytem/content_communication/CONTENT_COMMUNICATION_MANIFESTO.md
+    changelog_path: objective-review-metasytem/content_communication/CHANGELOG.md
   data-analytics:
     id: data-analytics
     title: Data & Analytics Manifesto
@@ -275,8 +275,8 @@ manifestos:
           target: "\u22644 hours"
           acceptable: "\u22648 hours"
           measurement: incident-tracking-system
-    file_path: app/data_analytics/DATA_ANALYTICS_MANIFESTO.md
-    changelog_path: app/data_analytics/CHANGELOG.md
+    file_path: objective-review-metasytem/data_analytics/DATA_ANALYTICS_MANIFESTO.md
+    changelog_path: objective-review-metasytem/data_analytics/CHANGELOG.md
   ethics:
     id: ethics
     title: The Quantified Ethics Manifesto
@@ -335,12 +335,12 @@ manifestos:
       resource_efficiency:
         cost_per_transaction: trend down
         cycle_time: trend down
-    file_path: app/ethics/ETHICS_MANIFESTO.md
-    changelog_path: app/ethics/CHANGELOG.md
+    file_path: objective-review-metasytem/ethics/ETHICS_MANIFESTO.md
+    changelog_path: objective-review-metasytem/ethics/CHANGELOG.md
   formal-verification:
     id: formal-verification
     title: The Formal Verification Manifesto
-    version: '2.0'
+    version: '2.1'
     status: current
     focus: Mathematical correctness proofs for critical systems
     primary_users:
@@ -411,8 +411,8 @@ manifestos:
         critical_bugs_in_verified_code:
           target: '0'
           measurement: bug-tracker
-    file_path: app/formal_verification/FORMAL_VERIFICATION_MANIFESTO.md
-    changelog_path: app/formal_verification/CHANGELOG.md
+    file_path: objective-review-metasytem/formal_verification/FORMAL_VERIFICATION_MANIFESTO.md
+    changelog_path: objective-review-metasytem/formal_verification/CHANGELOG.md
   security-hardening:
     id: security-hardening
     title: The Security Hardening Manifesto
@@ -497,8 +497,8 @@ manifestos:
         hardcoded_secrets:
           target: '0'
           measurement: trufflehog-gitleaks
-    file_path: app/security_hardening/SECURITY_HARDENING_MANIFESTO.md
-    changelog_path: app/security_hardening/CHANGELOG.md
+    file_path: objective-review-metasytem/security_hardening/SECURITY_HARDENING_MANIFESTO.md
+    changelog_path: objective-review-metasytem/security_hardening/CHANGELOG.md
   user-experience:
     id: user-experience
     title: The User Experience Manifesto
@@ -583,8 +583,8 @@ manifestos:
           target: "\u2264100ms"
         cls:
           target: "\u22640.1"
-    file_path: app/user_experience/UX_MANIFESTO.md
-    changelog_path: app/user_experience/CHANGELOG.md
+    file_path: objective-review-metasytem/user_experience/UX_MANIFESTO.md
+    changelog_path: objective-review-metasytem/user_experience/CHANGELOG.md
   vibe-coding:
     id: vibe-coding
     title: The Vibe Coding Manifesto
@@ -645,5 +645,5 @@ manifestos:
       test_coverage:
         target: "\u226590%"
         acceptable: "\u226580%"
-    file_path: app/vibe_coding/VIBE_CODING_MANIFESTO.md
-    changelog_path: app/vibe_coding/CHANGELOG.md
+    file_path: objective-review-metasytem/vibe_coding/VIBE_CODING_MANIFESTO.md
+    changelog_path: objective-review-metasytem/vibe_coding/CHANGELOG.md

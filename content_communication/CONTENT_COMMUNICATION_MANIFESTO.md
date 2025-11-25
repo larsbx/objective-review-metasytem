@@ -61,82 +61,82 @@ measurement:
 **Version**: 2.1
 **Last Updated**: 2025-11-23
 
+**Version**: 2.1
+**Last Updated**: 2025-11-23
+
 > Content is not a layer on top of the product; it *is* the product. From the text on a button to the most detailed API documentation, clear, accessible, and actionable communication is the foundation of a successful user experience.
 
 ---
 
-## The Five Core Principles
+## The 5 Rulings
 
-These five principles are the foundation of effective communication. They apply to all forms of content, from UI microcopy to technical manuals.
+### OBLIGATORY (Core Principles)
+**Mandatory practices for functional and accessible communication.**
 
-### 1. Clarity is the Prime Directive.
-Comprehension outweighs cleverness, brevity, or stylistic flair. Your primary duty is to be understood. Use simple language, active voice, and concrete examples. If the reader is confused, the content has failed.
+-   **Clarity as Prime Directive**: Comprehension outweighs cleverness. Use simple language and active voice.
+-   **Design for the Reader's Goal**: Structure content around user needs, not system architecture.
+-   **Ensure Accessibility**: Text alternatives for visuals, semantic structure (`H1`->`H2`), and sufficient contrast (WCAG 2.1 AA).
+-   **Treat Content as Product**: Version control (Git), ownership, and maintenance lifecycles for all documentation.
+-   **Empathetic Tone**: Never blame the user. Use inclusive, respectful language.
 
-### 2. Design for the Reader's Goal.
-Structure content to help the reader achieve their objective as quickly as possible. Don't organize by what *you* want to say; organize by what *they* need to do. An effective structure anticipates the user's journey and provides the right information at the right time.
+### ENCOURAGED (Pillars of Practice)
+**Recommended practices for high-quality content.**
 
-### 3. Be Empathetic and Respectful.
-Your reader may be frustrated, stressed, or new to the topic. Write with patience and respect. Acknowledge potential confusion, use inclusive language, and never blame the user for errors. Good content builds trust.
+-   **Semantic Hierarchy**: Use proper HTML tags (`<nav>`, `<article>`) and heading levels to encode meaning.
+-   **Progressive Disclosure**: Reveal complexity incrementally (Quick Start -> Deep Dive).
+-   **Scannability**: Use bullet points, bold keywords, and short paragraphs.
+-   **Searchability**: Descriptive titles and metadata to ensure discoverability.
+-   **Visual Communication**: Use diagrams and screenshots to clarify complex topics.
+-   **Code as Communication**: Ensure code examples are testable, idiomatic, and well-commented.
+-   **Style Guides**: Define and enforce voice, tone, and terminology.
 
-### 4. Ensure Accessibility for All.
-Content must be usable by everyone, including people with disabilities. This is a legal, moral, and business imperative. Adhere to WCAG 2.1 AA as a minimum baseline. Use semantic structure, provide text alternatives for visuals, and ensure sufficient color contrast.
+### OPTIONAL (Discretionary)
+**Frameworks and stylistic choices.**
 
-### 5. Treat Content as a Product.
-Content requires the same rigor as code. It must be versioned, tested, owned, and maintained. It has a lifecycle, requires a strategy, and its performance must be measured. "Docs or it didn't happen" applies to features and the content that describes them.
+-   **Diátaxis Framework**: Organizing docs into Tutorials, How-To, Reference, and Explanation.
+    1.  **Tutorials (Learning-Oriented)**: A lesson that takes the reader by the hand through a series of steps to complete a project. The goal is to build confidence and understanding.
+        -   *Analogy*: A teacher showing a student how to cook their first meal.
 
----
+    2.  **How-To Guides (Goal-Oriented)**: A series of steps to solve a specific, real-world problem. Assumes some basic knowledge.
+        -   *Analogy*: A recipe in a cookbook.
 
-## The Pillars of Practice
+    3.  **Reference (Information-Oriented)**: A dry, technical description of the system's components, like API endpoints or configuration options. Its job is to be comprehensive and correct.
+        -   *Analogy*: An encyclopedia or a dictionary.
 
-These pillars provide the practical framework for implementing the core principles.
+    4.  **Explanation (Understanding-Oriented)**: A discussion that provides background and context, clarifying a particular topic.
+        -   *Analogy*: An article on the history and theory of a culinary technique.
 
-### Pillar I: Architecture & Structure
-*(How to organize content for user success)*
+    A successful documentation suite contains all four types of content and links them appropriately. Don't try to write a single document that does all four things.
+-   **Specific Diagramming Tools**: Mermaid, PlantUML, etc.
+-   **Brand Voice Nuance**: Choosing between "Playful" vs "Serious" based on brand identity (as long as it remains clear).
 
--   **Semantic Hierarchy**: Structure must encode meaning. Use headings sequentially (`H1` → `H2` → `H3`). Use semantic HTML (`<nav>`, `<button>`, `<article>`) to enable accessibility and machine readability.
--   **Progressive Disclosure**: Reveal complexity incrementally. Start with a "Quick Start" guide, then provide paths to deeper knowledge. In UI, hide advanced settings behind an explicit user action.
--   **Scannability**: Users scan before they read. Optimize for scanning with clear headings, short paragraphs, bulleted lists, and bolded keywords. Front-load the most important information.
--   **Searchability & Discoverability**: Use descriptive titles, relevant keywords, and rich metadata to ensure content can be found via internal and external search. Use internal links to create a connected web of knowledge.
+### DISCOURAGED (Anti-Patterns)
+**Practices that reduce clarity and maintainability.**
 
-### Pillar II: Craft & Style
-*(How to write clear, consistent, and effective content)*
+-   **Passive Voice**: Obscures who is performing the action.
+-   **Jargon & Acronyms**: Using undefined terms that alienate beginners.
+-   **"Click Here"**: Non-descriptive link text.
+-   **Inconsistent Terminology**: Calling the same thing "User", "Client", and "Person" in the same doc.
+-   **Wall of Text**: Long, unbroken paragraphs that are impossible to scan.
 
--   **Precision in Terminology**: Use a consistent, defined set of terms. Avoid synonyms for the same concept. A "user" should always be a "user," not sometimes a "person" or "client." Create and maintain a glossary.
--   **Voice & Tone Consistency**: Define a consistent brand voice (your personality) and adapt the tone for the context (e.g., celebratory for success messages, apologetic for critical errors).
--   **Visual Communication**: Use diagrams, screenshots, and tables to clarify complex relationships and procedures. A good diagram is worth a thousand words. Ensure all visuals have text alternatives.
--   **Code as Communication**: Code examples must be correct, complete, and testable. They should be idiomatic to the language and commented to explain the *why*, not the *what*.
+### PROHIBITED (Forbidden)
+**Practices that mislead or harm the user.**
 
-### Pillar III: Process & Governance
-*(How to manage content at scale)*
-
--   **Version Control & Docs-as-Code**: Treat documentation like code. Store it in Git, review changes via pull requests, and deploy it with automated checks.
--   **Maintenance & Ownership**: All content must have a designated owner. Implement a process for regular reviews, link checking, and flagging of stale content. Content without an owner will rot.
--   **Content Strategy & Governance**: Define workflows for creating, reviewing, publishing, and archiving content. A clear strategy ensures consistency and quality as the team grows.
--   **Continuous Measurement**: Content effectiveness must be measured. Track metrics like page views, search success rate, task completion, and user satisfaction ("Was this page helpful?"). Use this data to drive improvements.
-
----
-
-## Content in Practice: The Diátaxis Framework
-
-To implement the principle of "Design for the Reader's Goal," organize technical documentation according to the user's immediate need. The Diátaxis framework proposes four distinct types of content:
-
-1.  **Tutorials (Learning-Oriented)**: A lesson that takes the reader by the hand through a series of steps to complete a project. The goal is to build confidence and understanding.
-    -   *Analogy*: A teacher showing a student how to cook their first meal.
-
-2.  **How-To Guides (Goal-Oriented)**: A series of steps to solve a specific, real-world problem. Assumes some basic knowledge.
-    -   *Analogy*: A recipe in a cookbook.
-
-3.  **Reference (Information-Oriented)**: A dry, technical description of the system's components, like API endpoints or configuration options. Its job is to be comprehensive and correct.
-    -   *Analogy*: An encyclopedia or a dictionary.
-
-4.  **Explanation (Understanding-Oriented)**: A discussion that provides background and context, clarifying a particular topic.
-    -   *Analogy*: An article on the history and theory of a culinary technique.
-
-A successful documentation suite contains all four types of content and links them appropriately. Don't try to write a single document that does all four things.
+-   **Deceptive Patterns**: Wording designed to trick users (e.g., "Cancel" button that actually continues).
+-   **Blaming the User**: Error messages like "You entered the wrong data" (vs "Invalid format").
+-   **Broken Links**: Shipping documentation with dead internal links.
+-   **Untested Code Examples**: Providing code snippets that do not compile or run.
 
 ---
 
 ## Practical Guides
+
+### Error Message Framework
+A good error message answers:
+1.  **What happened?**
+2.  **Why did it happen?**
+3.  **How can I fix it?**
+4.  **Where can I get help?**
 
 ### Selection by Role
 -   **Technical Writers**: Focus on all principles, especially `Pillar III: Process & Governance`, to build a scalable content operation.
@@ -144,20 +144,7 @@ A successful documentation suite contains all four types of content and links th
 -   **UX Writers**: Focus on `Clarity`, `Empathy`, and `Voice & Tone` when crafting UI microcopy and error messages.
 -   **Product Managers**: Focus on `Design for the Reader's Goal` and `Clarity` when writing specifications and release notes.
 
-### Error Message Framework
-A good error message is empathetic and actionable. It should answer four questions:
-1.  **What happened?**: "Save Failed."
-2.  **Why did it happen?**: "You are not connected to the internet."
-3.  **How can I fix it?**: "Please check your connection and try again."
-4.  **Where can I get more help?**: "Contact support if the problem persists."
-
----
-
-## Appendices
-
-*(This section would link to the detailed content from the original manifesto, reformatted as appendices.)*
-
--   **Appendix A: Detailed Implementation Guides for all 18 Original Principles**
--   **Appendix B: Content Tooling Ecosystem Map**
--   **Appendix C: Content Maturity Model**
--   **Appendix D: Checklists and Measurement Frameworks**
+### Measurement
+-   **Readability**: Flesch-Kincaid Grade ≤ 10.
+-   **Structural**: 0 broken links.
+-   **User Impact**: Search success rate ≥ 90%.
