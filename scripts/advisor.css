@@ -1,0 +1,26 @@
+/* advisor.css */
+
+Container {
+    align: center middle;
+    padding: 2;
+}
+
+#question {
+    margin-bottom: 1;
+}
+
+#concern_input {
+    width: 80%;
+    margin-bottom: 1;
+}
+
+#get_advice {
+    margin-bottom: 1;
+}
+
+#advice_display {
+    width: 80%;
+    height: 10;
+    border: solid $primary;
+    padding: 1;
+}
