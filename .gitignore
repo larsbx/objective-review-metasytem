@@ -1,0 +1,42 @@
+# Environments
+.env
+.venv
+venv/
+__pycache__/
+
+# Distribution / build
+.Python
+build/
+develop-eggs/
+dist/*
+!dist/agents/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# pyenv
+.python-version
+
+# dotenv
+.env
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyinstaller
+*.manifest
+*.spec
+.env
