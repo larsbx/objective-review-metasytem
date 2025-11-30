@@ -61,9 +61,6 @@ measurement:
 **Version**: 2.1
 **Last Updated**: 2025-11-23
 
-**Version**: 2.1
-**Last Updated**: 2025-11-23
-
 > Data is not a byproduct; it is a foundational asset that requires disciplined engineering. This manifesto outlines the principles for building reliable, scalable, and trustworthy data platforms that empower an organization to make better decisions, faster.
 
 ---

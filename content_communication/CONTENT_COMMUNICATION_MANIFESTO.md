@@ -61,9 +61,6 @@ measurement:
 **Version**: 2.1
 **Last Updated**: 2025-11-23
 
-**Version**: 2.1
-**Last Updated**: 2025-11-23
-
 > Content is not a layer on top of the product; it *is* the product. From the text on a button to the most detailed API documentation, clear, accessible, and actionable communication is the foundation of a successful user experience.
 
 ---

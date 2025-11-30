@@ -12,8 +12,8 @@ The easiest way to get started is to use the **Manifesto Advisor** tool. It will
 
 **1. Install Dependencies:**
 ```bash
-# You need Python 3 and PyYAML
-pip install pyyaml
+# You need Python 3
+pip install -r requirements.txt
 ```
 
 **2. Run the Advisor:**

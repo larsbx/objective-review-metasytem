@@ -14,16 +14,7 @@ import yaml
 
 # --- Configuration ---
 SRC_ROOT = Path(__file__).parent.parent
-MANIFESTO_DIRS = [
-    "accessibility",
-    "content_communication",
-    "data_analytics",
-    "ethics",
-    "formal_verification",
-    "security_hardening",
-    "user_experience",
-    "vibe_coding",
-]
+# MANIFESTO_DIRS removed in favor of dynamic discovery
 DIST_DIR = SRC_ROOT / "dist"
 AGENTS_DIR = DIST_DIR / "agents"
 MANUAL_AGENT_FILES = ["decision-trees.yaml", "semantic-relationships.yaml"]
@@ -54,6 +45,9 @@ def find_manifesto_file(manifest_dir_path):
     1. Ends with _MANIFESTO.md
     2. Any .md file with valid front matter
     """
+    if not manifest_dir_path.exists():
+        return None
+        
     md_files = glob.glob(str(manifest_dir_path / "*.md"))
     if not md_files:
         return None
@@ -71,6 +65,23 @@ def find_manifesto_file(manifest_dir_path):
 
     return None
 
+def discover_manifesto_dirs():
+    """
+    Dynamically discovers directories containing manifestos.
+    Returns a list of Path objects.
+    """
+    manifesto_dirs = []
+    # Look for any directory in SRC_ROOT that contains a *_MANIFESTO.md file
+    # This is a heuristic to find manifesto directories
+    for item in SRC_ROOT.iterdir():
+        if item.is_dir() and not item.name.startswith('.') and item.name not in ['dist', 'scripts', 'integrations']:
+            # Check if it contains a manifesto file
+            if find_manifesto_file(item):
+                manifesto_dirs.append(item)
+    return sorted(manifesto_dirs)
+
+
+
 # --- Main Build Logic ---
 
 def build_manifesto_index():
@@ -85,12 +96,12 @@ def build_manifesto_index():
         "manifestos": {}
     }
 
-    for manifest_dir in MANIFESTO_DIRS:
-        manifest_dir_path = SRC_ROOT / manifest_dir
+    manifesto_dirs = discover_manifesto_dirs()
+    for manifest_dir_path in manifesto_dirs:
         filepath = find_manifesto_file(manifest_dir_path)
 
         if not filepath:
-            print(f"Warning: No valid manifesto file found in {manifest_dir}")
+            print(f"Warning: No valid manifesto file found in {manifest_dir_path}")
             continue
 
         front_matter = read_markdown_front_matter(filepath)
@@ -117,8 +128,8 @@ def build_measurement_frameworks():
         }
     }
 
-    for manifest_dir in MANIFESTO_DIRS:
-        manifest_dir_path = SRC_ROOT / manifest_dir
+    manifesto_dirs = discover_manifesto_dirs()
+    for manifest_dir_path in manifesto_dirs:
         filepath = find_manifesto_file(manifest_dir_path)
 
         if not filepath:

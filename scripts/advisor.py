@@ -20,6 +20,7 @@ from textual.widgets import Button, Header, Footer, Static, Input
 # --- Configuration ---
 SRC_ROOT = Path(__file__).parent.parent
 AGENTS_DIR = SRC_ROOT / "dist" / "agents"
+MODEL_NAME = "gemini-pro"
 load_dotenv()
 
 # --- Helper Functions ---
@@ -55,11 +56,27 @@ class AdvisorApp(App):
     def on_button_pressed(self, event: Button.Pressed) -> None:
         """Event handler called when the 'Get Advice' button is pressed."""
         if event.button.id == "get_advice":
-            concern = self.query_one("#concern_input", Input).value
-            if concern:
-                self.query_one("#advice_display", Static).update("Getting advice...")
+            concern_input = self.query_one("#concern_input", Input)
+            concern = concern_input.value.strip()
+            
+            # Input Validation
+            if not concern:
+                self.query_one("#advice_display", Static).update("Please enter a concern.")
+                return
+            if len(concern) > 500:
+                self.query_one("#advice_display", Static).update("Input too long. Please keep it under 500 characters.")
+                return
+
+            # Disable button to prevent double-submit
+            event.button.disabled = True
+            self.query_one("#advice_display", Static).update("Getting advice...")
+            
+            # TODO: In a real app, run this in a worker thread to avoid freezing UI
+            try:
                 advice = self.get_llm_advice(concern)
                 self.query_one("#advice_display", Static).update(advice)
+            finally:
+                event.button.disabled = False
 
     def get_llm_advice(self, concern: str) -> str:
         """Gets advice from the LLM based on the user's concern."""
@@ -68,7 +85,7 @@ class AdvisorApp(App):
             return "Error: GEMINI_API_KEY not found in .env file."
 
         genai.configure(api_key=api_key)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel(MODEL_NAME)
 
         # For now, just returning a placeholder
         # In the future, we will build a more sophisticated prompt
