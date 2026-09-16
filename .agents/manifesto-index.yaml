@@ -47,6 +47,40 @@ manifestos:
       function_length_max: 25
       test_coverage_min: 0.9
 
+  research-hygiene:
+    id: "research-hygiene"
+    title: "Research Hygiene Manifesto"
+    version: "1.0"
+    file_path: "../research_hygiene/RESEARCH_HYGIENE_MANIFESTO.md"
+    changelog_path: "../research_hygiene/CHANGELOG.md"
+    last_updated: "2026-09-16"
+    status: "current"
+
+    focus: "What a result is entitled to claim, and what happens when evidence runs out"
+    primary_users: ["research-engineers", "ml-practitioners", "benchmark-maintainers", "technical-writers"]
+    learning_curve: "low"
+    roi_timeline: "immediate"
+    adoption_scope: "broad"
+
+    principles_count: 9
+    tier_structure:
+      core: 4
+      standard: 3
+      excellence: 2
+
+    applicability:
+      project_types: ["research", "evaluation-harnesses", "benchmarks", "scientific-software", "proof-adjacent"]
+      languages: ["python", "rust", "julia", "r", "lean", "tla-plus", "mojo"]
+      contexts: ["experiments", "model-evaluation", "literature-backed-claims", "multi-repository-programmes"]
+
+    related_manifestos:
+      complements: ["formal-verification", "data-analytics", "content-communication"]
+      prerequisites: []
+      enables: ["reproducible-research", "auditable-claims"]
+
+    tools:
+      categories: ["claim-ledgers", "prose-linters", "differential-testing", "model-checkers"]
+
   formal-verification:
     id: "formal-verification"
     title: "Formal Verification Manifesto"

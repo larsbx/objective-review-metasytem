@@ -45,6 +45,7 @@ The Markdown files are the **single source of truth**. They contain YAML front m
 ├── data_analytics/           # Data & Analytics Manifesto
 ├── ethics/                   # The Quantified Ethics Manifesto
 ├── formal_verification/      # Formal Verification Manifesto
+├── research_hygiene/         # Research Hygiene Manifesto
 ├── security_hardening/       # Security Hardening Manifesto
 ├── user_experience/          # User Experience Manifesto
 └── vibe_coding/              # Vibe Coding Manifesto
@@ -57,7 +58,7 @@ The Markdown files are the **single source of truth**. They contain YAML front m
 │   └── build_agents_data.py  # Script to generate the dist/agents/ data
 │
 ├── integrations/
-│   ├── vale/                 # Example Vale configuration for prose linting
+│   ├── vale/                 # Vale styles, and an example configuration
 │   └── github/               # Example GitHub Actions workflow
 │
 ├── README.md                 # This file

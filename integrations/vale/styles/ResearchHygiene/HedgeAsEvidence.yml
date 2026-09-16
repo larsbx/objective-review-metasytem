@@ -1,0 +1,12 @@
+extends: existence
+message: "'%s' stands in for a result. Either measure it, or label the claim open."
+link: https://github.com/larsbx/objective-review-metasytem/blob/main/research_hygiene/RESEARCH_HYGIENE_MANIFESTO.md#i-declare-the-status-of-every-claim
+level: warning
+ignorecase: true
+tokens:
+  - should be correct
+  - should be fine
+  - presumably
+  - it is obvious that
+  - clearly holds
+  - trivially true

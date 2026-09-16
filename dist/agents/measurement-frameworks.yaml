@@ -142,6 +142,22 @@ formal-verification:
     critical_bugs_in_verified_code:
       target: '0'
       measurement: bug-tracker
+research-hygiene:
+  claim_status:
+    claims_with_declared_status:
+      target: 100%
+      measurement: claim-ledger-audit
+    surfaces_in_agreement:
+      target: 100%
+      measurement: ci-consistency-check
+  refusal_handling:
+    bounded_failures_reported_as_absence:
+      target: '0'
+      measurement: code-review
+  translation:
+    authority_raised_across_a_boundary:
+      target: '0'
+      measurement: vocabulary-map-tests
 security-hardening:
   vulnerability_management:
     critical_vuln_sla:

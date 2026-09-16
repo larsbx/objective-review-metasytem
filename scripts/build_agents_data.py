@@ -20,6 +20,7 @@ MANIFESTO_DIRS = [
     "data_analytics",
     "ethics",
     "formal_verification",
+    "research_hygiene",
     "security_hardening",
     "user_experience",
     "vibe_coding",

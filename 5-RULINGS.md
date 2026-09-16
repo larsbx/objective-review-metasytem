@@ -29,6 +29,35 @@ This document compiles the rulings from all manifestos within this project, cate
 
 ---
 
+## 🔬 Research Hygiene
+
+### OBLIGATORY
+- **Declare Claim Status**: Proved, imported, scaffolded, or open.
+- **Refusal Is Not a Negative Result**: A cap must not read as a clean answer.
+- **Report the Bound**: Say when a search stopped at a limit.
+- **Translation Preserves or Lowers Authority**: Never raises it.
+
+### ENCOURAGED
+- **One Claims Ledger**: Generate or check every status surface from it.
+- **Independent Controls**: A control derived from its subject cannot fail.
+- **Declare Terminology**: Genealogy, bridge claim, known leaks, use discipline.
+
+### OPTIONAL
+- **Differential Testing**: Compare against an independent implementation.
+- **Delivery Ledger**: Distinguish delivered from partly delivered.
+
+### DISCOURAGED
+- **Unqualified "Verified"**
+- **Duplicated Status** with nothing keeping it in step
+- **Asserted Equivalence** the code does not check
+
+### PROHIBITED
+- **Bounded Failure Reported as Absence**
+- **A Control That Cannot Fail**
+- **Raising Authority in Translation**
+
+---
+
 ## 🔒 Security Hardening
 
 ### OBLIGATORY
