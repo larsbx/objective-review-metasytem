@@ -206,10 +206,9 @@ We may add a CONTRIBUTORS.md file in the future to highlight major contributions
 
 ## Questions?
 
-- **General questions**: [Open a discussion](https://github.com/larsbx/objective-review-metasytem/discussions)
+- **Questions and clarifications**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with "Question:" prefix
 - **Bug reports**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with "Bug:" prefix
 - **Feature requests**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with "Feature:" prefix
-- **Clarifications**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with "Question:" prefix
 
 ---
 
