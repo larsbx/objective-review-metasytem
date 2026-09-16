@@ -1,0 +1,12 @@
+extends: existence
+message: "'%s' turns a failed search into an absence. Report the bound and say the remainder is unknown."
+link: https://github.com/larsbx/objective-review-metasytem/blob/main/research_hygiene/RESEARCH_HYGIENE_MANIFESTO.md#iii-report-the-bound-when-you-reach-it
+level: warning
+ignorecase: true
+tokens:
+  - no counterexample exists
+  - there are none
+  - none exist
+  - cannot occur
+  - never happens
+  - exhaustively ruled out

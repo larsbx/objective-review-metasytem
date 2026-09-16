@@ -413,6 +413,80 @@ manifestos:
           measurement: bug-tracker
     file_path: objective-review-metasytem/formal_verification/FORMAL_VERIFICATION_MANIFESTO.md
     changelog_path: objective-review-metasytem/formal_verification/CHANGELOG.md
+  research-hygiene:
+    id: research-hygiene
+    title: The Research Hygiene Manifesto
+    version: '1.0'
+    status: current
+    focus: What a result is entitled to claim, and what happens when evidence runs
+      out
+    primary_users:
+    - research-engineers
+    - ml-practitioners
+    - benchmark-maintainers
+    - technical-writers
+    learning_curve: low
+    roi_timeline: immediate
+    adoption_scope: broad
+    principles_count: 9
+    tier_structure:
+      core: 4
+      standard: 3
+      excellence: 2
+    applicability:
+      project_types:
+      - research
+      - evaluation-harnesses
+      - benchmarks
+      - scientific-software
+      - proof-adjacent
+      languages:
+      - python
+      - rust
+      - julia
+      - r
+      - lean
+      - tla-plus
+      - mojo
+      contexts:
+      - experiments
+      - model-evaluation
+      - literature-backed-claims
+      - multi-repository-programmes
+    related_manifestos:
+      complements:
+      - formal-verification
+      - data-analytics
+      - content-communication
+      prerequisites: []
+      enables:
+      - reproducible-research
+      - auditable-claims
+    tools:
+      categories:
+      - claim-ledgers
+      - prose-linters
+      - differential-testing
+      - model-checkers
+      count: 6+
+    measurement:
+      claim_status:
+        claims_with_declared_status:
+          target: 100%
+          measurement: claim-ledger-audit
+        surfaces_in_agreement:
+          target: 100%
+          measurement: ci-consistency-check
+      refusal_handling:
+        bounded_failures_reported_as_absence:
+          target: '0'
+          measurement: code-review
+      translation:
+        authority_raised_across_a_boundary:
+          target: '0'
+          measurement: vocabulary-map-tests
+    file_path: objective-review-metasytem/research_hygiene/RESEARCH_HYGIENE_MANIFESTO.md
+    changelog_path: objective-review-metasytem/research_hygiene/CHANGELOG.md
   security-hardening:
     id: security-hardening
     title: The Security Hardening Manifesto

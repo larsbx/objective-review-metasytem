@@ -1,0 +1,14 @@
+extends: existence
+message: "'%s' asserts a correspondence. Name the theorem or declare it as definition-only or analogy-only."
+link: https://github.com/larsbx/objective-review-metasytem/blob/main/research_hygiene/RESEARCH_HYGIENE_MANIFESTO.md#vii-declare-terminology-with-its-known-leaks
+level: warning
+ignorecase: true
+tokens:
+  - is isomorphic to
+  - isomorphic to
+  - corresponds exactly
+  - exactly the same as
+  - equivalent to
+  - is nothing but
+  - is just a
+  - by analogy
