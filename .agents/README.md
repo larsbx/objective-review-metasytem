@@ -124,4 +124,4 @@ These files are generated/maintained alongside the main manifestos. See [CONTRIB
 
 ---
 
-**Questions?** [Open an issue](../../issues) or see the [main README](../README.md)
+**Questions?** [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) or see the [main README](../README.md)

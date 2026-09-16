@@ -53,4 +53,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 **Maintainers**: See [CODEOWNERS](../.github/CODEOWNERS)
 
-**Feedback**: [Open an issue](../../issues) with questions or suggestions
+**Feedback**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with questions or suggestions

@@ -206,10 +206,10 @@ We may add a CONTRIBUTORS.md file in the future to highlight major contributions
 
 ## Questions?
 
-- **General questions**: [Open a discussion](../../discussions)
-- **Bug reports**: [Open an issue](../../issues) with "Bug:" prefix
-- **Feature requests**: [Open an issue](../../issues) with "Feature:" prefix
-- **Clarifications**: [Open an issue](../../issues) with "Question:" prefix
+- **General questions**: [Open a discussion](https://github.com/larsbx/objective-review-metasytem/discussions)
+- **Bug reports**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with "Bug:" prefix
+- **Feature requests**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with "Feature:" prefix
+- **Clarifications**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with "Question:" prefix
 
 ---
 

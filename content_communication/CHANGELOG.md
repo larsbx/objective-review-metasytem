@@ -175,7 +175,7 @@ We're seeking input on:
 - Internal documentation (runbooks, incident reports, RFCs)
 - AI-generated content quality standards
 
-**Submit feedback**: [Open an issue](../../issues) with your use case.
+**Submit feedback**: [Open an issue](https://github.com/larsbx/objective-review-metasytem/issues) with your use case.
 
 ---
 
@@ -222,7 +222,7 @@ This manifesto complements:
 - **[Security Hardening Manifesto](../security_hardening/)** v2.0 - Error messages, security disclosures
 - **[Data & Analytics Manifesto](../data_analytics/)** v2.0 - Data documentation, metrics definitions
 
-**See**: [Objective Review Metasystem README](../../README.md) for full ecosystem.
+**See**: [Objective Review Metasystem README](../README.md) for full ecosystem.
 
 ---
 
