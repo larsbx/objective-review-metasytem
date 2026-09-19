@@ -10,7 +10,8 @@ The estate's review manifestos: ethics, security, accessibility, formal
 verification, research hygiene and the rest, compiled into rulings.
 
 **Language / toolchain:** Markdown, with Python tooling under scripts/
-**CI:** GitHub Actions (`.github/workflows/docs-health.yml`): lychee link check, content freshness, markdownlint-cli2, typos
+**CI:** GitHub Actions (`.github/workflows/docs-health.yml`): lychee link check,
+  content freshness, markdownlint-cli2, typos
 
 This file is for whoever is working here next, human or otherwise. It states
 what is settled, so that it does not get re-litigated by someone reading only

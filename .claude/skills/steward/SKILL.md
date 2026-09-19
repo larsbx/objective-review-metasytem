@@ -15,7 +15,8 @@ The estate's review manifestos: ethics, security, accessibility, formal
 verification, research hygiene and the rest, compiled into rulings.
 
 **Language / toolchain:** Markdown, with Python tooling under scripts/
-**CI:** GitHub Actions (`.github/workflows/docs-health.yml`): lychee link check, content freshness, markdownlint-cli2, typos
+**CI:** GitHub Actions (`.github/workflows/docs-health.yml`): lychee link check,
+  content freshness, markdownlint-cli2, typos
 
 This document says *how* to steward a PR here. It does not widen what you are
 allowed to do. The standing prohibitions in your harness still hold — never
