@@ -1,4 +1,0 @@
-google-generativeai
-textual
-python-dotenv
-pyyaml
