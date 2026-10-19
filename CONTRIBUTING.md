@@ -24,9 +24,14 @@ Add a new skill only when it has a distinct task boundary. Extend an existing sk
 - The directory contains a `SKILL.md` file.
 - Frontmatter parses as YAML and contains non-empty `name` and `description` values.
 - The frontmatter name is unique and uses lowercase hyphen-case.
+- The frontmatter name matches its directory, and the description states the task and when to select it.
 - The body tells an agent what to do, what to verify, and how to report limitations.
-- Internal links resolve.
+- Internal links, including heading anchors, resolve. Plain-text references to sections and principles must identify guidance present in the skill.
+- The skill remains usable when copied by itself; links to other skills are optional and do not replace required instructions.
 - No instruction depends on the removed advisor or generated agent data.
+- Inspect all tracked files, including hidden directories and configuration, for obsolete discovery paths and references to deleted files.
+- Keep the README skill table and CODEOWNERS paths aligned with the skill directories.
+- Run the canonical skill-creator `scripts/quick_validate.py` against each skill directory and run `git diff --check`. The validator is a development check supplied by the skill-creator tooling, not a dependency of the skills.
 
 ## License
 

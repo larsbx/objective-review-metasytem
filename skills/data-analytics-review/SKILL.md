@@ -9,9 +9,6 @@ Establish the decision, data grain, ownership, freshness requirement, and author
 **Version**: 2.1
 **Last Updated**: 2025-11-23
 
-**Version**: 2.1
-**Last Updated**: 2025-11-23
-
 > Data is not a byproduct; it is a foundational asset that requires disciplined engineering. Build reliable, scalable, and trustworthy data platforms that support better decisions.
 
 ---

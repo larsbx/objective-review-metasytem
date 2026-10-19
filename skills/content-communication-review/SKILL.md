@@ -6,12 +6,6 @@ description: Draft, review, and improve documentation, interface copy, error mes
 
 Identify the audience and their intended task before editing. Review structure, terminology, accessibility, maintenance ownership, and actionability. Preserve technical meaning, distinguish factual defects from style preferences, and return replacement text or concrete edits when the user asks for remediation.
 
-**Version**: 2.1
-**Last Updated**: 2025-11-23
-
-**Version**: 2.1
-**Last Updated**: 2025-11-23
-
 > Content is not a layer on top of the product; it *is* the product. From the text on a button to the most detailed API documentation, clear, accessible, and actionable communication is the foundation of a successful user experience.
 
 ---
@@ -79,6 +73,31 @@ Identify the audience and their intended task before editing. Review structure, 
 
 ## Practical Guides
 
+### Process and Governance
+
+Apply **Treat Content as Product** throughout the content lifecycle:
+
+- Assign an owner and define who creates, reviews, and approves publication for each content type.
+- Keep content in version control. Review changes for technical accuracy, working links, tested examples, accessibility, and current screenshots before publication.
+- Set a review cadence and update version-specific guidance with each release. Track reader feedback and correct stale content.
+- When retiring content, announce the change, provide migration guidance, and archive or redirect obsolete pages.
+
+### Craft and Style
+
+Apply **Code as Communication** and **Style Guides** when drafting technical content:
+
+- Provide complete, idiomatic examples with prerequisites and expected results. Test them in the stated environment; explain intent in comments and progress from simple to complex examples.
+- Define domain terms before use, expand acronyms on first use, and maintain a glossary for ambiguous terms. Use one term for each concept consistently across documentation and UI labels.
+- Preserve technical distinctions. Do not substitute a familiar word for a different technical concept merely for stylistic variety.
+
+### Voice and Tone
+
+Apply **Clarity as Prime Directive** and **Empathetic Tone** across touchpoints:
+
+- Keep the product's voice consistent while adapting tone to context: encouraging for onboarding, precise for reference material, and calm and solution-focused for errors.
+- Use inclusive, respectful language. Acknowledge frustration without blaming, condescending to, or joking at the reader's expense.
+- Document terminology, voice, and tone choices with examples. Keep instructions actionable and never let brand personality obscure consequences or recovery steps.
+
 ### Error Message Framework
 A good error message answers:
 1.  **What happened?**
@@ -87,10 +106,10 @@ A good error message answers:
 4.  **Where can I get help?**
 
 ### Selection by Role
--   **Technical Writers**: Focus on all principles, especially `Pillar III: Process & Governance`, to build a scalable content operation.
--   **Developers**: Focus on `Pillar II: Craft & Style`, especially `Code as Communication` and `Precision in Terminology` when writing API docs.
--   **UX Writers**: Focus on `Clarity`, `Empathy`, and `Voice & Tone` when crafting UI microcopy and error messages.
--   **Product Managers**: Focus on `Design for the Reader's Goal` and `Clarity` when writing specifications and release notes.
+-   **Technical Writers**: Apply all principles, emphasizing [Process and Governance](#process-and-governance) to build a maintainable content operation.
+-   **Developers**: Apply [Craft and Style](#craft-and-style) to API documentation, terminology, and executable examples.
+-   **UX Writers**: Apply [Voice and Tone](#voice-and-tone) and the [Error Message Framework](#error-message-framework) to interface copy and recovery instructions.
+-   **Product Managers**: Apply **Design for the Reader's Goal** and **Clarity as Prime Directive** under [OBLIGATORY (Core Principles)](#obligatory-core-principles) to specifications and release notes.
 
 ### Measurement
 -   **Readability**: Flesch-Kincaid Grade ≤ 10.

@@ -4,6 +4,8 @@ A collection of independent skills for reviewing software, research, data, produ
 
 Each directory under `skills/` is a complete skill. Its `SKILL.md` contains the discovery metadata and the instructions an agent follows. There is no advisor application, generated registry, shared runtime, or model-specific dependency.
 
+The nine `skills/*/SKILL.md` files are the authoritative review guidance. This README is a navigation aid; contribution instructions and repository checks support maintenance without defining a second guidance source.
+
 ## Skills
 
 | Skill | Use it for |
@@ -26,11 +28,13 @@ skills/
     SKILL.md
 ```
 
-Skill names use lowercase letters and hyphens. Each `SKILL.md` begins with YAML frontmatter containing only `name` and `description`; the body contains the operational guidance.
+Skill names use lowercase letters, digits, and hyphens. Each `SKILL.md` begins with YAML frontmatter containing only `name` and `description`; the body contains the operational guidance.
 
 ## Use
 
 Copy or install the skill directory in a skill-capable agent environment. Relevant skills may be selected automatically from their descriptions, or invoked explicitly by name where the environment supports that.
+
+Each skill works on its own. Related-skill links are optional navigation within this collection; install those skills separately only when their task boundaries also apply. When upgrading an existing checkout or installation, remove previously installed agent registries, generated decision trees, and manifesto copies so consumers discover only the current skills.
 
 ## License
 

@@ -256,6 +256,8 @@ Rulings I through IV do not have exemptions. They are cheap, and each one exists
 
 ## Related skills
 
+Use these optional companion skills when installed and relevant. The instructions above are complete without them.
+
 - [Formal Verification Review](../formal-verification-review/SKILL.md): determine what to do when a claim can be proved.
 - [Data and Analytics Review](../data-analytics-review/SKILL.md): evaluate evidence handling and measurement.
 - [Content and Communication Review](../content-communication-review/SKILL.md): make an entitled claim precise and clear.
